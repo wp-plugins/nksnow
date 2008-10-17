@@ -29,10 +29,7 @@ You can configure the number of snowflakes and limit the plugin to specific post
 2. Settings page.
 
 == Frequently Asked Questions ==
-Q: I installed your plugin but there is no snow!<br />
-A: You missed step 4 of the install, you need to configure the plugin. The plugin defaults to 0 snowflakes.<br />
-
-Q: I did that but there's still no snow.<br />
+Q: I see no snow.<br />
 A: Please send me a link to your blog. It's quite possible that some doctype combinations or browsers will not work. If somebody complains I might try to fix it.<br />
 
 == Compatibility ==

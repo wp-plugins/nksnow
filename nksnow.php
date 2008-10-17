@@ -52,7 +52,7 @@ function nksnow_add_pages() {
 		</p>
 
 		<form action="" method="post">
-			Show how many snowflakes?
+			Show how many snowflakes (default 10)?
 			<select name="nksnow_snowflakes" >
 			<?php
 				$select = get_option('nksnow_snowflakes'); 
@@ -71,7 +71,7 @@ function nksnow_add_pages() {
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 			<br />
-			What should the timeout in milliseconds be between updates? 80 is recommended.
+			What should be the timeout in milliseconds between updates (default 80)? 
 			<select name="nksnow_timeout" >
 			<?php
 				$timeout = get_option('nksnow_timeout'); 
@@ -97,7 +97,11 @@ function nksnow_add_pages() {
 function nksnow_head() { ?>
 <!-- nksnow -->
 <script type="text/javascript">
-snowflakes = <?php echo get_option('nksnow_snowflakes'); ?>;
+snowflakes = <?php
+	echo get_option('nksnow_snowflakes');
+	if (!get_option('nksnow_snowflakes')) {
+		echo '10';
+	}
 timeout = <?php
 	echo get_option('nksnow_timeout');
 	if (!get_option('nksnow_timeout')) {
