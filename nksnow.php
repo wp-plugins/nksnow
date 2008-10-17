@@ -27,7 +27,7 @@ function nksnow_add_pages() {
 	function nksnow_options_page() { ?>
 		<div class="wrap" style="margin: 2mm;">
 		<?php
-			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] ) {
+			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] || $_POST['nksnow_timeout'] ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
 				if ($_POST['nksnow_snowflakes'] != get_option('nksnow_snowflakes') ) {
 					update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
@@ -36,6 +36,10 @@ function nksnow_add_pages() {
 				if ($_POST['nksnow_uri'] != get_option('nksnow_uri') ) {
 					update_option('nksnow_uri', $_POST['nksnow_uri']);
 					echo "URI changed to " . get_option('nksnow_uri');
+				}
+				if ($_POST['nksnow_timeout'] != get_option('nksnow_timeout') ) {
+					update_option('nksnow_timeout', $_POST['nksnow_timeout']);
+					echo "Timeout changed to " . get_option('nksnow_timeout');
 				}
 				echo '</div>';
 			}
@@ -67,6 +71,22 @@ function nksnow_add_pages() {
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 			<br />
+			What should the timeout in milliseconds be between updates? 80 is recommended.
+			<select name="nksnow_timeout" >
+			<?php
+				$timeout = get_option('nksnow_timeout'); 
+				echo $timeout;
+				for ($i = 40 ; $i <= 200; $i = $i + 10) {
+					if ( $i == $timeout ) {
+						echo "<option selected>$i</option>\n";
+					}
+					else {
+						echo "<option>$i</option>\n";
+					}
+				}
+			?>
+			</select>
+			<br />
 			<input type="submit" value="Update settings" />
 		</form>
 		</div>
@@ -77,7 +97,13 @@ function nksnow_add_pages() {
 function nksnow_head() { ?>
 <!-- nksnow -->
 <script type="text/javascript">
-snowflakes = <?php echo get_option('nksnow_snowflakes'); ?>
+snowflakes = <?php echo get_option('nksnow_snowflakes'); ?>;
+timeout = <?php
+	echo get_option('nksnow_timeout');
+	if (!get_option('nksnow_timeout')) {
+		echo '80';
+	}
+?>;
 </script>
 <script src="<?php bloginfo('url'); echo '/wp-content/plugins/nksnow/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->

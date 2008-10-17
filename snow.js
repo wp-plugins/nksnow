@@ -1,5 +1,4 @@
 // Definitions
-//snowflakes = <?php get_option('nksnow_snowflakes') ?>;
 posx = new Array();
 posy = new Array();
 speedx = 0;
@@ -68,5 +67,5 @@ function snow() {
 		document.getElementById(i).style.top=posy[i] + "px";
 		document.getElementById(i).style.left=posx[i] + "px";
 	}
-	window.setTimeout("snow()", 75); // and repeat
+	window.setTimeout("snow()", timeout); // and repeat
 }
