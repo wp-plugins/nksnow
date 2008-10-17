@@ -87,7 +87,7 @@ snowflakes = <?php echo get_option('nksnow_snowflakes'); ?>
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake.gif' . "\" style=\"position: absolute; top: -100px;\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake.gif' . "\" style=\"position: fixed; top: -100px;\" />";
 	}
 	//echo "<a href=\"#\" onclick=\"snow();\" >click me! ;-)</a>";
 }

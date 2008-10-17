@@ -4,8 +4,18 @@ posx = new Array();
 posy = new Array();
 speedx = 0;
 speedy = new Array();
-maxwidth = document.documentElement.clientWidth;
-maxheight = document.documentElement.clientHeight;
+
+maxwidth = window.innerWidth;
+maxheight = window.innerHeight;
+if (!maxwidth) {
+	maxwidth = document.documentElement.clientWidth;
+	maxheight = document.documentElement.clientHeight;
+}
+if (!maxwidth) {
+	maxwidth = document.body.clientWidth;
+	maxheight = document.body.clientHeight;
+}
+
 flakesize = 40; // width + height of snowflake + some more :-/
 
 // Create some position + movement data
