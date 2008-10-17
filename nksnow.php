@@ -102,6 +102,7 @@ snowflakes = <?php
 	if (!get_option('nksnow_snowflakes')) {
 		echo '10';
 	}
+?>;
 timeout = <?php
 	echo get_option('nksnow_timeout');
 	if (!get_option('nksnow_timeout')) {
