@@ -70,7 +70,7 @@ function nksnow_add_pages() {
 			<select name="nksnow_snowflakes" >
 			<?php
 				$select = get_option('nksnow_snowflakes'); 
-				if (!$select) { $select = 10; }
+				if ($select === NULL) { $select = 10; }
 				for ($i = 20 ; $i >= 0; $i--) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -86,15 +86,15 @@ function nksnow_add_pages() {
 			<br />
 			<?php
 				$select = get_option('nksnow_snowflake'); 
-				if (!$select) { $select = 0; }
-				for ($i = 0 ; $i <= 1; $i++) {
+				if ($select === NULL) { $select = 0; }
+				for ($i = 0 ; $i < 4; $i++) {
 					if ( $i == $select ) {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
 					}
 					else {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" />";
 					}
-					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #999; \" /><br />";
+					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #ccf; \" /><br />";
 				}
 			?>
 			<h2>Pro settings</h2>
@@ -105,7 +105,7 @@ function nksnow_add_pages() {
 			<select name="nksnow_timeout" >
 			<?php
 				$select = get_option('nksnow_timeout'); 
-				if (!$select) { $select = 80; }
+				if ($select === NULL) { $select = 80; }
 				for ($i = 40 ; $i <= 200; $i = $i + 10) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -121,7 +121,7 @@ function nksnow_add_pages() {
 			<select name="nksnow_maxstep" >
 			<?php
 				$select = get_option('nksnow_maxstep'); 
-				if (!$select) { $select = 10; }
+				if ($select === NULL) { $select = 10; }
 				for ($i = 1 ; $i <= 20; $i++) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -176,7 +176,7 @@ snowflake = <?php
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$snowflake = get_option('nksnow_snowflake');
-	if (!is_integer($snowflakes)) { $snowflakes = 10; }
+	if ($snowflakes === NULL) { $snowflakes = 10; }
 	if (!$snowflake) { $snowflake = 0; }
 	for ($i = 0; $i < $snowflakes; $i++) {
 		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $snowflake . '.gif' . "\" style=\"position: fixed; top: -100px;\" />";
