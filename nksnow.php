@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: xsnow-like plugin four your wordpress. Yay!
-Version: 0.2.0
+Version: 0.2.1
 */
 
 // Hook for adding admin menus
@@ -25,7 +25,7 @@ elseif  (!get_option('nksnow_uri')) {
 function nksnow_add_pages() {
 	add_options_page('Snow', 'Snow', 10, 'nksnow', 'nksnow_options_page');
 	function nksnow_options_page() { ?>
-		<div class="wrap" style="margin: 2mm;">
+		<div class="wrap" style="margin: 0 5mm; ">
 		<?php
 			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] || $_POST['nksnow_timeout'] || $_POST['nksnow_maxstep'] || $_POST['nksnow_snowflake'] ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
@@ -58,19 +58,19 @@ function nksnow_add_pages() {
 			}
 		?>
 		<h2>Snow</h2>
-		<p><small>nksnow</small></p>
-		<p>Hello!
-		<br />
-		Santa loves you!
+		<p> 
+			Feel free to send me feedback, patches, feature requests etc. to <a href="mailto:wp@nicolaskuttler.de">my mail address</a> or to blog about this plugin.        
+			Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a>
+			or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
+			If you like to, visit my <a href="http://www.amazon.de/gp/registry/24F64AHKD51LY">Amazon wishlist</a> and send me a gift.
 		</p>
-
+		<h2>Settings</h2>
 		<form action="" method="post">
-			Show how many snowflakes (default 10)?
+			Show how many snowflakes?
 			<select name="nksnow_snowflakes" >
 			<?php
 				$select = get_option('nksnow_snowflakes'); 
 				if (!$select) { $select = 10; }
-				echo $select;
 				for ($i = 20 ; $i >= 0; $i--) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -82,6 +82,22 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
+			Which one of the flakes do you want?
+			<br />
+			<?php
+				$select = get_option('nksnow_snowflake'); 
+				if (!$select) { $select = 0; }
+				for ($i = 0 ; $i <= 1; $i++) {
+					if ( $i == $select ) {
+						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
+					}
+					else {
+						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" />";
+					}
+					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #999; \" /><br />";
+				}
+			?>
+			<h2>Pro settings</h2>
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 			<br />
@@ -90,7 +106,6 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_timeout'); 
 				if (!$select) { $select = 80; }
-				echo $select;
 				for ($i = 40 ; $i <= 200; $i = $i + 10) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -107,29 +122,7 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_maxstep'); 
 				if (!$select) { $select = 10; }
-				echo $select;
 				for ($i = 1 ; $i <= 20; $i++) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				}
-			?>
-			</select>
-			<br />
-			<div style="background: black; margin: 1mm; width: 60px; ">
-			<?php echo '<img src="' . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake0.gif" style="padding: 2mm;" />'; ?>
-			<?php echo '<img src="' . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake1.gif" style="padding: 2mm;" />'; ?>
-			</div>
-			Which one of the flakes shown above do you want (default 0)?
-			<select name="nksnow_snowflake" >
-			<?php
-				$select = get_option('nksnow_snowflake'); 
-				if (!$select) { $select = 0; }
-				echo $select;
-				for ($i = 0 ; $i <= 2; $i++) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
 					}
@@ -183,7 +176,7 @@ snowflake = <?php
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$snowflake = get_option('nksnow_snowflake');
-	if (!$snowflakes) { $snowflakes = 10; }
+	if (!is_integer($snowflakes)) { $snowflakes = 10; }
 	if (!$snowflake) { $snowflake = 0; }
 	for ($i = 0; $i < $snowflakes; $i++) {
 		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $snowflake . '.gif' . "\" style=\"position: fixed; top: -100px;\" />";
