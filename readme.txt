@@ -36,7 +36,7 @@ A: Please send me a link to your blog. It's quite possible that some doctype com
 I only use wordpress 2.6, so I haven't tested the plugin with older installs yet. Please tell me if you use it successfully on older blogs.
 
 == Changelog ==
-		Add configuration option for timeout between updates.<br />
+0.2.0	Add a lot of new configuration options. Include a second snowflake.<br />
 0.1.6	Fix for google chrome and make the snowflakes scrolling-aware.<br />
 0.1.5	doc update only<br />
 0.1.4	wordpress.org upload, some doc updates<br />

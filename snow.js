@@ -15,7 +15,15 @@ if (!maxwidth) {
 	maxheight = document.body.clientHeight;
 }
 
-flakesize = 40; // width + height of snowflake + some more :-/
+switch (snowflake) {
+	default:
+	case 0:
+		flakesize = 40; // width + height of snowflake + some more :-/
+		break;
+	case 1:
+		flakesize = 4;
+		break;
+}
 
 // Create some position + movement data
 for (i = 0; i < snowflakes; i++) {
@@ -23,7 +31,7 @@ for (i = 0; i < snowflakes; i++) {
 	posy[i] = -17 - Math.random() * maxheight;
 	posx[i] = maxwidth / snowflakes * i;
 	// movement
-	speedy[i] = 5 + Math.random() * 5;
+	speedy[i] = maxstep / 2 + Math.random() * maxstep / 2;
 }
 
 
@@ -37,8 +45,8 @@ function snow() {
 		posx[i] = posx[i] + speedx;
 		// wind effect
 		if (Math.random() > 0.99) {
-			if (speedx < 5 && speedx > -5) {
-				speedx = speedx -10 + Math.random() * 20;
+			if (speedx < maxstep/2 && speedx > -maxstep/2) {
+				speedx = speedx - maxstep + Math.random() * maxstep;
 			}
 		}
 		// wind effect diminishes with time
