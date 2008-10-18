@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny
 Requires at least: 2.6.0
 Tested up to: 2.6.2
-Stable tag: 0.2.0
+Stable tag: 0.2.1
 
 Snowflakes falling down your blog! Inspired by the unforgettable xsnow.
 
