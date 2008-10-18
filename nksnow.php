@@ -87,14 +87,14 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_snowflake'); 
 				if ($select === NULL) { $select = 0; }
-				for ($i = 0 ; $i < 4; $i++) {
+				for ($i = 0 ; $i <= 4; $i++) {
 					if ( $i == $select ) {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
 					}
 					else {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" />";
 					}
-					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #ccf; \" /><br />";
+					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" /><br />";
 				}
 			?>
 			<h2>Pro settings</h2>
