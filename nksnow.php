@@ -27,7 +27,7 @@ function nksnow_add_pages() {
 	function nksnow_options_page() { ?>
 		<div class="wrap" style="margin: 0 5mm; ">
 		<?php
-			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] || $_POST['nksnow_timeout'] || $_POST['nksnow_maxstep'] || $_POST['nksnow_snowflake'] ) {
+			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] || $_POST['nksnow_timeout'] || $_POST['nksnow_maxstepx'] || $_POST['nksnow_maxstepy'] || $_POST['nksnow_snowflake'] ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
 				if ($_POST['nksnow_snowflakes'] != get_option('nksnow_snowflakes') ) {
 					update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
@@ -44,9 +44,14 @@ function nksnow_add_pages() {
 					echo "Timeout changed to " . get_option('nksnow_timeout');
 					echo "<br />";
 				}
-				if ($_POST['nksnow_maxstep'] != get_option('nksnow_maxstep') ) {
-					update_option('nksnow_maxstep', $_POST['nksnow_maxstep']);
-					echo "Maxstep changed to " . get_option('nksnow_maxstep');
+				if ($_POST['nksnow_maxstepx'] != get_option('nksnow_maxstepx') ) {
+					update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
+					echo "MaxstepXchanged to " . get_option('nksnow_maxstepx');
+					echo "<br />";
+				}
+				if ($_POST['nksnow_maxstepy'] != get_option('nksnow_maxstepy') ) {
+					update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
+					echo "MaxstepY changed to " . get_option('nksnow_maxstepy');
 					echo "<br />";
 				}
 				if ($_POST['nksnow_snowflake'] != get_option('nksnow_snowflake') ) {
@@ -87,7 +92,7 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_snowflake'); 
 				if ($select === NULL) { $select = 0; }
-				for ($i = 0 ; $i <= 4; $i++) {
+				for ($i = 0 ; $i <= 6; $i++) {
 					if ( $i == $select ) {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
 					}
@@ -98,10 +103,7 @@ function nksnow_add_pages() {
 				}
 			?>
 			<h2>Pro settings</h2>
-			Show snowflakes only on pages whose URI contains
-			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
-			<br />
-			What should be the timeout in milliseconds between updates (default 80)? 
+			Overall speed (timeout in milliseconds between moves) (default 80)? 
 			<select name="nksnow_timeout" >
 			<?php
 				$select = get_option('nksnow_timeout'); 
@@ -117,10 +119,10 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
-			Maxstep, maximum of how many pixels the flakes moves at once (default 10)
-			<select name="nksnow_maxstep" >
+			Maximum Wind strength (default 10)
+			<select name="nksnow_maxstepx" >
 			<?php
-				$select = get_option('nksnow_maxstep'); 
+				$select = get_option('nksnow_maxstepx'); 
 				if ($select === NULL) { $select = 10; }
 				for ($i = 1 ; $i <= 20; $i++) {
 					if ( $i == $select ) {
@@ -132,6 +134,25 @@ function nksnow_add_pages() {
 				}
 			?>
 			</select>
+			<br />
+			Maximum Falling speed (default 10)
+			<select name="nksnow_maxstepy" >
+			<?php
+				$select = get_option('nksnow_maxstepy'); 
+				if ($select === NULL) { $select = 10; }
+				for ($i = 1 ; $i <= 20; $i++) {
+					if ( $i == $select ) {
+						echo "<option selected>$i</option>\n";
+					}
+					else {
+						echo "<option>$i</option>\n";
+					}
+				}
+			?>
+			</select>
+			<br />
+			Show snowflakes only on pages whose URI contains
+			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 			<br />
 			<input type="submit" value="Update settings" />
 		</form>
@@ -155,9 +176,15 @@ timeout = <?php
 		echo '80';
 	}
 ?>;
-maxstep = <?php
-	echo get_option('nksnow_maxstep');
-	if (!get_option('nksnow_maxstep')) {
+maxstepx = <?php
+	echo get_option('nksnow_maxstepx');
+	if (!get_option('nksnow_maxstepx')) {
+		echo '10';
+	}
+?>;
+maxstepy = <?php
+	echo get_option('nksnow_maxstepy');
+	if (!get_option('nksnow_maxstepy')) {
 		echo '10';
 	}
 ?>;
