@@ -1,7 +1,7 @@
 // Definitions
 posx = new Array();
 posy = new Array();
-speedx = 0;
+speedx = Math.random() * maxstep;
 speedy = new Array();
 
 maxwidth = window.innerWidth;
@@ -18,17 +18,20 @@ if (!maxwidth) {
 switch (snowflake) {
 	default:
 	case 0:
-		flakesize = 40; // width + height of snowflake + some more :-/
+		flakesize = 25;
 		break;
 	case 1:
 		flakesize = 4;
+		break;
+	case 4:
+		flakesize = 8;
 		break;
 }
 
 // Create some position + movement data
 for (i = 0; i < snowflakes; i++) {
 	// starting position
-	posy[i] = -17 - Math.random() * maxheight;
+	posy[i] = -flakesize - Math.random() * maxheight;
 	posx[i] = maxwidth / snowflakes * i;
 	// movement
 	speedy[i] = maxstep / 2 + Math.random() * maxstep / 2;
@@ -55,7 +58,7 @@ function snow() {
 				speedx = speedx - 0.1;
 			}
 		}
-		if (speedx < 0) {
+		else if (speedx < 0) {
 			if (Math.random() > 0.9) {
 				speedx = speedx + 0.1;
 			}
