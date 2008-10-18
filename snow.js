@@ -1,7 +1,7 @@
 // Definitions
 posx = new Array();
 posy = new Array();
-speedx = Math.random() * maxstep;
+speedx = Math.random() * maxstepx;
 speedy = new Array();
 
 maxwidth = window.innerWidth;
@@ -20,6 +20,7 @@ switch (snowflake) {
 	case 0:
 		flakesize = 25;
 		break;
+	case 5:
 	case 1:
 		flakesize = 4;
 		break;
@@ -31,10 +32,10 @@ switch (snowflake) {
 // Create some position + movement data
 for (i = 0; i < snowflakes; i++) {
 	// starting position
-	posy[i] = -flakesize - Math.random() * maxheight;
+	posy[i] = Math.random() * maxheight;
 	posx[i] = maxwidth / snowflakes * i;
 	// movement
-	speedy[i] = maxstep / 2 + Math.random() * maxstep / 2;
+	speedy[i] = maxstepy / 2 + Math.random() * maxstepy / 2;
 }
 
 
@@ -48,8 +49,8 @@ function snow() {
 		posx[i] = posx[i] + speedx;
 		// wind effect
 		if (Math.random() > 0.99) {
-			if (speedx < maxstep/2 && speedx > -maxstep/2) {
-				speedx = speedx - maxstep + Math.random() * maxstep;
+			if (speedx < maxstepx/2 && speedx > -maxstepx/2) {
+				speedx = speedx - maxstepx + Math.random() * maxstepx;
 			}
 		}
 		// wind effect diminishes with time
