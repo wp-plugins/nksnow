@@ -32,7 +32,7 @@ I added this feature so that I could put a <a href="http://www.nkuttler.de/nksno
 </ol>
 
 == Screenshots ==
-1. It's snowing ;-) Watch the <a href="http://www.nkuttler.de/nksnow/">live demo</a> at my blog.
+1. It's snowing! Watch the <a href="http://www.nkuttler.de/nksnow/">live demo</a> at my blog.
 2. Settings page.
 
 == Frequently Asked Questions ==
