@@ -108,7 +108,7 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_timeout'); 
 				if ($select === NULL) { $select = 80; }
-				for ($i = 40 ; $i <= 200; $i = $i + 10) {
+				for ($i = 40 ; $i <= 500; $i = $i + 40) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
 					}
