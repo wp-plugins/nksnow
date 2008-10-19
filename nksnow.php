@@ -4,8 +4,8 @@ Plugin Name: Snow
 Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
-Description: xsnow-like plugin four your wordpress. Yay!
-Version: 0.2.1
+Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
+Version: 0.2.2
 */
 
 // Hook for adding admin menus

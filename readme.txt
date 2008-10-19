@@ -3,7 +3,7 @@ Contributors: nkuttler
 Author URI: http://www.nkuttler.de/
 Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
-Tags: admin, plugin, christmas, snow, toy, toys, fun, funny
+Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.6.0
 Tested up to: 2.6.2
 Stable tag: 0.2.1
@@ -46,7 +46,7 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 I only use wordpress 2.6, so I haven't tested the plugin with older installs yet. Please tell me if you use it successfully on older blogs. I got reports that the plugin doesn't work on 2.5, it's on my todo list.
 
 == Changelog ==
-0.2.2	New snowflake, small js updates.
+0.2.2	New snowflakes, small js updates, make config page friendlier.<br >
 0.2.1	Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.<br />
 0.2.0	Add a lot of new configuration options. Include a second snowflake.<br />
 0.1.6	Fix for google chrome and make the snowflakes scrolling-aware.<br />
