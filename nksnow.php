@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.2.2
+Version: 0.3.0
 */
 
 // Hook for adding admin menus
@@ -114,17 +114,13 @@ function nksnow_add_pages() {
 					else {
 						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
 					}
-					//var_dump($i);
-					//echo '<br />';
-					//echo "var_dump(array_search($i, $select_array))==";
-					//var_dump(array_search($i, $select_array));
 					echo '<br />';
 					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
 					echo "</td>";
 				}
 				echo "</tr></table>";
 			?>
-			By the way if you have nice snowflakes, raindrops, leaves etc. feel free to submit them to me if they are properly licensed.
+			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<h2>Pro settings</h2>
 			Overall speed (timeout in milliseconds between moves) (default 80)? 
 			<select name="nksnow_timeout" >
@@ -221,12 +217,6 @@ maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
 	if (!get_option('nksnow_maxstepy')) {
 		echo '10';
-	}
-?>;
-snowflake = <?php
-	echo get_option('nksnow_snowflake');
-	if (!get_option('nksnow_snowflake')) {
-		echo '2';
 	}
 ?>;
 </script>
