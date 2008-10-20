@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Snow
+Plugin Name: Snow and more
 Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
@@ -23,7 +23,7 @@ elseif  (!get_option('nksnow_uri')) {
 
 
 function nksnow_add_pages() {
-	add_options_page('Snow', 'Snow', 10, 'nksnow', 'nksnow_options_page');
+	add_options_page('Snow and more', 'Snow and more', 10, 'nksnow', 'nksnow_options_page');
 	function nksnow_options_page() { ?>
 		<div class="wrap" style="margin: 0 5mm; ">
 		<?php
@@ -46,7 +46,7 @@ function nksnow_add_pages() {
 				}
 				if ($_POST['nksnow_maxstepx'] != get_option('nksnow_maxstepx') ) {
 					update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
-					echo "MaxstepXchanged to " . get_option('nksnow_maxstepx');
+					echo "MaxstepX changed to " . get_option('nksnow_maxstepx');
 					echo "<br />";
 				}
 				if ($_POST['nksnow_maxstepy'] != get_option('nksnow_maxstepy') ) {
@@ -54,15 +54,15 @@ function nksnow_add_pages() {
 					echo "MaxstepY changed to " . get_option('nksnow_maxstepy');
 					echo "<br />";
 				}
-				if ($_POST['nksnow_snowflake'] != get_option('nksnow_snowflake') ) {
-					update_option('nksnow_snowflake', $_POST['nksnow_snowflake']);
-					echo "Snowflake changed to " . get_option('nksnow_snowflake');
+				if (implode(',', $_POST['nksnow_snowflake']) != get_option('nksnow_snowflake') ) {
+					update_option('nksnow_snowflake', implode(',', $_POST['nksnow_snowflake']));
+					echo "Falling object changed to " . get_option('nksnow_snowflake');
 					echo "<br />";
 				}
 				echo '</div>';
 			}
 		?>
-		<h2>Snow</h2>
+		<h2>Snow and more</h2>
 		<p> 
 			Feel free to send me feedback, patches, feature requests etc. to <a href="mailto:wp@nicolaskuttler.de">my mail address</a> or to blog about this plugin.        
 			Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a>
@@ -90,19 +90,36 @@ function nksnow_add_pages() {
 			Which one of the flakes do you want? 
 			<br />
 			<?php
-				$select = get_option('nksnow_snowflake'); 
-				if ($select === NULL) { $select = 0; }
-				for ($i = 0 ; $i <= 8; $i++) {
-					if ( $i == $select ) {
-						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
+				$str_array = split(',', get_option('nksnow_snowflake'));
+				if (get_option('nksnow_snowflake')) {
+					$select_array = array();
+					foreach ( $str_array as $value ) {
+						array_push( $select_array, intval($value) );
+					}
+				}
+				else {
+					$select_array = array(2);
+				}
+				echo "<table><tr>";
+				for ($i = 0 ; $i <= 10; $i++) {
+					echo "<td style=\"border: 1px solid #ccc; vertical-align: top; \">";
+					if ( is_integer(array_search($i, $select_array)) ) {
+						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" checked />";
 					}
 					else {
-						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" />";
+						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
 					}
-					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" /><br />";
+					//var_dump($i);
+					//echo '<br />';
+					//echo "var_dump(array_search($i, $select_array))==";
+					//var_dump(array_search($i, $select_array));
+					echo '<br />';
+					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
+					echo "</td>";
 				}
+				echo "</tr></table>";
 			?>
-			Btw if you have nice snowflakes, raindrops, leaves etc. feel free to submit them to me if they are properly licensed.
+			By the way if you have nice snowflakes, raindrops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<h2>Pro settings</h2>
 			Overall speed (timeout in milliseconds between moves) (default 80)? 
 			<select name="nksnow_timeout" >
@@ -141,7 +158,7 @@ function nksnow_add_pages() {
 			<?php
 				$select = get_option('nksnow_maxstepy'); 
 				if ($select === NULL) { $select = 10; }
-				for ($i = 1 ; $i <= 20; $i++) {
+				for ($i = 3 ; $i <= 20; $i++) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
 					}
@@ -192,7 +209,7 @@ maxstepy = <?php
 snowflake = <?php
 	echo get_option('nksnow_snowflake');
 	if (!get_option('nksnow_snowflake')) {
-		echo '0';
+		echo '2';
 	}
 ?>;
 </script>
@@ -205,9 +222,19 @@ function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$snowflake = get_option('nksnow_snowflake');
 	if ($snowflakes === NULL) { $snowflakes = 10; }
-	if (!$snowflake) { $snowflake = 0; }
+	$str_array = split(',', get_option('nksnow_snowflake'));
+	if (get_option('nksnow_snowflake')) {
+		$select_array = array();
+		foreach ( $str_array as $value ) {
+			array_push( $select_array, intval($value) );
+		}
+	}
+	else {
+		$select_array = array(2);
+	}
+	$arraymax = count($select_array) - 1;
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $snowflake . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
 	}
 	//echo "<a href=\"#\" onclick=\"snow();\" >click me! ;-)</a>";
 }
