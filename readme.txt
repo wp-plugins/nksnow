@@ -37,6 +37,9 @@ I added this feature so that I could put a <a href="http://www.nkuttler.de/nksno
 
 == Frequently Asked Questions ==
 Q: I see no snow.<br />
+A: Please make sure that your template uses the wp_footer() and wp_head() template tags. They should be in your header.php and footer.php, see <a href="http://codex.wordpress.org/Theme_Development">the theme development page</a>.<br />
+
+Q: I still see no snow.<br />
 A: Please send me a link to your blog. It's quite possible that some doctype combinations or browsers will not work. If somebody complains I might try to fix it.<br />
 
 Q: Why don't you have nicer snowflakes?<br />
