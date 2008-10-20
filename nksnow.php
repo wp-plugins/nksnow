@@ -51,7 +51,7 @@ function nksnow_add_pages() {
 				}
 				if ($_POST['nksnow_showpowered'] != get_option('nksnow_showpowered') ) {
 					update_option('nksnow_showpowered', $_POST['nksnow_showpowered']);
-					echo "Hide powered by changed to " . get_option('nksnow_showpowered');
+					echo "Hide &quot;powered by&quot; changed to " . get_option('nksnow_showpowered');
 					echo "<br />";
 				}
 				if ($_POST['nksnow_maxstepy'] != get_option('nksnow_maxstepy') ) {
@@ -92,7 +92,7 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
-			Which one of the flakes do you want? 
+			Which of these flakes, drops and leaves do you want? 
 			<br />
 			<?php
 				$str_array = split(',', get_option('nksnow_snowflake'));
