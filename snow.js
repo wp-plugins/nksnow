@@ -35,7 +35,7 @@ for (i = 0; i < snowflakes; i++) {
 	posy[i] = Math.random() * maxheight;
 	posx[i] = maxwidth / snowflakes * i;
 	// movement
-	speedy[i] = maxstepy / 2 + Math.random() * maxstepy / 2;
+	speedy[i] = 2 + Math.random() * (maxstepy - 2);
 }
 
 
@@ -49,32 +49,33 @@ function snow() {
 		posx[i] = posx[i] + speedx;
 		// wind effect
 		if (Math.random() > 0.99) {
-			if (speedx < maxstepx/2 && speedx > -maxstepx/2) {
-				speedx = speedx - maxstepx + Math.random() * maxstepx;
+			if (speedx < 2 && speedx > -2) {
+				speedx = - maxstepx +  Math.random() * maxstepx * 2;
 			}
 		}
 		// wind effect diminishes with time
 		if (speedx > 0) {
 			if (Math.random() > 0.9) {
-				speedx = speedx - 0.1;
+				speedx = speedx / 1.2;
 			}
 		}
 		else if (speedx < 0) {
 			if (Math.random() > 0.9) {
-				speedx = speedx + 0.1;
+				speedx = speedx / 1.1;
 			}
 		}
 		// move flakes when they reach a limit
-		if (posy[i] > maxheight - flakesize) {
-			posy[i] = - flakesize - Math.random() * maxheight / 2;
+		if (posy[i] > maxheight ) {
+			posx[i] = Math.random() * maxwidth;
+			posy[i] = - Math.random() * maxheight / 2;
 		}
-		else if (posx[i] > maxwidth - flakesize) {
-			posx[i] = 0 + flakesize;
-			posy[i] = maxheight - flakesize - Math.random() * maxheight;
+		else if (posx[i] > maxwidth + flakesize) {
+			posx[i] = -flakesize ;
+			posy[i] = maxheight - Math.random() * maxheight;
 		}
-		if (posx[i] < flakesize) {
-			posx[i] = maxwidth - flakesize;
-			posy[i] = maxheight - flakesize - Math.random() * maxheight;
+		if (posx[i] < - flakesize ) {
+			posx[i] = maxwidth + flakesize;
+			posy[i] = maxheight - Math.random() * maxheight;
 		}
 		document.getElementById(i).style.top=posy[i] + "px";
 		document.getElementById(i).style.left=posx[i] + "px";
