@@ -206,7 +206,7 @@ function nksnow_footer() {
 	if ($snowflakes === NULL) { $snowflakes = 10; }
 	if (!$snowflake) { $snowflake = 0; }
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $snowflake . '.gif' . "\" style=\"position: fixed; top: -100px;\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $snowflake . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
 	}
 	//echo "<a href=\"#\" onclick=\"snow();\" >click me! ;-)</a>";
 }
