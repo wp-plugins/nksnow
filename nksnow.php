@@ -69,7 +69,7 @@ function nksnow_add_pages() {
 		?>
 		<h2>Snow and more</h2>
 		<p> 
-			Feel free to send me feedback, patches, feature requests etc. to <a href="mailto:wp@nicolaskuttler.de">my mail address</a> or to blog about this plugin.        
+			Feel free to send me feedback, patches, feature requests etc. or to blog about this plugin.        
 			Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a>
 			or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
 			If you like to, visit my <a href="http://www.amazon.de/gp/registry/24F64AHKD51LY">Amazon wishlist</a> and send me a gift.

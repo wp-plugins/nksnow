@@ -1,4 +1,4 @@
-=== Snow ===
+=== Snow and more ===
 Contributors: nkuttler
 Author URI: http://www.nkuttler.de/
 Plugin URI: http://www.nkuttler.de/nksnow/
