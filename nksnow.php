@@ -49,6 +49,11 @@ function nksnow_add_pages() {
 					echo "MaxstepX changed to " . get_option('nksnow_maxstepx');
 					echo "<br />";
 				}
+				if ($_POST['nksnow_showpowered'] != get_option('nksnow_showpowered') ) {
+					update_option('nksnow_showpowered', $_POST['nksnow_showpowered']);
+					echo "Hide powered by changed to " . get_option('nksnow_showpowered');
+					echo "<br />";
+				}
 				if ($_POST['nksnow_maxstepy'] != get_option('nksnow_maxstepy') ) {
 					update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 					echo "MaxstepY changed to " . get_option('nksnow_maxstepy');
@@ -172,6 +177,18 @@ function nksnow_add_pages() {
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 			<br />
+			Hide the &quot;Powered by&quot; message in the footer?
+			<select name="nksnow_showpowered">
+			<option <?php
+				if (get_option('nksnow_showpowered') === 'Yes') {
+					echo "selected";
+				}?>>Yes</option>
+			<option <?php
+				if (get_option('nksnow_showpowered') !== 'Yes') {
+					echo "selected";
+				}?>>No</option>
+			</select>
+			<br />
 			<input type="submit" value="Update settings" />
 		</form>
 		</div>
@@ -236,6 +253,14 @@ function nksnow_footer() {
 	for ($i = 0; $i < $snowflakes; $i++) {
 		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/wp-content/plugins/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
 	}
-	//echo "<a href=\"#\" onclick=\"snow();\" >click me! ;-)</a>";
+	if (!get_option('nksnow_showpowered') === 'Yes' ) { ?>
+<span style="font-size: smaller; color: #ccc;">
+	Snowstorm provided by
+	<a style="color: #ccc;" href="http://www.nkuttler.de/nksnow/">nksnow</a>
+	written by
+	<a style="color: #ccc;" href="http://www.nkuttler.de">nkuttler</a>.
+</span>
+<?php
+	}
 }
 ?>
