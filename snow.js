@@ -15,19 +15,7 @@ if (!maxwidth) {
 	maxheight = document.body.clientHeight;
 }
 
-switch (snowflake) {
-	default:
-	case 0:
-		flakesize = 25;
-		break;
-	case 5:
-	case 1:
-		flakesize = 4;
-		break;
-	case 4:
-		flakesize = 8;
-		break;
-}
+flakesize = 40; // biggest flake
 
 // Create some position + movement data
 for (i = 0; i < snowflakes; i++) {
