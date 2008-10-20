@@ -87,12 +87,12 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
-			Which one of the flakes do you want?
+			Which one of the flakes do you want? 
 			<br />
 			<?php
 				$select = get_option('nksnow_snowflake'); 
 				if ($select === NULL) { $select = 0; }
-				for ($i = 0 ; $i <= 6; $i++) {
+				for ($i = 0 ; $i <= 8; $i++) {
 					if ( $i == $select ) {
 						echo "<input type=\"radio\" name=\"nksnow_snowflake\" value=\"$i\" checked />";
 					}
@@ -102,6 +102,7 @@ function nksnow_add_pages() {
 					echo '<img src="' . get_bloginfo('url') . "/wp-content/plugins/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" /><br />";
 				}
 			?>
+			Btw if you have nice snowflakes, raindrops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<h2>Pro settings</h2>
 			Overall speed (timeout in milliseconds between moves) (default 80)? 
 			<select name="nksnow_timeout" >
