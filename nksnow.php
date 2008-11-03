@@ -5,8 +5,21 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.3.0
+Version: 0.4.0
 */
+
+// Install hook
+register_activation_hook(__FILE__,'nksnow_install');
+function nksnow_install() {
+echo "plugin activated";
+    update_option('nksnow_snowflakes', '10');
+    update_option('nksnow_timeout', '80');
+    update_option('nksnow_maxstepx', '10');
+    update_option('nksnow_maxstepy', '10');
+    update_option('nksnow_snowflake', '2,3');
+    update_option('nksnow_uri', '');
+}
+
 
 // Hook for adding admin menus
 add_action('admin_menu', 'nksnow_add_pages');
@@ -80,7 +93,6 @@ function nksnow_add_pages() {
 			<select name="nksnow_snowflakes" >
 			<?php
 				$select = get_option('nksnow_snowflakes'); 
-				if ($select === NULL) { $select = 10; }
 				for ($i = 20 ; $i >= 0; $i--) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -126,7 +138,6 @@ function nksnow_add_pages() {
 			<select name="nksnow_timeout" >
 			<?php
 				$select = get_option('nksnow_timeout'); 
-				if ($select === NULL) { $select = 80; }
 				for ($i = 40 ; $i <= 500; $i = $i + 40) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -142,7 +153,6 @@ function nksnow_add_pages() {
 			<select name="nksnow_maxstepx" >
 			<?php
 				$select = get_option('nksnow_maxstepx'); 
-				if ($select === NULL) { $select = 10; }
 				for ($i = 1 ; $i <= 20; $i++) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -158,7 +168,6 @@ function nksnow_add_pages() {
 			<select name="nksnow_maxstepy" >
 			<?php
 				$select = get_option('nksnow_maxstepy'); 
-				if ($select === NULL) { $select = 10; }
 				for ($i = 3 ; $i <= 20; $i++) {
 					if ( $i == $select ) {
 						echo "<option selected>$i</option>\n";
@@ -197,27 +206,15 @@ function nksnow_head() { ?>
 <script type="text/javascript">
 snowflakes = <?php
 	echo get_option('nksnow_snowflakes');
-	if (!get_option('nksnow_snowflakes')) {
-		echo '10';
-	}
 ?>;
 timeout = <?php
 	echo get_option('nksnow_timeout');
-	if (!get_option('nksnow_timeout')) {
-		echo '80';
-	}
 ?>;
 maxstepx = <?php
 	echo get_option('nksnow_maxstepx');
-	if (!get_option('nksnow_maxstepx')) {
-		echo '10';
-	}
 ?>;
 maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
-	if (!get_option('nksnow_maxstepy')) {
-		echo '10';
-	}
 ?>;
 </script>
 <script src="<?php bloginfo('url'); echo '/wp-content/plugins/nksnow/snow.js'; ?>" type="text/javascript"></script>
@@ -228,7 +225,6 @@ maxstepy = <?php
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$snowflake = get_option('nksnow_snowflake');
-	if ($snowflakes === NULL) { $snowflakes = 10; }
 	$str_array = split(',', get_option('nksnow_snowflake'));
 	if (get_option('nksnow_snowflake')) {
 		$select_array = array();
