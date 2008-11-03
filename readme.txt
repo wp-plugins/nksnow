@@ -46,9 +46,10 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Compatibility ==
-I only use wordpress 2.6, so I haven't tested the plugin with older installs yet. Please tell me if you use it successfully on older blogs. I got reports that the plugin doesn't work on 2.5, it's on my todo list.
+Please tell me if you use this plugin successfully on older blogs. I got reports that the plugin doesn't work on 2.5, it's on my todo list.
 
 == Changelog ==
+0.4.0	Add install hook + minor updates.<br />
 0.3.0	Add leaves, make it possible to select different flakes, drops and leaves at the same time. Updates in the wind algo too.<br />
 0.2.2	New snowflakes, small js updates and make the config page friendlier. FAQ update and remove border around images if css puts some there, thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a> for pointing that out.<br >
 0.2.1	Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.<br />
