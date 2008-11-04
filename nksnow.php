@@ -8,6 +8,8 @@ Description: Snow falling down your wordpress blog. See the <a href="http://www.
 Version: 0.4.0
 */
 
+$version = 0.4.0;
+
 // Install hook
 register_activation_hook(__FILE__,'nksnow_install');
 function nksnow_install() {
@@ -202,7 +204,7 @@ function nksnow_add_pages() {
 }
 
 function nksnow_head() { ?>
-<!-- nksnow -->
+<!-- nksnow <?php echo $version ?>-->
 <script type="text/javascript">
 snowflakes = <?php
 	echo get_option('nksnow_snowflakes');
