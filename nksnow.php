@@ -220,7 +220,7 @@ maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
 ?>;
 </script>
-<script src="<?php echo "/" . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('url') . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->
 <?php
 }
@@ -240,7 +240,7 @@ function nksnow_footer() {
 	}
 	$arraymax = count($select_array) - 1;
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
+		echo "\n<img id=\"$i\" src=\"" get_bloginfo('url') . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0;\" class=\"nksnow\" />";
 	}
 }
 
