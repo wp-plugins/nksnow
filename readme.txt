@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.6.0
-Tested up to: 2.7-beta1
+Tested up to: 2.7-beta2
 Stable tag: 0.4.3
 
 Snowflakes falling down your blog! Inspired by the unforgettable xsnow.
@@ -49,6 +49,8 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 Please tell me if you use this plugin successfully on older blogs. I got reports that the plugin doesn't work on 2.5, it's on my todo list.
 
 == Changelog ==
+0.4.4	Really include the smaller leaves, thanks to <a href="http://drkblog.com/">Dr K</a> for pointing that out. Update config screenshot.<br />
+0.4.3	Bugfix<br />
 0.4.2	Fix the bug introduced by the last 'fix'<br />
 0.4.1	Fix potential bug by using PLUGINDIR constant instead of hardcoded path.<br />
 0.4.0	Add install hook + minor updates.<br />
