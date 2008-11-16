@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.4.5
+Version: 0.5.0
 */
 
 // Install hook
@@ -17,6 +17,7 @@ echo "plugin activated";
     update_option('nksnow_maxstepx', '10');
     update_option('nksnow_maxstepy', '10');
     update_option('nksnow_snowflake', '2,3');
+    update_option('nksnow_maxtime', '20');
     update_option('nksnow_uri', '');
 }
 
@@ -41,43 +42,17 @@ function nksnow_add_pages() {
 	function nksnow_options_page() { ?>
 		<div class="wrap" style="margin: 0 5mm; ">
 		<?php
-			if ($_POST['nksnow_snowflakes'] || $_POST['nksnow_uri'] || $_POST['nksnow_timeout'] || $_POST['nksnow_maxstepx'] || $_POST['nksnow_maxstepy'] || $_POST['nksnow_snowflake'] ) {
+			if ($_POST['nksnow_snowflakes']) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
-				if ($_POST['nksnow_snowflakes'] != get_option('nksnow_snowflakes') ) {
-					update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
-					echo "Snowflakes changed to " . get_option('nksnow_snowflakes');
-					echo "<br />";
-				}
-				if ($_POST['nksnow_uri'] != get_option('nksnow_uri') ) {
-					update_option('nksnow_uri', $_POST['nksnow_uri']);
-					echo "URI changed to " . get_option('nksnow_uri');
-					echo "<br />";
-				}
-				if ($_POST['nksnow_timeout'] != get_option('nksnow_timeout') ) {
-					update_option('nksnow_timeout', $_POST['nksnow_timeout']);
-					echo "Timeout changed to " . get_option('nksnow_timeout');
-					echo "<br />";
-				}
-				if ($_POST['nksnow_maxstepx'] != get_option('nksnow_maxstepx') ) {
-					update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
-					echo "MaxstepX changed to " . get_option('nksnow_maxstepx');
-					echo "<br />";
-				}
-				if ($_POST['nksnow_homelink'] != get_option('nksnow_homelink') ) {
-					update_option('nksnow_homelink', $_POST['nksnow_homelink']);
-					echo "Hide &quot;powered by&quot; changed to " . get_option('nksnow_homelink');
-					echo "<br />";
-				}
-				if ($_POST['nksnow_maxstepy'] != get_option('nksnow_maxstepy') ) {
-					update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
-					echo "MaxstepY changed to " . get_option('nksnow_maxstepy');
-					echo "<br />";
-				}
-				if (implode(',', $_POST['nksnow_snowflake']) != get_option('nksnow_snowflake') ) {
-					update_option('nksnow_snowflake', implode(',', $_POST['nksnow_snowflake']));
-					echo "Falling object changed to " . get_option('nksnow_snowflake');
-					echo "<br />";
-				}
+				echo "Settings changed";
+				update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
+				update_option('nksnow_uri', $_POST['nksnow_uri']);
+				update_option('nksnow_timeout', $_POST['nksnow_timeout']);
+				update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
+				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
+				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
+				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
+				update_option('nksnow_snowflake', implode(',', $_POST['nksnow_snowflake']));
 				echo '</div>';
 			}
 		?>
@@ -135,7 +110,10 @@ function nksnow_add_pages() {
 			?>
 			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<h2>Pro settings</h2>
-			Overall speed (timeout in milliseconds between moves) (default 80)? 
+			Stop snow after how many seconds?
+			<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
+			<br />
+			Overall speed (timeout in milliseconds between moves)? 
 			<select name="nksnow_timeout" >
 			<?php
 				$select = get_option('nksnow_timeout'); 
@@ -150,7 +128,7 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
-			Maximum Wind strength (default 10)
+			Maximum Wind strength 
 			<select name="nksnow_maxstepx" >
 			<?php
 				$select = get_option('nksnow_maxstepx'); 
@@ -165,7 +143,7 @@ function nksnow_add_pages() {
 			?>
 			</select>
 			<br />
-			Maximum Falling speed (default 10)
+			Maximum Falling speed
 			<select name="nksnow_maxstepy" >
 			<?php
 				$select = get_option('nksnow_maxstepy'); 
@@ -216,6 +194,9 @@ maxstepx = <?php
 ?>;
 maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
+?>;
+maxtime = <?php
+	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>
 <script src="<?php echo get_bloginfo('url') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
