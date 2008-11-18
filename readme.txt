@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.1
 Tested up to: 2.7-beta3
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 
 Snowflakes falling down your blog! Inspired by the unforgettable xsnow.
 
@@ -46,6 +46,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+0.5.1	Bugfix, thanks to <a href="http://www.ps3attitude.com/">DolphGB</a>.<br />
 0.5.0	Stop snowing after a certain time.<br />
 0.4.5	Checked compatibility with older wordpress versions.<br />
 0.4.4	Really include the smaller leaves, thanks to <a href="http://drkblog.com/">Dr K</a> for pointing that out. Update config screenshot.<br />
