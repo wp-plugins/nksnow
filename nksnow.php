@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.5.0
+Version: 0.5.1
 */
 
 // Install hook
@@ -42,7 +42,7 @@ function nksnow_add_pages() {
 	function nksnow_options_page() { ?>
 		<div class="wrap" style="margin: 0 5mm; ">
 		<?php
-			if ($_POST['nksnow_snowflakes']) {
+			if ( strlen($_POST['nksnow_snowflakes']) > 0 ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
 				echo "Settings changed";
 				update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
