@@ -19,16 +19,25 @@ echo "plugin activated";
     update_option('nksnow_snowflake', '2,3');
     update_option('nksnow_maxtime', '20');
     update_option('nksnow_uri', '');
+    update_option('nksnow_precise', '');
 }
-
 
 // Hook for adding admin menus
 add_action('admin_menu', 'nksnow_add_pages');
-if ( get_option('nksnow_uri') &&
-		strpos($_SERVER['REQUEST_URI'], get_option('nksnow_uri')) > 0
+if (get_option('nksnow_uri')) {
+	if (
+		(
+			get_option('nksnow_precise') !== 'on' &&
+			strpos($_SERVER['REQUEST_URI'], get_option('nksnow_uri')) > 0
+		) ||
+		(
+			get_option('nksnow_precise') === 'on' &&
+			strcmp($_SERVER['REQUEST_URI'], get_option('nksnow_uri')) === 0
+		)
 	) {
-	add_action('wp_head', 'nksnow_head');
-	add_action('wp_footer', 'nksnow_footer');
+		add_action('wp_head', 'nksnow_head');
+		add_action('wp_footer', 'nksnow_footer');
+	}
 } // default: enable
 elseif  (!get_option('nksnow_uri')) {
 	add_action('wp_head', 'nksnow_head');
@@ -45,8 +54,10 @@ function nksnow_add_pages() {
 			if ( strlen($_POST['nksnow_snowflakes']) > 0 ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
 				echo "Settings changed";
+				var_dump( get_option('nksnow_precise') );
 				update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
 				update_option('nksnow_uri', $_POST['nksnow_uri']);
+				update_option('nksnow_precise', $_POST['nksnow_precise']);
 				update_option('nksnow_timeout', $_POST['nksnow_timeout']);
 				update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
 				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
@@ -160,6 +171,10 @@ function nksnow_add_pages() {
 			<br />
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
+			Precise match? <input type="checkbox" name="nksnow_precise" <?php
+				if (get_option('nksnow_precise') === 'on') {
+					echo "checked";
+				}?>>
 			<br />
 			Hide the &quot;Powered by&quot; message in the footer?
 			<select name="nksnow_homelink">
