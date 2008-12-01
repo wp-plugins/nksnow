@@ -8,12 +8,12 @@ Requires at least: 2.1
 Tested up to: 2.7-beta3
 Stable tag: 0.5.2
 
-Snowflakes falling down your blog! Inspired by the unforgettable xsnow.
+Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
 
 == Description ==
 
 <p>
-Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Future releases will include nicer snowflakes, trees, and santa of course!
+Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
 </p>
 <p>
 You can configure the number of snowflakes and limit the plugin to specific posts or pages.
