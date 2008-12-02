@@ -114,7 +114,7 @@ function nksnow_add_pages() {
 						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
 					}
 					echo '<br />';
-					echo '<img src="' . get_bloginfo('url') .'/' . PLUGINDIR . "/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
+					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
 					echo "</td>";
 				}
 				echo "</tr></table>";
@@ -214,7 +214,7 @@ maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>
-<script src="<?php echo get_bloginfo('url') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->
 <?php
 }
@@ -234,7 +234,7 @@ function nksnow_footer() {
 	}
 	$arraymax = count($select_array) - 1;
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
 	}
 }
 
