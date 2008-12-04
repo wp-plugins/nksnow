@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.5.2
+Version: 0.5.4
 */
 
 // Install hook
@@ -74,6 +74,9 @@ function nksnow_add_pages() {
 			or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
 			If you like to, visit my <a href="http://www.amazon.de/gp/registry/24F64AHKD51LY">Amazon wishlist</a> and send me a gift.
 		</p>
+		<p>
+		If you have any problems using this plugin, please read the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> first.
+		</p>
 		<h2>Settings</h2>
 		<form action="" method="post">
 			Show how many snowflakes?
@@ -114,7 +117,7 @@ function nksnow_add_pages() {
 						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
 					}
 					echo '<br />';
-					echo '<img src="' . get_bloginfo('url') .'/' . PLUGINDIR . "/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
+					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
 					echo "</td>";
 				}
 				echo "</tr></table>";
@@ -214,7 +217,7 @@ maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>
-<script src="<?php echo get_bloginfo('url') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
+<script src="<?php echo get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->
 <?php
 }
@@ -234,7 +237,7 @@ function nksnow_footer() {
 	}
 	$arraymax = count($select_array) - 1;
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('url') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
 	}
 }
 
