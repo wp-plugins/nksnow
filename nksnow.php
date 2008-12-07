@@ -97,6 +97,7 @@ function nksnow_add_pages() {
 			Which of these flakes, drops and leaves do you want? 
 			<br />
 			<?php
+				$dirArray = nksnow_dirArray();
 				$str_array = split(',', get_option('nksnow_snowflake'));
 				if (get_option('nksnow_snowflake')) {
 					$select_array = array();
@@ -108,7 +109,7 @@ function nksnow_add_pages() {
 					$select_array = array(2);
 				}
 				echo "<table><tr>";
-				for ($i = 0 ; $i <= 10; $i++) {
+				for ($i = 0 ; $i < count($dirArray); $i++) {
 					echo "<td style=\"border: 1px solid #ccc; vertical-align: top; \">";
 					if ( is_integer(array_search($i, $select_array)) ) {
 						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" checked />";
@@ -117,10 +118,11 @@ function nksnow_add_pages() {
 						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
 					}
 					echo '<br />';
-					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/flake$i.gif\" style=\"padding: 2mm; background: #99f; \" />";
+					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"padding: 2mm; background: #99f; \" />";
 					echo "</td>";
 				}
-				echo "</tr></table>";
+				echo "</tr>";
+				echo "</table>";
 			?>
 			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<h2>Pro settings</h2>
@@ -198,6 +200,7 @@ function nksnow_add_pages() {
 	}
 }
 
+// set necessary JS variables and include the script
 function nksnow_head() { ?>
 <!-- nksnow -->
 <script type="text/javascript">
@@ -222,6 +225,7 @@ maxtime = <?php
 <?php
 }
 
+// Put the images into the HTML code
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$snowflake = get_option('nksnow_snowflake');
@@ -239,6 +243,7 @@ function nksnow_footer() {
 	for ($i = 0; $i < $snowflakes; $i++) {
 		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
 	}
+	var_dump($TEST);
 }
 
 function nksnow_homelink() {
@@ -250,5 +255,21 @@ function nksnow_homelink() {
 		<br />
 <?php
 	}
+}
+
+function nksnow_dirArray() {
+	$picpath = ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/';
+	if ( $picdir = opendir($picpath) ) {
+		while($entryName = readdir($picdir)) {
+
+			if ( $entryName == '.' || $entryName == '..' ) {
+				continue;
+			}
+			$dirArray[] = $entryName;
+		}
+	}
+	sort($dirArray);
+	closedir($picdir);
+	return $dirArray;
 }
 ?>
