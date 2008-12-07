@@ -42,7 +42,7 @@ A: Please make sure that your template uses the wp_footer() and wp_head() templa
 Q: I still see no snow.<br />
 A: Please send me a link to your blog. It's quite possible that some doctype combinations or browsers will not work. If somebody complains I might try to fix it.<br />
 
-Q: The snowflakes look odd, there's a border around them, they have a background etc.
+Q: The snowflakes look odd, there's a border around them, they have a background etc.<br />
 A: Add <tt>img.nksnow { border: 0 }</tt> at the end of your style.css (or change the CSS property you need to change).
 
 Q: Why don't you have nicer snowflakes?<br />
