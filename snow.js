@@ -17,8 +17,6 @@ if (!maxwidth) {
 	maxheight = document.body.clientHeight;
 }
 
-flakesize = 40; // biggest flake
-
 // Create some position + movement data
 for (i = 0; i < snowflakes; i++) {
 	// starting position
