@@ -49,7 +49,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-0.6.0	Add pics directory. Simply throw more images there and have them appear in the settings page.<br />
+0.6.0	Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
 0.5.4	Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
 0.5.3	Fix wrong get_bloginfo('url') usage<br />
 0.5.2	Add precise URI match suggested by Rob<br />
