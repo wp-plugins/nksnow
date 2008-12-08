@@ -248,7 +248,14 @@ function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$selected_array = split(',', get_option('nksnow_selected'));
 	$dirArray = nksnow_dirArray();
-	$arraymax = count($selected_array);
+	$arraymax = count($selected_array) - 1;
+	// Check if selected images really exists, revert to defaults if not
+	// Smoothen 0.5.4 -> 0.6.0 transition
+	foreach($selected_array as $selected) {
+		if (!file_exists( ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/' . $selected )) {
+    		$selected_array = array('flake2.gif', 'flake3.gif');
+		}
+	}
 
 	for ($i = 0; $i < $snowflakes; $i++) {
 		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/pics/' . $selected_array[rand(0, $arraymax)] . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
