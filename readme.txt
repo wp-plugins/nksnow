@@ -13,7 +13,7 @@ Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsno
 == Description ==
 
 <p>
-Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
+Snowflakes (and more) falling down your blog! There are snowflakes, leaves and drops. Since version 0.6.0 you can simply add more images in the <tt>pics</tt> folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
 </p>
 <p>
 You can configure the number of snowflakes and limit the plugin to specific posts or pages.
@@ -49,6 +49,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+0.6.0	Add pics directory. Simply throw more images there and have them appear in the settings page.<br />
 0.5.4	Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
 0.5.3	Fix wrong get_bloginfo('url') usage<br />
 0.5.2	Add precise URI match suggested by Rob<br />

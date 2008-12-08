@@ -5,21 +5,22 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.5.4
+Version: 0.6.0
 */
 
 // Install hook
 register_activation_hook(__FILE__,'nksnow_install');
 function nksnow_install() {
-echo "plugin activated";
+	echo "plugin activated";
     update_option('nksnow_snowflakes', '10');
     update_option('nksnow_timeout', '80');
     update_option('nksnow_maxstepx', '10');
     update_option('nksnow_maxstepy', '10');
-    update_option('nksnow_snowflake', '2,3');
+    update_option('nksnow_selected', 'flake2.gif,flake3.gif');
     update_option('nksnow_maxtime', '20');
     update_option('nksnow_uri', '');
     update_option('nksnow_precise', '');
+    update_option('nksnow_flakesize', '40');
 }
 
 // Hook for adding admin menus
@@ -54,7 +55,6 @@ function nksnow_add_pages() {
 			if ( strlen($_POST['nksnow_snowflakes']) > 0 ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
 				echo "Settings changed";
-				var_dump( get_option('nksnow_precise') );
 				update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
 				update_option('nksnow_uri', $_POST['nksnow_uri']);
 				update_option('nksnow_precise', $_POST['nksnow_precise']);
@@ -63,7 +63,8 @@ function nksnow_add_pages() {
 				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
-				update_option('nksnow_snowflake', implode(',', $_POST['nksnow_snowflake']));
+				update_option('nksnow_selected', implode(',', $_POST['nksnow_selected']));
+				update_option('nksnow_flakesize', $_POST['nksnow_flakesize']);
 				echo '</div>';
 			}
 		?>
@@ -98,24 +99,15 @@ function nksnow_add_pages() {
 			<br />
 			<?php
 				$dirArray = nksnow_dirArray();
-				$str_array = split(',', get_option('nksnow_snowflake'));
-				if (get_option('nksnow_snowflake')) {
-					$select_array = array();
-					foreach ( $str_array as $value ) {
-						array_push( $select_array, intval($value) );
-					}
-				}
-				else {
-					$select_array = array(2);
-				}
+				$selected_array = split(',', get_option('nksnow_selected'));
 				echo "<table><tr>";
 				for ($i = 0 ; $i < count($dirArray); $i++) {
 					echo "<td style=\"border: 1px solid #ccc; vertical-align: top; \">";
-					if ( is_integer(array_search($i, $select_array)) ) {
-						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" checked />";
+					if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
+						echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
 					}
 					else {
-						echo "<input type=\"checkbox\" name=\"nksnow_snowflake[]\" value=\"$i\" />";
+						echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
 					}
 					echo '<br />';
 					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"padding: 2mm; background: #99f; \" />";
@@ -125,6 +117,29 @@ function nksnow_add_pages() {
 				echo "</table>";
 			?>
 			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
+			<br/>
+			<input type="submit" value="Update settings" />
+			<h2>Custom images</h2>
+			<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
+			<br />
+			Make sure the value is bigger than your highest image's hight and broadest image's width.
+			</p>
+			Flakesize?
+			<select name="nksnow_flakesize" >
+			<?php
+				$select = get_option('nksnow_flakesize'); 
+				for ($i = 20 ; $i <= 500; $i = $i + 10) {
+					if ( $i == $select ) {
+						echo "<option selected>$i</option>\n";
+					}
+					else {
+						echo "<option>$i</option>\n";
+					}
+				}
+			?>
+			</select>
+			<br/>
+			<input type="submit" value="Update settings" />
 			<h2>Pro settings</h2>
 			Stop snow after how many seconds?
 			<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
@@ -216,6 +231,9 @@ maxstepx = <?php
 maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
 ?>;
+flakesize = <?php
+	echo get_option('nksnow_flakesize');
+?>;
 maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
@@ -228,22 +246,13 @@ maxtime = <?php
 // Put the images into the HTML code
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
-	$snowflake = get_option('nksnow_snowflake');
-	$str_array = split(',', get_option('nksnow_snowflake'));
-	if (get_option('nksnow_snowflake')) {
-		$select_array = array();
-		foreach ( $str_array as $value ) {
-			array_push( $select_array, intval($value) );
-		}
-	}
-	else {
-		$select_array = array(2);
-	}
-	$arraymax = count($select_array) - 1;
+	$selected_array = split(',', get_option('nksnow_selected'));
+	$dirArray = nksnow_dirArray();
+	$arraymax = count($selected_array);
+
 	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/flake' . $select_array[rand(0, $arraymax)] . '.gif' . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
+		echo "\n<img id=\"$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/pics/' . $selected_array[rand(0, $arraymax)] . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" />";
 	}
-	var_dump($TEST);
 }
 
 function nksnow_homelink() {
@@ -262,7 +271,7 @@ function nksnow_dirArray() {
 	if ( $picdir = opendir($picpath) ) {
 		while($entryName = readdir($picdir)) {
 
-			if ( $entryName == '.' || $entryName == '..' ) {
+			if ( $entryName == '.' || $entryName == '..' || $entryName == '.svn' ) {
 				continue;
 			}
 			$dirArray[] = $entryName;
