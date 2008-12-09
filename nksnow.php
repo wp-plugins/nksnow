@@ -200,7 +200,10 @@ function nksnow_add_pages() {
 			<br />
 			Show snowflakes only on pages whose URI contains
 			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
-			Precise match? <input type="checkbox" name="nksnow_precise" <?php
+			<br />
+			Show snowflakes only if the URI given above and the URI are equal
+			($_SERVER['REQUEST_URI'] == URI string)?
+		   	<input type="checkbox" name="nksnow_precise" <?php
 				if (get_option('nksnow_precise') === 'on') {
 					echo "checked";
 				}?>>
