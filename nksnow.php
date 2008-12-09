@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.6.0
+Version: 0.6.1
 */
 
 // Install hook
@@ -63,7 +63,12 @@ function nksnow_add_pages() {
 				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
-				update_option('nksnow_selected', implode(',', $_POST['nksnow_selected']));
+				if ($_POST['nksnow_selected']) {
+					update_option('nksnow_selected', implode(',', $_POST['nksnow_selected']));
+				}
+				else {
+    				update_option('nksnow_selected', 'flake2.gif,flake3.gif');
+				}
 				update_option('nksnow_flakesize', $_POST['nksnow_flakesize']);
 				echo '</div>';
 			}
@@ -100,17 +105,21 @@ function nksnow_add_pages() {
 			<?php
 				$dirArray = nksnow_dirArray();
 				$selected_array = split(',', get_option('nksnow_selected'));
-				echo "<table><tr>";
+				echo "<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>";
 				for ($i = 0 ; $i < count($dirArray); $i++) {
-					echo "<td style=\"border: 1px solid #ccc; vertical-align: top; \">";
+					echo "<td style=\"vertical-align: top; text-align: center; padding: 2px; \">";
 					if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
 						echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
 					}
 					else {
 						echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
 					}
-					echo '<br />';
-					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"padding: 2mm; background: #99f; \" />";
+					echo "</td>";
+				}
+				echo "</tr><tr>";
+				for ($i = 0 ; $i < count($dirArray); $i++) {
+					echo "<td style=\"vertical-align: center; background: #aaf; text-align: center; padding: 2px; \">";
+					echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />";
 					echo "</td>";
 				}
 				echo "</tr>";
