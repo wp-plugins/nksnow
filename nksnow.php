@@ -122,7 +122,7 @@ function nksnow_add_pages() {
 			<h2>Custom images</h2>
 			<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
 			<br />
-			Make sure the value is bigger than your highest image's hight and broadest image's width.
+			Make sure the value is bigger than your highest image's height and broadest image's width.
 			</p>
 			Flakesize?
 			<select name="nksnow_flakesize" >
