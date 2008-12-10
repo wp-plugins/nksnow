@@ -75,8 +75,8 @@ function snow(endtime) {
 				posx[i] = maxwidth + flakesize;
 				//posy[i] = maxheight - Math.random() * maxheight;
 			}
-			document.getElementById(i).style.top=posy[i] + "px";
-			document.getElementById(i).style.left=posx[i] + "px";
+			document.getElementById('nksnow' + i).style.top=posy[i] + "px";
+			document.getElementById('nksnow' + i).style.left=posx[i] + "px";
 		}
 	}
 	// TODO: don't repeat if time  is over + no flakes are left
