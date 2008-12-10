@@ -278,7 +278,8 @@ function nksnow_homelink() {
 	if (
 			!(get_option('nksnow_homelink') === 'Yes')
 	) { ?>
-		Snowstorm powered by
+		<a href="http://www.nkuttler.de/nksnow/">Snowstorm</a>
+		powered by
 		<a href="http://www.nkuttler.de/nksnow/">nksnow</a>
 		<br />
 <?php
