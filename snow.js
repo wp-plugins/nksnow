@@ -63,7 +63,7 @@ function snow(endtime) {
 				posy[i] = - Math.random() * maxheight / 2;
 				if (currentTime.getTime() > endtime) {
 					active[i] = false;
-					posy[i] = -100;
+					posy[i] = -100 - flakesize;
 					actives--;
 				}
 			}
