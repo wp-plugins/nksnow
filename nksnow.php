@@ -278,7 +278,7 @@ function nksnow_homelink() {
 	if (
 			!(get_option('nksnow_homelink') === 'Yes')
 	) { ?>
-		<a href="http://www.nkuttler.de/nksnow/">Snowstorm</a>
+		<a href="http://www.nkuttler.de/nksnow/">Wordpress snowstorm</a>
 		powered by
 		<a href="http://www.nkuttler.de/nksnow/">nksnow</a>
 		<br />
