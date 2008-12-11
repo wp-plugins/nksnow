@@ -49,7 +49,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-0.6.2	End position of pictures depends on flake size<br />
+0.6.2	End position of pictures depends on flake size. Update homelink.<br />
 0.6.1	More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
 0.6.0	Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
 0.5.4	Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
