@@ -231,22 +231,23 @@ function nksnow_add_pages() {
 function nksnow_head() { ?>
 <!-- nksnow -->
 <script type="text/javascript">
-snowflakes = <?php
+nks = new Object;
+nks.snowflakes = <?php
 	echo get_option('nksnow_snowflakes');
 ?>;
-timeout = <?php
+nks.timeout = <?php
 	echo get_option('nksnow_timeout');
 ?>;
-maxstepx = <?php
+nks.maxstepx = <?php
 	echo get_option('nksnow_maxstepx');
 ?>;
-maxstepy = <?php
+nks.maxstepy = <?php
 	echo get_option('nksnow_maxstepy');
 ?>;
-flakesize = <?php
+nks.flakesize = <?php
 	echo get_option('nksnow_flakesize');
 ?>;
-maxtime = <?php
+nks.maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>

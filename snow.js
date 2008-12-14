@@ -1,86 +1,92 @@
 // Definitions
-posx = new Array();
-posy = new Array();
-speedx = Math.random() * maxstepx;
-speedy = new Array();
-active = new Array();
-actives = snowflakes;
+nks.posx = new Array();
+nks.posy = new Array();
+nks.speedx = Math.random() * nks.maxstepx;
+nks.speedy = new Array();
+nks.active = new Array();
+nks.actives = nks.snowflakes;
 
-maxwidth = window.innerWidth;
-maxheight = window.innerHeight;
-if (!maxwidth) {
-	maxwidth = document.documentElement.clientWidth;
-	maxheight = document.documentElement.clientHeight;
+nks.maxwidth = window.innerWidth;
+nks.maxheight = window.innerHeight;
+if (!nks.maxwidth) {
+	nks.maxwidth = document.documentElement.clientWidth;
+	nks.maxheight = document.documentElement.clientHeight;
 }
-if (!maxwidth) {
-	maxwidth = document.body.clientWidth;
-	maxheight = document.body.clientHeight;
+if (!nks.maxwidth) {
+	nks.maxwidth = document.body.clientWidth;
+	nks.maxheight = document.body.clientHeight;
 }
 
 // Create some position + movement data
-for (i = 0; i < snowflakes; i++) {
+for (i = 0; i < nks.snowflakes; i++) {
 	// starting position
-	posy[i] = Math.random() * maxheight;
-	posx[i] = maxwidth / snowflakes * i;
+	nks.posy[i] = Math.random() * nks.maxheight;
+	nks.posx[i] = nks.maxwidth / nks.snowflakes * i;
 	// movement
-	speedy[i] = 2 + Math.random() * (maxstepy - 2);
-	active[i] = true;
+	nks.speedy[i] = 2 + Math.random() * (nks.maxstepy - 2);
+	nks.active[i] = true;
 }
 
 
+if (window.onload) {
+	nks.oldonload = window.onload;
+}
 window.onload=function(){
 	currentTime = new Date();
-	endtime = currentTime.getTime() + maxtime;
-	snow(endtime);
+	nks.endtime = currentTime.getTime() + nks.maxtime;
+	snow(nks);
+	if (nks.oldonload) {
+		nks.oldonload();
+	}
 }
 
-function snow(endtime) {
+function snow(nks) {
 	currentTime = new Date();
-	for (i = 0; i < snowflakes; i++) {
-		if (active[i] === true) {
-			posy[i] = posy[i] + speedy[i];
-			posx[i] = posx[i] + speedx;
+	for (i = 0; i < nks.snowflakes; i++) {
+		if (nks.active[i] === true) {
+			nks.posy[i] = nks.posy[i] + nks.speedy[i];
+			nks.posx[i] = nks.posx[i] + nks.speedx;
 			// wind effect
 			if (Math.random() > 0.99) {
-				if (speedx < 2 && speedx > -2) {
-					speedx = - maxstepx +  Math.random() * maxstepx * 2;
+				if (nks.speedx < 2 && nks.speedx > -2) {
+					nks.speedx = - nks.maxstepx +  Math.random() * nks.maxstepx * 2;
 				}
 			}
 			// wind effect diminishes with time
-			if (speedx > 0) {
+			if (nks.speedx > 0) {
 				if (Math.random() > 0.9) {
-					speedx = speedx / 1.2;
+					nks.speedx = nks.speedx / 1.2;
 				}
 			}
-			else if (speedx < 0) {
+			else if (nks.speedx < 0) {
 				if (Math.random() > 0.9) {
-					speedx = speedx / 1.1;
+					nks.speedx = nks.speedx / 1.1;
 				}
 			}
 			// move flakes when they reach a limit
-			if (posy[i] > maxheight ) {
-				posx[i] = Math.random() * maxwidth;
-				posy[i] = - Math.random() * maxheight / 2;
-				if (currentTime.getTime() > endtime) {
-					active[i] = false;
-					posy[i] = -100 - flakesize;
-					actives--;
+			if (nks.posy[i] > nks.maxheight ) {
+				nks.posx[i] = Math.random() * nks.maxwidth;
+				nks.posy[i] = - Math.random() * nks.maxheight / 2;
+				if (currentTime.getTime() > nks.endtime) {
+					nks.active[i] = false;
+					nks.posy[i] = -100 - nks.flakesize;
+					nks.actives--;
 				}
 			}
-			if (posx[i] > maxwidth + flakesize) {
-				posx[i] = -flakesize ;
+			if (nks.posx[i] > nks.maxwidth + nks.flakesize) {
+				nks.posx[i] = -nks.flakesize ;
 				//posy[i] = maxheight - Math.random() * maxheight;
 			}
-			else if (posx[i] < - flakesize ) {
-				posx[i] = maxwidth + flakesize;
+			else if (nks.posx[i] < - nks.flakesize ) {
+				nks.posx[i] = nks.maxwidth + nks.flakesize;
 				//posy[i] = maxheight - Math.random() * maxheight;
 			}
-			document.getElementById('nksnow' + i).style.top=posy[i] + "px";
-			document.getElementById('nksnow' + i).style.left=posx[i] + "px";
+			document.getElementById('nksnow' + i).style.top=nks.posy[i] + "px";
+			document.getElementById('nksnow' + i).style.left=nks.posx[i] + "px";
 		}
 	}
 	// TODO: don't repeat if time  is over + no flakes are left
-	if (actives > 0) {
-		window.setTimeout("snow(endtime)", timeout);
+	if (nks.actives > 0) {
+		window.setTimeout("snow(nks)", nks.timeout);
 	}
 }
