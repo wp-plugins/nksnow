@@ -34,6 +34,20 @@ if (window.onload) {
 window.onload=function(){
 	currentTime = new Date();
 	nks.endtime = currentTime.getTime() + nks.maxtime;
+	// http://www.javascriptkit.com/javatutors/navigator.shtml
+	if(navigator) {
+		if(navigator.userAgent) {
+			if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){
+				var ieversion=new Number(RegExp.$1) 
+			}
+		}
+	}
+	for (i = 0; i < nks.snowflakes; i++) {
+		if (ieversion && ieversion==6) {
+			// ie sucks
+			document.getElementById('nksnow' + i).style.position='absolute';
+		}
+	}
 	snow(nks);
 	if (nks.oldonload) {
 		nks.oldonload();
