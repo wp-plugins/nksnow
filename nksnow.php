@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.6.2
+Version: 0.7.0
 */
 
 // Install hook
@@ -82,6 +82,9 @@ function nksnow_add_pages() {
 		</p>
 		<p>
 		If you have any problems using this plugin, please read the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> first.
+		</p>
+		<p>
+		If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
 		</p>
 		<h2>Settings</h2>
 		<form action="" method="post">

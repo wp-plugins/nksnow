@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.1
 Tested up to: 2.7
-Stable tag: 0.6.1
+Stable tag: 0.7.0
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
 
@@ -20,6 +20,9 @@ You can configure the number of snowflakes and limit the plugin to specific post
 If you enter something into the URI field you will only see snow if the URI of your page matches the string.
 No fancy regexps.
 I added this feature so that I could put a <a href="http://www.nkuttler.de/nksnow/">live demo</a> on my blog.
+</p>
+<p>
+If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
 </p>
 
 == Installation ==
@@ -49,7 +52,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-0.7.0	JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. End position of pictures depends on flake size, smaller updates.<br />
+0.7.0	JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. End position of pictures depends on flake size, smaller updates.<br />
 0.6.1	More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
 0.6.0	Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
 0.5.4	Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
