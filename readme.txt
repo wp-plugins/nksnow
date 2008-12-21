@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.1
 Tested up to: 2.7
-Stable tag: 0.7.1
+Stable tag: 0.7.2
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
 
@@ -52,6 +52,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+0.7.2	Undo last 'update'.<br />
 0.7.1	Let IE5 ignore this script.<br />
 0.7.0	JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. Window.onload bugfix. End position of pictures depends on flake size, smaller updates.<br />
 0.6.1	More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
