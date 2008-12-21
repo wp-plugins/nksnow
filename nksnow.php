@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.7.2
+Version: 0.7.3
 */
 
 // Install hook
@@ -64,7 +64,7 @@ function nksnow_add_pages() {
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
 				if ($_POST['nksnow_selected']) {
-					update_option('nksnow_selected', implode(',', $_POST['nksnow_selected']));
+					update_option('nksnow_selected', $_POST['nksnow_selected']);
 				}
 				else {
     				update_option('nksnow_selected', 'flake2.gif,flake3.gif');
@@ -107,7 +107,7 @@ function nksnow_add_pages() {
 			<br />
 			<?php
 				$dirArray = nksnow_dirArray();
-				$selected_array = split(',', get_option('nksnow_selected'));
+				$selected_array = get_option('nksnow_selected');
 				echo "<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>";
 				for ($i = 0 ; $i < count($dirArray); $i++) {
 					echo "<td style=\"vertical-align: top; text-align: center; padding: 2px; \">";
@@ -262,7 +262,7 @@ nks.maxtime = <?php
 // Put the images into the HTML code
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
-	$selected_array = split(',', get_option('nksnow_selected'));
+	$selected_array = get_option('nksnow_selected');
 	$dirArray = nksnow_dirArray();
 	$arraymax = count($selected_array) - 1;
 	// Check if selected images really exists, revert to defaults if not
