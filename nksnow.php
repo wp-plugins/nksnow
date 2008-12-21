@@ -89,10 +89,10 @@ I was pretty unhappy with the default WordPress tag cloud widget. This one is mo
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
 I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
 <br/>
-<a href="http://www.nkuttler.de/">Rhyming widget</a>:
+<a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
 I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
 <br/>
-<a href="http://www.nkuttler.de/">Fireworks</a>:
+<a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
 The name says it all, see fireworks on your blog!
 </p>
 
