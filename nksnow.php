@@ -74,18 +74,28 @@ function nksnow_add_pages() {
 			}
 		?>
 		<h2>Snow and more</h2>
-		<p> 
-			Feel free to send me feedback, patches, feature requests etc. or to blog about this plugin.        
-			Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a>
-			or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
-			If you like to, visit my <a href="http://www.amazon.de/gp/registry/24F64AHKD51LY">Amazon wishlist</a> and send me a gift.
-		</p>
 		<p>
 		If you have any problems using this plugin, please read the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> first.
 		</p>
-		<p>
-		If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
-		</p>
+<h3>Contact</h3>
+<p>
+Feel free to send me feedback, patches, feature requests etc. to <a href="mailto:wp@nicolaskuttler.de">my mail address</a> or to blog about this plugin. Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a> or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
+</p>
+<h3>My other plugins</h3>
+<p>
+<a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
+I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
+<br/>
+<a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
+I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
+<br/>
+<a href="http://www.nkuttler.de/">Rhyming widget</a>:
+I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
+<br/>
+<a href="http://www.nkuttler.de/">Fireworks</a>:
+The name says it all, see fireworks on your blog!
+</p>
+
 		<h2>Settings</h2>
 		<form action="" method="post">
 			Show how many snowflakes?

@@ -25,6 +25,19 @@ I added this feature so that I could put a <a href="http://www.nkuttler.de/nksno
 If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
 </p>
 
+<h3>My other plugins</h3>
+<a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
+I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
+<br/>
+<a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
+I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
+<br/>
+<a href="http://www.nkuttler.de/">Rhyming widget</a>:
+I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
+<br/>
+<a href="http://www.nkuttler.de/">Fireworks</a>:
+The name says it all, see fireworks on your blog!
+
 == Installation ==
 <ol>
 <li>Unzip nksnow.zip</li>
