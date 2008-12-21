@@ -254,8 +254,10 @@ nks.maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>
+<!--[if gt IE 5]>
 <script src="<?php echo get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->
+<![endif]-->
 <?php
 }
 
