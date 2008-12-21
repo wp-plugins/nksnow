@@ -233,6 +233,7 @@ function nksnow_add_pages() {
 // set necessary JS variables and include the script
 function nksnow_head() { ?>
 <!-- nksnow -->
+<!--[if gt IE 5]>
 <script type="text/javascript">
 nks = new Object;
 nks.snowflakes = <?php
@@ -254,10 +255,9 @@ nks.maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
 ?>;
 </script>
-<!--[if gt IE 5]>
 <script src="<?php echo get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
-<!-- /nksnow -->
 <![endif]-->
+<!-- /nksnow -->
 <?php
 }
 
