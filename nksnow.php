@@ -275,6 +275,10 @@ function nksnow_footer() {
 	$selected_array = get_option('nksnow_selected');
 	$dirArray = nksnow_dirArray();
 	$arraymax = count($selected_array) - 1;
+	// check
+	if (!is_array($selected_array)) {
+    	$selected_array = array('flake2.gif', 'flake3.gif');
+	}
 	// Check if selected images really exists, revert to defaults if not
 	// Smoothen 0.5.4 -> 0.6.0 transition
 	foreach($selected_array as $selected) {

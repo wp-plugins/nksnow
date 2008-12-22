@@ -67,7 +67,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-0.7.4	Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that.<br />
+0.7.4	Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that. Thanks to <a href="http://dponline.org/weblog">Dona</a> for reporting.<br />
 0.7.3	Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to <a href="http://mintys.lt/">Gudas</a>.<br />
 0.7.2	Undo last 'update'.<br />
 0.7.1	Let IE5 ignore this script.<br />
