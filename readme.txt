@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.1
 Tested up to: 2.7
-Stable tag: 0.7.3
+Stable tag: 0.7.4
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
 
@@ -26,6 +26,7 @@ If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/"
 </p>
 
 <h3>My other plugins</h3>
+<p>
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
 I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
@@ -37,6 +38,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 <br/>
 <a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
 The name says it all, see fireworks on your blog!
+</p>
 
 == Installation ==
 <ol>
@@ -65,6 +67,7 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+0.7.4	Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that.<br />
 0.7.3	Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to <a href="http://mintys.lt/">Gudas</a>.<br />
 0.7.2	Undo last 'update'.<br />
 0.7.1	Let IE5 ignore this script.<br />
