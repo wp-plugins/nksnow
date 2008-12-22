@@ -63,11 +63,11 @@ function nksnow_add_pages() {
 				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
-				if ($_POST['nksnow_selected']) {
+				if (is_array($_POST['nksnow_selected'])) {
 					update_option('nksnow_selected', $_POST['nksnow_selected']);
 				}
 				else {
-    				update_option('nksnow_selected', 'flake2.gif,flake3.gif');
+    				update_option('nksnow_selected', array('flake2.gif','flake3.gif'));
 				}
 				update_option('nksnow_flakesize', $_POST['nksnow_flakesize']);
 				echo '</div>';
