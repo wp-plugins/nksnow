@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.7.3
+Version: 0.7.5
 */
 
 // Install hook
@@ -118,6 +118,10 @@ The name says it all, see fireworks on your blog!
 			<?php
 				$dirArray = nksnow_dirArray();
 				$selected_array = get_option('nksnow_selected');
+				// 0.7.3 had some incompatible changes, check
+				if (!is_array($selected_array)) {
+    				$selected_array = array('flake2.gif', 'flake3.gif');
+				}
 				echo "<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>";
 				for ($i = 0 ; $i < count($dirArray); $i++) {
 					echo "<td style=\"vertical-align: top; text-align: center; padding: 2px; \">";
@@ -275,7 +279,7 @@ function nksnow_footer() {
 	$selected_array = get_option('nksnow_selected');
 	$dirArray = nksnow_dirArray();
 	$arraymax = count($selected_array) - 1;
-	// check
+	// 0.7.3 had some incompatible changes, check
 	if (!is_array($selected_array)) {
     	$selected_array = array('flake2.gif', 'flake3.gif');
 	}
