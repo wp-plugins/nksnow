@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.7.5
+Version: 0.7.6
 */
 
 // Install hook
@@ -50,7 +50,7 @@ add_action('wp_footer', 'nksnow_homelink');
 function nksnow_add_pages() {
 	add_options_page('Snow and more', 'Snow and more', 10, 'nksnow', 'nksnow_options_page');
 	function nksnow_options_page() { ?>
-		<div class="wrap" style="margin: 0 5mm; ">
+		<div class="wrap" style="margin: 0 5mm; max-width: 100ex; ">
 		<?php
 			if ( strlen($_POST['nksnow_snowflakes']) > 0 ) {
 				echo '<div id="message" class="updated fade">Form submitted.<br />';
@@ -80,9 +80,14 @@ function nksnow_add_pages() {
 <h3>Contact</h3>
 <p>
 Feel free to send me feedback, patches, feature requests etc. to <a href="mailto:wp@nicolaskuttler.de">my mail address</a> or to blog about this plugin. Visit my blog at <a href="http://www.nkuttler.de/">nkuttler.de</a> or this plugin's page at <a href="http://www.nkuttler.de/nksnow/">nksnow</a>.
+<br />
+Please remember to <a href="http://www.wordpress.org/extend/plugins/nksnow/">rate this widget</a>, especially if you like it.
 </p>
 <h3>My other plugins</h3>
 <p>
+<a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
+The name says it all, see fireworks on your blog!
+<br />
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
 I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
@@ -92,8 +97,6 @@ I like to tweak my main theme that I use on a varity of blogs. If you have ever 
 <a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
 I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
 <br/>
-<a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
-The name says it all, see fireworks on your blog!
 </p>
 
 		<h2>Settings</h2>
@@ -145,7 +148,7 @@ The name says it all, see fireworks on your blog!
 			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<br/>
 			<input type="submit" value="Update settings" />
-			<h2>Custom images</h2>
+			<h3>Custom images</h3>
 			<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
 			<br />
 			Make sure the value is bigger than your highest image's height and broadest image's width.
@@ -166,7 +169,7 @@ The name says it all, see fireworks on your blog!
 			</select>
 			<br/>
 			<input type="submit" value="Update settings" />
-			<h2>Pro settings</h2>
+			<h3>Pro settings</h3>
 			Stop snow after how many seconds?
 			<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
 			<br />
