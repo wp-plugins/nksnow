@@ -8,6 +8,7 @@ nks.actives = nks.snowflakes;
 
 nks.maxwidth = window.innerWidth;
 nks.maxheight = window.innerHeight;
+nks.minheight = -nks.flakesize; // for invert mode
 if (!nks.maxwidth) {
 	nks.maxwidth = document.documentElement.clientWidth;
 	nks.maxheight = document.documentElement.clientHeight;
@@ -58,7 +59,7 @@ function snow(nks) {
 	currentTime = new Date();
 	for (i = 0; i < nks.snowflakes; i++) {
 		if (nks.active[i] === true) {
-			nks.posy[i] = nks.posy[i] + nks.speedy[i];
+			nks.posy[i] = nks.posy[i] + nks.speedy[i] * nks.invert;
 			nks.posx[i] = nks.posx[i] + nks.speedx;
 			// wind effect
 			if (Math.random() > 0.99) {
@@ -78,9 +79,18 @@ function snow(nks) {
 				}
 			}
 			// move flakes when they reach a limit
-			if (nks.posy[i] > nks.maxheight ) {
+			if (nks.invert == 1 && nks.posy[i] > nks.maxheight ) {
 				nks.posx[i] = Math.random() * nks.maxwidth;
 				nks.posy[i] = - Math.random() * nks.maxheight / 2;
+				if (currentTime.getTime() > nks.endtime) {
+					nks.active[i] = false;
+					nks.posy[i] = -100 - nks.flakesize;
+					nks.actives--;
+				}
+			}
+			if (nks.invert == -1 && nks.posy[i] < nks.minheight ) {
+				nks.posx[i] = Math.random() * nks.maxwidth;
+				nks.posy[i] = nks.maxheight + Math.random() * nks.maxheight * 0.5;
 				if (currentTime.getTime() > nks.endtime) {
 					nks.active[i] = false;
 					nks.posy[i] = -100 - nks.flakesize;

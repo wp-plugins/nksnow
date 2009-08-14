@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
 Requires at least: 2.1
-Tested up to: 2.7.1
+Tested up to: 2.8.4
 Stable tag: 0.7.6
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow.
@@ -67,34 +67,69 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-0.7.6	Small update + fix.<br />
-0.7.5	And another fix related to the 0.7.3 release. Thanks to <a href="http://www.ecchi-sama.fr/">Rodin Pandarex</a>.<br />
-0.7.4	Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that. Thanks to <a href="http://dponline.org/weblog">Dona</a> for reporting.<br />
-0.7.3	Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to <a href="http://mintys.lt/">Gudas</a>.<br />
-0.7.2	Undo last 'update'.<br />
-0.7.1	Let IE5 ignore this script.<br />
-0.7.0	JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. Window.onload bugfix. End position of pictures depends on flake size, smaller updates.<br />
-0.6.1	More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
-0.6.0	Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
-0.5.4	Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
-0.5.3	Fix wrong get_bloginfo('url') usage<br />
-0.5.2	Add precise URI match suggested by Rob<br />
-0.5.1	Bugfix, thanks to <a href="http://www.ps3attitude.com/">DolphGB</a>.<br />
-0.5.0	Stop snowing after a certain time.<br />
-0.4.5	Checked compatibility with older wordpress versions.<br />
-0.4.4	Really include the smaller leaves, thanks to <a href="http://drkblog.com/">Dr K</a> for pointing that out. Update config screenshot.<br />
-0.4.3	Bugfix<br />
-0.4.2	Fix the bug introduced by the last 'fix'<br />
-0.4.1	Fix potential bug by using PLUGINDIR constant instead of hardcoded path.<br />
-0.4.0	Add install hook + minor updates.<br />
-0.3.0	Add leaves, make it possible to select different flakes, drops and leaves at the same time. Updates in the wind algo too.<br />
-0.2.2	New snowflakes, small js updates and make the config page friendlier. FAQ update and remove border around images if css puts some there, thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a> for pointing that out.<br >
-0.2.1	Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.<br />
-0.2.0	Add a lot of new configuration options. Include a second snowflake.<br />
-0.1.6	Fix for google chrome and make the snowflakes scrolling-aware.<br />
-0.1.5	Doc updates only<br />
-0.1.4	Wordpress.org upload, some doc updates<br />
-0.1.3	Nicer snowflakes<br />
-0.1.2	Number of snowflakes is an option now, fix for IE, set allowed URI<br />
-0.1.1	Minor fixes<br />
-0.1.0	Initial release<br />
+= 0.8.0 =
+ * New images: balloons by <a href="">bla</a>.
+ * New mode for ballons: images float upwards now.
+ * Added changelog using the new format.
+= 0.7.6 =
+ * Small update + fix.<br />
+= 0.7.5 =
+ * And another fix related to the 0.7.3 release. Thanks to <a href="http://www.ecchi-sama.fr/">Rodin Pandarex</a>.<br />
+= 0.7.4 =
+ * Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that. Thanks to <a href="http://dponline.org/weblog">Dona</a> for reporting.<br />
+= 0.7.3 =
+ * Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to <a href="http://mintys.lt/">Gudas</a>.<br />
+= 0.7.2 =
+ * Undo last 'update'.<br />
+= 0.7.1 =
+ * Let IE5 ignore this script.<br />
+= 0.7.0 =
+ * JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. Window.onload bugfix. End position of pictures depends on flake size, smaller updates.<br />
+= 0.6.1 =
+ * More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
+= 0.6.0 =
+ * Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
+= 0.5.4 =
+ * Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
+= 0.5.3 =
+ * Fix wrong get_bloginfo('url') usage<br />
+= 0.5.2 =
+ * Add precise URI match suggested by Rob<br />
+= 0.5.1 =
+ * Bugfix, thanks to <a href="http://www.ps3attitude.com/">DolphGB</a>.<br />
+= 0.5.0 =
+ * Stop snowing after a certain time.<br />
+= 0.4.5 =
+ * Checked compatibility with older wordpress versions.<br />
+= 0.4.4 =
+ * Really include the smaller leaves, thanks to <a href="http://drkblog.com/">Dr K</a> for pointing that out. Update config screenshot.<br />
+= 0.4.3 =
+ * Bugfix<br />
+= 0.4.2 =
+ * Fix the bug introduced by the last 'fix'<br />
+= 0.4.1 =
+ * Fix potential bug by using PLUGINDIR constant instead of hardcoded path.<br />
+= 0.4.0 =
+ * Add install hook + minor updates.<br />
+= 0.3.0 =
+ * Add leaves, make it possible to select different flakes, drops and leaves at the same time. Updates in the wind algo too.<br />
+= 0.2.2 =
+ * New snowflakes, small js updates and make the config page friendlier. FAQ update and remove border around images if css puts some there, thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a> for pointing that out.<br >
+= 0.2.1 =
+ * Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.<br />
+= 0.2.0 =
+ * Add a lot of new configuration options. Include a second snowflake.<br />
+= 0.1.6 =
+ * Fix for google chrome and make the snowflakes scrolling-aware.<br />
+= 0.1.5 =
+ * Doc updates only<br />
+= 0.1.4 =
+ * Wordpress.org upload, some doc updates<br />
+= 0.1.3 =
+ * Nicer snowflakes<br />
+= 0.1.2 =
+ * Number of snowflakes is an option now, fix for IE, set allowed URI<br />
+= 0.1.1 =
+ * Minor fixes<br />
+= 0.1.0 =
+ * Initial release<br />

@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.7.6
+Version: 0.8.0
 */
 
 // Install hook
@@ -21,6 +21,7 @@ function nksnow_install() {
     update_option('nksnow_uri', '');
     update_option('nksnow_precise', '');
     update_option('nksnow_flakesize', '40');
+    update_option('nksnow_invert', 'No');
 }
 
 // Hook for adding admin menus
@@ -63,6 +64,7 @@ function nksnow_add_pages() {
 				update_option('nksnow_homelink', $_POST['nksnow_homelink']);
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
+				update_option('nksnow_invert', $_POST['nksnow_invert']);
 				if (is_array($_POST['nksnow_selected'])) {
 					update_option('nksnow_selected', $_POST['nksnow_selected']);
 				}
@@ -116,7 +118,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 			?>
 			</select>
 			<br />
-			Which of these flakes, drops and leaves do you want? 
+			Which of these flakes, drops, leaves and balloons do you want? 
 			<br />
 			<?php
 				$dirArray = nksnow_dirArray();
@@ -147,6 +149,18 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 			?>
 			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
 			<br/>
+			Use the balloon mode? This will make all images float upwards.
+			<select name="nksnow_invert">
+			<option <?php
+				if (get_option('nksnow_invert') === 'Yes') {
+					echo "selected";
+				}?>>Yes</option>
+			<option <?php
+				if (get_option('nksnow_invert') !== 'Yes') {
+					echo "selected";
+				}?>>No</option>
+			</select>
+			<br />
 			<input type="submit" value="Update settings" />
 			<h3>Custom images</h3>
 			<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
@@ -269,6 +283,14 @@ nks.flakesize = <?php
 ?>;
 nks.maxtime = <?php
 	echo get_option('nksnow_maxtime') * 1000;
+?>;
+nks.invert = <?php
+	if (get_option('nksnow_invert') == "Yes") {
+		echo "-1";
+	}
+	else {
+		echo "1";
+	}
 ?>;
 </script>
 <script src="<?php echo get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
