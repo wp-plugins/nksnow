@@ -68,8 +68,8 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 
 == Changelog ==
 = 0.8.0 =
- * New images: balloons by <a href="">bla</a>.
  * New mode for ballons: images float upwards now.
+ * New images: balloons by <a href="http://desperatelyseekingwp.com">Desperately Seeking WordPress</a>.
  * Added changelog using the new format.
 = 0.7.6 =
  * Small update + fix.<br />
