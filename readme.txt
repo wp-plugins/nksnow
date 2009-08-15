@@ -3,7 +3,7 @@ Contributors: nkuttler
 Author URI: http://www.nkuttler.de/
 Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
-Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa
+Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, birthday, celebrate, party
 Requires at least: 2.1
 Tested up to: 2.8.4
 Stable tag: 0.7.6
@@ -13,7 +13,7 @@ Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsno
 == Description ==
 
 <p>
-Snowflakes (and more) falling down your blog! There are snowflakes, leaves and drops. Since version 0.6.0 you can simply add more images in the <tt>pics</tt> folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
+Snowflakes (and more) falling down your blog! There are snowflakes, leaves, drops and balloons that can float upwards. You can simply add more images in the <tt>pics</tt> folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
 </p>
 <p>
 You can configure the number of snowflakes and limit the plugin to specific posts or pages.
