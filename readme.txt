@@ -3,7 +3,7 @@ Contributors: nkuttler
 Author URI: http://www.nkuttler.de/
 Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
-Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, birthday, celebrate, party
+Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, birthday, celebrate
 Requires at least: 2.1
 Tested up to: 2.8.4
 Stable tag: 0.7.6
@@ -68,9 +68,9 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 
 == Changelog ==
 = 0.8.0 =
- * New mode for ballons: images float upwards now.
- * New images: balloons by <a href="http://desperatelyseekingwp.com">Desperately Seeking WordPress</a>.
- * Added changelog using the new format.
+ * New mode for ballons: the images can float upwards now.
+ * Added new images: balloons. Thanks to <a href="http://desperatelyseekingwp.com">Desperately Seeking WordPress</a> for the images and the idea.
+ * This changelog was changed to the new format.
 = 0.7.6 =
  * Small update + fix.<br />
 = 0.7.5 =
