@@ -103,7 +103,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 
 		<h2>Settings</h2>
 		<form action="" method="post">
-			Show how many snowflakes?
+			Show how many snowflakes (or other objects)?
 			<select name="nksnow_snowflakes" >
 			<?php
 				$select = get_option('nksnow_snowflakes'); 
@@ -147,7 +147,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 				echo "</tr>";
 				echo "</table>";
 			?>
-			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if they are properly licensed.
+			By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.
 			<br/>
 			Use the balloon mode? This will make all images float upwards.
 			<select name="nksnow_invert">
