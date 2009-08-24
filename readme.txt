@@ -67,6 +67,9 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.8.2 =
+ * Admin CSS updates.
+ *
 = 0.8.1 =
  * Doc updates.
 = 0.8.0 =

@@ -161,7 +161,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 				}?>>No</option>
 			</select>
 			<br />
-			<input type="submit" value="Update settings" />
+			<input type="submit" class="button-primary" value="Save changes" />
 			<h3>Custom images</h3>
 			<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
 			<br />
@@ -182,7 +182,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 			?>
 			</select>
 			<br/>
-			<input type="submit" value="Update settings" />
+			<input type="submit" class="button-primary" value="Save changes" />
 			<h3>Pro settings</h3>
 			Stop snow after how many seconds?
 			<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
@@ -254,7 +254,7 @@ I wrote a little online rhyming dictionary. This is a widget to search it direct
 				}?>>No</option>
 			</select>
 			<br />
-			<input type="submit" value="Update settings" />
+			<input type="submit" class="button-primary" value="Save changes" />
 		</form>
 		</div>
 		<?php
