@@ -6,7 +6,7 @@ Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
 Tested up to: 2.8.4
-Stable tag: 0.8.0
+Stable tag: 0.8.1
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
 
@@ -30,7 +30,7 @@ If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/"
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
 I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
-<a href="http://www.nkuttler.de/nkmovecomment/">Move WordPress comments</a>:
+<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
 This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to move comments to a different post/page and to fix comment threading.
 <br/>
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
@@ -73,6 +73,7 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 = 0.8.1 =
  * Admin CSS updates.
  * Doc updates.
+ * Fix bad upgrade bug that deletes plugin settings
 = 0.8.0 =
  * New mode for ballons: the images can float upwards now.
  * Added new images: balloons. Thanks to <a href="http://desperatelyseekingwp.com">Desperately Seeking WordPress</a> for the images and the idea.
