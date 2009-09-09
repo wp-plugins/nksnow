@@ -30,7 +30,7 @@ If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/"
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
 I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
-<a href="http://www.nkuttler.de/nkmovecomment/">Move WordPress comments</a>:
+<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
 This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to move comments to a different post/page and to fix comment threading.
 <br/>
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
