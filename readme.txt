@@ -30,6 +30,9 @@ If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/"
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
 I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
+<a href="http://www.nkuttler.de/nkmovecomment/">Move WordPress comments</a>:
+This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to move comments to a different post/page and to fix comment threading.
+<br/>
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
 I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
 <br/>
@@ -67,10 +70,8 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
-= 0.8.2 =
- * Admin CSS updates.
- *
 = 0.8.1 =
+ * Admin CSS updates.
  * Doc updates.
 = 0.8.0 =
  * New mode for ballons: the images can float upwards now.
