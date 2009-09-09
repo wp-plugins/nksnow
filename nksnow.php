@@ -11,17 +11,18 @@ Version: 0.8.1
 // Install hook
 register_activation_hook(__FILE__,'nksnow_install');
 function nksnow_install() {
-	echo "plugin activated";
-    update_option('nksnow_snowflakes', '10');
-    update_option('nksnow_timeout', '80');
-    update_option('nksnow_maxstepx', '10');
-    update_option('nksnow_maxstepy', '10');
-    update_option('nksnow_selected', 'flake2.gif,flake3.gif');
-    update_option('nksnow_maxtime', '20');
-    update_option('nksnow_uri', '');
-    update_option('nksnow_precise', '');
-    update_option('nksnow_flakesize', '40');
-    update_option('nksnow_invert', 'No');
+	if (!get_option('nksnow_snowflakes')) {
+	    update_option('nksnow_snowflakes', '10');
+	    update_option('nksnow_timeout', '80');
+	    update_option('nksnow_maxstepx', '10');
+	    update_option('nksnow_maxstepy', '10');
+	    update_option('nksnow_selected', 'flake2.gif,flake3.gif');
+	    update_option('nksnow_maxtime', '20');
+	    update_option('nksnow_uri', '');
+	    update_option('nksnow_precise', '');
+	    update_option('nksnow_flakesize', '40');
+	    update_option('nksnow_invert', 'No');
+	}
 }
 
 // Hook for adding admin menus
