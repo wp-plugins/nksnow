@@ -25,22 +25,25 @@ I added this feature so that I could put a <a href="http://www.nkuttler.de/nksno
 If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
 </p>
 
-<h3>My other plugins</h3>
+<h3>My plugins</h3>
 <p>
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
-I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
-<br/>
-<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
-This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to move comments to a different post/page and to fix comment threading.
+I was pretty unhappy with the default <a href="http://www.nkuttler.de/nktagcloud/">WordPress tag cloud</a> widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
-I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
+I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to <a href="http://www.nkuttler.de/nkthemeswitch/">use a different theme</a> than the one used for your visitors when you are logged in.
 <br/>
-<a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
-I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
+<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
+This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to <a href="http://www.nkuttler.de/nkmovecomments/">move comments</a> to a different post/page and to fix comment threading.
+<br/>
+<a href="http://www.nkuttler.de/nksnow/">Snow and more</a>:
+This one lets you see <a href="http://www.nkuttler.de/nksnow/">snowflakes or other images fall down your blog</a>.
 <br/>
 <a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
-The name says it all, see fireworks on your blog!
+The name says it all, see <a href="http://www.nkuttler.de/nkfireworks/">fireworks</a> on your blog!
+<br/>
+<a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
+I wrote a little online <a href="http://www.rhymebox.com/">rhyming dictionary</a>. This is a widget to search it directly from one of your sidebars.
 </p>
 
 == Installation ==
@@ -57,6 +60,9 @@ The name says it all, see fireworks on your blog!
 2. Settings page.
 
 == Frequently Asked Questions ==
+Q: How do I make the effect only active on the start page?<br />
+A: Set the URI filter to / and check the precise match box. This assumes that WordPress is installed in the webserver's root directory.<br />
+
 Q: I see no snow.<br />
 A: Please make sure that your template uses the wp_footer() and wp_head() template tags. They should be in your header.php and footer.php, see <a href="http://codex.wordpress.org/Theme_Development">the theme development page</a>.<br />
 
@@ -70,6 +76,8 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.8.2 =
+ * Doc updates
 = 0.8.1 =
  * Admin CSS updates.
  * Doc updates.

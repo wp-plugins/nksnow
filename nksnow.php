@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.8.1
+Version: 0.8.2
 */
 
 // Install hook
@@ -87,24 +87,31 @@ Feel free to send me feedback, patches, feature requests etc. to <a href="mailto
 Please remember to <a href="http://www.wordpress.org/extend/plugins/nksnow/">rate this widget</a>, especially if you like it.
 </p>
 
-<h3>My other plugins</h3>
+<h3>My plugins</h3>
 <p>
-<a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
-The name says it all, see fireworks on your blog!
-<br />
 <a href="http://www.nkuttler.de/nktagcloud/">Better tag cloud</a>:
-I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
-<br/>
-<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
-This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to move comments to a different post/page and to fix comment threading.
+I was pretty unhappy with the default <a href="http://www.nkuttler.de/nktagcloud/">WordPress tag cloud</a> widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
 <br/>
 <a href="http://www.nkuttler.de/nkthemeswitch/">Theme switch</a>:
-I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
+I like to tweak my main theme that I use on a varity of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to <a href="http://www.nkuttler.de/nkthemeswitch/">use a different theme</a> than the one used for your visitors when you are logged in.
+<br/>
+<a href="http://www.nkuttler.de/nkmovecomments/">Move WordPress comments</a>:
+This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to <a href="http://www.nkuttler.de/nkmovecomments/">move comments</a> to a different post/page and to fix comment threading.
+<br/>
+<a href="http://www.nkuttler.de/nksnow/">Snow and more</a>:
+This one lets you see <a href="http://www.nkuttler.de/nksnow/">snowflakes or other images fall down your blog</a>.
+<br/>
+<a href="http://www.nkuttler.de/nkfireworks/">Fireworks</a>:
+The name says it all, see <a href="http://www.nkuttler.de/nkfireworks/">fireworks</a> on your blog!
 <br/>
 <a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
-I wrote a little online rhyming dictionary. This is a widget to search it directly from one of your sidebars.
-<br/>
+I wrote a little online <a href="http://www.rhymebox.com/">rhyming dictionary</a>. This is a widget to search it directly from one of your sidebars.
 </p>
+
+
+
+
+
 
 		<h2>Settings</h2>
 		<form action="" method="post">
