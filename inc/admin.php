@@ -59,31 +59,34 @@ function nksnow_css_admin() { ?>
 /**
  * The options page
  */
-function nksnow_options_page() { ?>
-	<div class="wrap" > <?php
-	if ( $_POST['nksnow_snowflakes'] ) {
-		$nonce = $_POST['_wpnonce'];
-		if ( !wp_verify_nonce( $nonce, 'nksnow-config') ) die( 'Security check' );
-
-		update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
-		update_option('nksnow_uri', $_POST['nksnow_uri']);
-		update_option('nksnow_precise', $_POST['nksnow_precise']);
-		update_option('nksnow_timeout', $_POST['nksnow_timeout']);
-		update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
-		update_option('nksnow_homelink', $_POST['nksnow_homelink']);
-		update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
-		update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
-		update_option('nksnow_invert', $_POST['nksnow_invert']);
-
-		// todo why array? single flake?
-		if ( is_array( $_POST['nksnow_selected'] ) ) {
-			update_option( 'nksnow_selected', $_POST['nksnow_selected'] );
+function nksnow_options_page() {
+	if ( current_user_can( 'manage_options' ) ) { ?>
+		<div id="nkuttler" class="wrap" >  <?php
+		if ( $_POST['nksnow_snowflakes'] ) {
+			#function_exists( 'check_admin_referer' ) ? check_admin_referer( 'nksnow' ) : null;
+			$nonce = $_POST['_wpnonce'];
+			if ( !wp_verify_nonce( $nonce, 'nksnow') ) die( 'Security check' );
+	
+			update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
+			update_option('nksnow_uri', $_POST['nksnow_uri']);
+			update_option('nksnow_precise', $_POST['nksnow_precise']);
+			update_option('nksnow_timeout', $_POST['nksnow_timeout']);
+			update_option('nksnow_maxstepx', $_POST['nksnow_maxstepx']);
+			update_option('nksnow_homelink', $_POST['nksnow_homelink']);
+			update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
+			update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
+			update_option('nksnow_invert', $_POST['nksnow_invert']);
+	
+			// todo why array? single flake?
+			if ( is_array( $_POST['nksnow_selected'] ) ) {
+				update_option( 'nksnow_selected', $_POST['nksnow_selected'] );
+			}
+			else {
+				update_option( 'nksnow_selected', array( 'flake2.gif','flake3.gif' ) );
+			}
+			update_option( 'nksnow_flakesize', $_POST['nksnow_flakesize'] );
+			echo '</div>';
 		}
-		else {
-			update_option( 'nksnow_selected', array( 'flake2.gif','flake3.gif' ) );
-		}
-		update_option( 'nksnow_flakesize', $_POST['nksnow_flakesize'] );
-		echo '</div>';
 	} ?>
 
 	<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2>
@@ -94,7 +97,7 @@ function nksnow_options_page() { ?>
 
 	<h2><?php _e( 'Settings', 'nksnow' ) ?></h2>
 	<form action="" method="post">
-		<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow-config' )  ?>
+		<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow' )  ?>
 		
 		<?php _e( 'Show how many snowflakes (or other objects)?', 'nksnow' ) ?>
 		<select name="nksnow_snowflakes" >

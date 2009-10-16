@@ -86,7 +86,7 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 
 == Changelog ==
 = 0.9.0 =
- * Make PHP code a little more efficient
+ * Make PHP code a little more efficient and secure
  * I18N
  * Add german translation
 = 0.8.1 =
