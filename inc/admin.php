@@ -94,9 +94,9 @@ function nksnow_options_page() { ?>
 		if (!is_array($selected_array)) {
 			$selected_array = array('flake2.gif', 'flake3.gif');
 		}
-		echo '<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>';
+		echo '<table style="border: 1px solid #ddd; margin: 1mm 0; " ><tr>';
 		for ($i = 0 ; $i < count($dirArray); $i++) {
-			echo '<td style=\"vertical-align: top; text-align: center; padding: 2px; \">';
+			echo '<td style="vertical-align: top; text-align: center; padding: 2px; ">';
 			if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
 				echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
 			}
@@ -107,7 +107,7 @@ function nksnow_options_page() { ?>
 		}
 		echo '</tr><tr>';
 		for ($i = 0 ; $i < count($dirArray); $i++) {
-			echo '<td style=\"vertical-align: center; background: #aaf; text-align: center; padding: 2px; \">';
+			echo '<td style="vertical-align: center; background: #aaf; text-align: center; padding: 2px; ">';
 			echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />";
 			echo '</td>';
 		}
