@@ -64,7 +64,7 @@ function nksnow_css_admin() { ?>
 function nksnow_options_page() {
 	if ( current_user_can( 'manage_options' ) ) { ?>
 		<div id="nkuttler" class="wrap" >  <?php
-			if ( $_POST['nksnow_snowflakes'] ) {
+			if ( $_POST['nksnow'] ) {
 				#function_exists( 'check_admin_referer' ) ? check_admin_referer( 'nksnow' ) : null;
 				$nonce = $_POST['_wpnonce'];
 				if ( !wp_verify_nonce( $nonce, 'nksnow') ) die( 'Security check' );
@@ -98,6 +98,7 @@ function nksnow_options_page() {
 		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
 			<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow' )  ?>
+			<input type="hidden" name="nksnow" value="hello, world!" />
 			<table class="form-table" id="clearnone" >
 				<tr>
 					<th>
