@@ -123,7 +123,7 @@ msgid ""
 "Show snowflakes only if the URI given above and the URI are equal ($_SERVER"
 "['REQUEST_URI'] == URI string)?"
 msgstr ""
-"Zeige die Schneflocken nur wenn obige Adresse und besucht Adresse genau "
+"Zeige die Schneflocken nur wenn die obige Adresse und die besucht Adresse genau "
 "gleich sind ($_SERVER['REQUEST_URI'] == URI string)?"
 
 #: inc/admin.php:226
