@@ -88,6 +88,7 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 = 0.9.0 =
  * Make PHP code a little more efficient
  * I18N
+ * Add german translation
 = 0.8.2 =
  * Doc updates
 = 0.8.1 =
