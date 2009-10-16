@@ -52,9 +52,6 @@ The name says it all, see fireworks on your blog!
 I wrote a little online <a href="http://www.rhymebox.com/">rhyming dictionary</a>. This is a widget to search it directly from one of your sidebars.
 </p>
 
-
-
-
 == Installation ==
 <ol>
 <li>Unzip nksnow.zip</li>
@@ -86,9 +83,9 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 
 == Changelog ==
 = 0.9.0 =
- * Make PHP code a little more efficient and secure
  * I18N
  * Add german translation
+ * Improve PHP code, readability, security.
 = 0.8.1 =
  * Admin CSS updates.
  * Doc updates.
