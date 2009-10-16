@@ -16,7 +16,6 @@ function nksnow_load() {
 	add_action( 'init', 'nksnow_load_translation_file' );
 
 	if ( is_admin() ) {
-		require_once( 'inc/nkuttler.php' );
 		require_once( 'inc/admin.php' );
 		register_activation_hook( __FILE__, 'nksnow_activate' );
 		register_uninstall_hook( __FILE__, 'nksnow_uninstall' );

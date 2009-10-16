@@ -88,13 +88,12 @@ function nksnow_options_page() {
 			} 
 		} ?>
 
-		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2>
-		<?php nkuttler_links( 'nksnow' ); ?>
-		<p>
-			<?php printf ( __( "If you have any problems using this plugin, please have a look at the <a href=\"%s\">FAQ</a>.", 'nksnow' ), 'http://wordpress.org/extend/plugins/nksnow/faq/' ); ?>
-		</p>
+		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php 
+
+		require_once( 'nkuttler.php' );
+		nkuttler_links( 'nksnow' ); ?>
 	
-		<h2><?php _e( 'Settings', 'nksnow' ) ?></h2>
+		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
 			<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow' )  ?>
 			<table class="form-table" id="clearnone" >
@@ -185,7 +184,7 @@ function nksnow_options_page() {
 				<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 			</p>
 
-			<h2><?php _e( 'Custom images', 'nksnow' ) ?></h2>
+			<h3><?php _e( 'Custom images', 'nksnow' ) ?></h3>
 			<p>
 				<?php _e( 'If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value.', 'nksnow' ) ?>
 				<br />
