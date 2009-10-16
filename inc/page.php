@@ -1,27 +1,44 @@
 <?php
 
-if ( get_option('nksnow_uri') ) {
-	if (
-		(
-			get_option( 'nksnow_precise' ) !== 'on' &&
-			strpos( $_SERVER['REQUEST_URI'], get_option( 'nksnow_uri' ) ) > 0
-		) ||
-		(
-			get_option('nksnow_precise') === 'on' &&
-			strcmp( $_SERVER['REQUEST_URI'], get_option( 'nksnow_uri' ) ) === 0
-		)
-	) {
+/**
+ * The main frontend function. Always run.
+ *
+ * @since 0.9.0
+ *
+ * For 0.9.0 I changed it so that the home link is only shown when the plugin
+ * is active and not disabled. Well, at least there's a gazillion of blogs that
+ * still use one of the obsolete versions :)
+ */
+function nksnow() {
+	if ( get_option('nksnow_uri') ) {
+		if (
+			(
+				get_option( 'nksnow_precise' ) !== 'on' &&
+				strpos( $_SERVER['REQUEST_URI'], get_option( 'nksnow_uri' ) ) > 0
+			) ||
+			(
+				get_option('nksnow_precise') === 'on' &&
+				strcmp( $_SERVER['REQUEST_URI'], get_option( 'nksnow_uri' ) ) === 0
+			)
+		) {
+			add_action( 'wp_head', 'nksnow_head' );
+			add_action( 'wp_footer', 'nksnow_footer' );
+
+			add_action( 'wp_footer', 'nksnow_homelink' );
+		}
+	} // default: enable
+	elseif  ( !get_option( 'nksnow_uri' ) ) {
 		add_action( 'wp_head', 'nksnow_head' );
 		add_action( 'wp_footer', 'nksnow_footer' );
-	}
-} // default: enable
-elseif  ( !get_option( 'nksnow_uri' ) ) {
-	add_action( 'wp_head', 'nksnow_head' );
-	add_action( 'wp_footer', 'nksnow_footer' );
-}
-add_action( 'wp_footer', 'nksnow_homelink' );
 
-// set necessary JS variables and include the script
+		add_action( 'wp_footer', 'nksnow_homelink' );
+	}
+}
+nksnow();
+
+/**
+ * Add the necessary JS variables and include the wonderful snow script
+ */
 function nksnow_head() { ?>
 <!-- nksnow -->
 <script type="text/javascript">
@@ -58,7 +75,9 @@ nks.invert = <?php
 <?php
 }
 
-// Put the images into the HTML code
+/**
+ * Put the images into the HTML code
+ */
 function nksnow_footer() {
 	$snowflakes = get_option('nksnow_snowflakes');
 	$selected_array = get_option('nksnow_selected');
@@ -83,6 +102,10 @@ function nksnow_footer() {
 	}
 }
 
+/**
+ * Insert a highly search engine optimized link to the plugin's page.
+ * Who wouldn't want to rank for those keywords?
+ */
 function nksnow_homelink() {
 	if ( !( get_option('nksnow_homelink' ) === 'Yes' ) ) {
 		if ( get_option( 'nksnow_invert' ) === 'Yes' ) {
@@ -94,6 +117,14 @@ function nksnow_homelink() {
 	}
 }
 
+/**
+ * Messy function that returns all things in a hardcoded directory :)
+ * This was my first plugin ever.
+ *
+ * @return array list of, errrr, things
+ *
+ * @todo fix this mess... somewhen
+ */
 function nksnow_dirArray() {
 	$picpath = ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/';
 	if ( $picdir = opendir( $picpath ) ) {
