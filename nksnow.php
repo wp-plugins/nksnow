@@ -8,6 +8,9 @@ Description: Snow falling down your wordpress blog. See the <a href="http://www.
 Version: 0.9.0
 */
 
+/**
+ * Check who we are and load stuff
+ */
 function nksnow_load() {
 	// TODO split translations?
 	add_action( 'init', 'nksnow_load_translation_file' );
@@ -24,11 +27,12 @@ function nksnow_load() {
 
 /**
  * Load Translations
+ *
+ * @todo maybe split the two sentences for the frontend into a different file?
  */
 function nksnow_load_translation_file() {
 	$plugin_path = plugin_basename( dirname( __FILE__ ) .'/translations' );
 	load_plugin_textdomain( 'nksnow', '', $plugin_path );
 }
-
 
 nksnow_load();

@@ -3,7 +3,7 @@
 /**
  * Install hook
  *
- * @todo use one potion... somewhen
+ * @todo use one option... somewhen
  */
 function nksnow_activate() {
 	if ( !get_option( 'nksnow_snowflakes' ) ) {
@@ -21,7 +21,7 @@ function nksnow_activate() {
 }
 
 /**
- * : uninstall hook
+ * Uninstall hook
  */
 function nksnow_uninstall() {
     delete_option( 'nksnow_snowflakes' );
@@ -37,7 +37,7 @@ function nksnow_uninstall() {
 }
 
 /**
- * Add option page
+ * Add options page
  */
 function nksnow_add_pages() {
 	$page = add_options_page( __( 'Snow and more', 'nksnow' ), __( 'Snow and more', 'nksnow' ), 10, 'nksnow', 'nksnow_options_page' );
