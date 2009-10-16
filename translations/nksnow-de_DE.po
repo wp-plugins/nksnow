@@ -47,7 +47,7 @@ msgid ""
 "By the way if you have nice snowflakes, drops, leaves etc. feel free to "
 "submit them to me if you made them yourself."
 msgstr ""
-"Übrigens, wenn du hübsche Schneflocken, Tropfen, Blätter etc. hast dann "
+"Übrigens, wenn Du hübsche Schneeflocken, Tropfen, Blätter etc. hast dann "
 "schick sie mir bitte zu falls Du sie selbst erstellt hast."
 
 #: inc/admin.php:119
@@ -68,7 +68,7 @@ msgstr "Änderungen speichern"
 
 #: inc/admin.php:134
 msgid "Custom images"
-msgstr "Eignen Bilder"
+msgstr "Eigene Bilder"
 
 #: inc/admin.php:137
 msgid ""
