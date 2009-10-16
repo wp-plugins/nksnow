@@ -28,17 +28,18 @@ function nksnow_install() {
  * Add option page
  */
 function nksnow_add_pages() {
-	add_options_page( 'Snow and more', 'Snow and more', 10, 'nksnow', 'nksnow_options_page' );
+	add_options_page( __( 'Snow and more', 'nksnow' ), __( 'Snow and more', 'nksnow' ), 10, 'nksnow', 'nksnow_options_page' );
 }
 
 /**
  * The options page
  */
 function nksnow_options_page() { ?>
-	<div class="wrap" style="margin: 0 5mm; max-width: 100ex; "> <?php
-	if ( strlen($_POST['nksnow_snowflakes']) > 0 ) {
-		echo '<div id="message" class="updated fade">Form submitted.<br />';
-		echo "Settings changed";
+	<div class="wrap" > <?php
+	if ( $_POST['nksnow_snowflakes'] ) {
+		$nonce = $_POST['_wpnonce'];
+		if ( !wp_verify_nonce( $nonce, 'nksnow-config') ) die( 'Security check' );
+
 		update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
 		update_option('nksnow_uri', $_POST['nksnow_uri']);
 		update_option('nksnow_precise', $_POST['nksnow_precise']);
@@ -48,25 +49,28 @@ function nksnow_options_page() { ?>
 		update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 		update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
 		update_option('nksnow_invert', $_POST['nksnow_invert']);
-		if (is_array($_POST['nksnow_selected'])) {
-			update_option('nksnow_selected', $_POST['nksnow_selected']);
+
+		// todo why array? single flake?
+		if ( is_array( $_POST['nksnow_selected'] ) ) {
+			update_option( 'nksnow_selected', $_POST['nksnow_selected'] );
 		}
 		else {
-			update_option('nksnow_selected', array('flake2.gif','flake3.gif'));
+			update_option( 'nksnow_selected', array( 'flake2.gif','flake3.gif' ) );
 		}
-		update_option('nksnow_flakesize', $_POST['nksnow_flakesize']);
+		update_option( 'nksnow_flakesize', $_POST['nksnow_flakesize'] );
 		echo '</div>';
 	} ?>
 
-	<h2>Snow and more</h2>
+	<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2>
 	<p>
-	If you have any problems using this plugin, please have a look at the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a>.
+		<?php printf ( __( "If you have any problems using this plugin, please have a look at the <a href=\"%s\">FAQ</a>.", 'nksnow' ), 'http://wordpress.org/extend/plugins/nksnow/faq/' ); ?>
 	</p>
 
-	<h2>Settings</h2>
+	<h2><?php _e( 'Settings', 'nksnow' ) ?></h2>
 	<form action="" method="post">
-
-		Show how many snowflakes (or other objects)?
+		<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow-config' )  ?>
+		
+		<?php _e( 'Show how many snowflakes (or other objects)?', 'nksnow' ) ?>
 		<select name="nksnow_snowflakes" >
 		<?php
 			$select = get_option('nksnow_snowflakes'); 
@@ -82,7 +86,7 @@ function nksnow_options_page() { ?>
 		</select>
 		<br />
 
-		Which of these flakes, drops, leaves and balloons do you want? 
+		<?php _e( 'Which of these flakes, drops, leaves and balloons do you want? ', 'nksnow' ) ?>
 		<br /> <?php
 		$dirArray = nksnow_dirArray();
 		$selected_array = get_option('nksnow_selected');
@@ -90,50 +94,52 @@ function nksnow_options_page() { ?>
 		if (!is_array($selected_array)) {
 			$selected_array = array('flake2.gif', 'flake3.gif');
 		}
-		echo "<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>";
+		echo '<table style=\"border: 1px solid #ddd; margin: 1mm 0; \" ><tr>';
 		for ($i = 0 ; $i < count($dirArray); $i++) {
-			echo "<td style=\"vertical-align: top; text-align: center; padding: 2px; \">";
+			echo '<td style=\"vertical-align: top; text-align: center; padding: 2px; \">';
 			if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
 				echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
 			}
 			else {
 				echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
 			}
-			echo "</td>";
+			echo '</td>';
 		}
-		echo "</tr><tr>";
+		echo '</tr><tr>';
 		for ($i = 0 ; $i < count($dirArray); $i++) {
-			echo "<td style=\"vertical-align: center; background: #aaf; text-align: center; padding: 2px; \">";
+			echo '<td style=\"vertical-align: center; background: #aaf; text-align: center; padding: 2px; \">';
 			echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />";
-			echo "</td>";
+			echo '</td>';
 		}
-		echo "</tr>";
-		echo "</table>"; ?>
-		By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.
+		echo '</tr>';
+		echo '</table>'; ?>
+		<?php _e( 'By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.', 'nksnow' ) ?>
 		<br/>
 
-		Use the balloon mode? This will make all images float upwards.
+		<?php _e( 'Use the balloon mode? This will make all images float upwards.', 'nksnow' ) ?>
 		<select name="nksnow_invert">
-		<option <?php
+		<option value="Yes" <?php
 			if (get_option('nksnow_invert') === 'Yes') {
 				echo "selected";
-			}?>>Yes</option>
+			}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
 		<option <?php
 			if (get_option('nksnow_invert') !== 'Yes') {
 				echo "selected";
-			}?>>No</option>
+			}?>><?php _e( 'No', 'nksnow' ) ?></option>
 		</select>
 		<br />
 
-		<input type="submit" class="button-primary" value="Save changes" />
+		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 
-		<h3>Custom images</h3>
-		<p>If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value. 
+		<h3><?php _e( 'Custom images', 'nksnow' ) ?></h3>
+		<p>
+			
+		<?php _e( 'If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value.', 'nksnow' ) ?>
 		<br />
-		Make sure the value is bigger than your highest image's height and broadest image's width.
+		<?php _e( "Make sure the value is bigger than your highest image's height and broadest image's width.", 'nksnow' ) ?>
 		</p>
 
-		Flakesize?
+		<?php _e( 'Flakesize?', 'nksnow' ) ?>
 		<select name="nksnow_flakesize" >
 		<?php
 			$select = get_option('nksnow_flakesize'); 
@@ -149,14 +155,14 @@ function nksnow_options_page() { ?>
 		</select>
 		<br/>
 
-		<input type="submit" class="button-primary" value="Save changes" />
+		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 
-		<h3>Pro settings</h3>
-		Stop snow after how many seconds?
+		<h3><?php _e( 'Pro settings', 'nksnow' ) ?></h3>
+		<?php _e( 'Stop snow after how many seconds?', 'nksnow' ) ?>
 		<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
 		<br />
 
-		Overall speed (timeout in milliseconds between moves)? 
+		<?php _e( 'Overall speed (timeout in milliseconds between moves)? ', 'nksnow' ) ?>
 		<select name="nksnow_timeout" >
 		<?php
 			$select = get_option('nksnow_timeout'); 
@@ -172,7 +178,7 @@ function nksnow_options_page() { ?>
 		</select>
 		<br />
 
-		Maximum Wind strength 
+		<?php _e( 'Maximum Wind strength ', 'nksnow' ) ?>
 		<select name="nksnow_maxstepx" >
 		<?php
 			$select = get_option('nksnow_maxstepx'); 
@@ -188,7 +194,7 @@ function nksnow_options_page() { ?>
 		</select>
 		<br />
 
-		Maximum Falling speed
+		<?php _e( 'Maximum Falling speed', 'nksnow' ) ?>
 		<select name="nksnow_maxstepy" >
 		<?php
 			$select = get_option('nksnow_maxstepy'); 
@@ -204,32 +210,33 @@ function nksnow_options_page() { ?>
 		</select>
 		<br />
 
-		Show snowflakes only on pages whose URI contains
+		<?php _e( 'Show snowflakes only on pages whose URI contains', 'nksnow' ) ?>
 		<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
 		<br />
 
-		Show snowflakes only if the URI given above and the URI are equal
-		($_SERVER['REQUEST_URI'] == URI string)?
+		<?php _e( "Show snowflakes only if the URI given above and the URI are equal (\$_SERVER['REQUEST_URI'] == URI string)?", 'nksnow' ) ?>
+		
 	   	<input type="checkbox" name="nksnow_precise" <?php
 			if (get_option('nksnow_precise') === 'on') {
 				echo "checked";
 			}?>>
 		<br />
 
-		Hide the &quot;Powered by&quot; message in the footer?
+		
+		<?php _e( 'Hide the &quot;Powered by&quot; message in the footer?', 'nksnow' ) ?>
 		<select name="nksnow_homelink">
 		<option <?php
 			if (get_option('nksnow_homelink') === 'Yes') {
 				echo "selected";
-			}?>>Yes</option>
+			}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
 		<option <?php
 			if (get_option('nksnow_homelink') !== 'Yes') {
 				echo "selected";
-			}?>>No</option>
+			}?>><?php _e( 'No', 'nksnow' ) ?></option>
 		</select>
 		<br />
 
-		<input type="submit" class="button-primary" value="Save changes" />
+		<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 
 	</form>
 	</div> <?php

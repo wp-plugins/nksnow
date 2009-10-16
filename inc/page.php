@@ -83,21 +83,17 @@ function nksnow_footer() {
 	}
 }
 
-# site
 function nksnow_homelink() {
 	if ( !( get_option('nksnow_homelink' ) === 'Yes' ) ) {
-		if ( get_option( 'nksnow_invert' ) === 'Yes' ) { ?>
-			<a href="http://www.nkuttler.de/nksnow/">Wordpress balloons</a> <?php
-		} else { ?>
-			<a href="http://www.nkuttler.de/nksnow/">Wordpress snowstorm</a> <?php
+		if ( get_option( 'nksnow_invert' ) === 'Yes' ) {
+			printf( __( "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), 'http://www.nkuttler.de/wordpress/nksnow/', 'http://www.nkuttler.de/wordpress/nksnow/' );
+		} else {
+			printf( __( "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), 'http://www.nkuttler.de/wordpress/nksnow/', 'http://www.nkuttler.de/wordpress/nksnow/' );
 		} ?>
-		powered by
-		<a href="http://www.nkuttler.de/nksnow/">nksnow</a>
 		<br /> <?php
 	}
 }
 
-#  ALL
 function nksnow_dirArray() {
 	$picpath = ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/';
 	if ( $picdir = opendir( $picpath ) ) {
