@@ -94,185 +94,252 @@ function nksnow_options_page() {
 			<?php printf ( __( "If you have any problems using this plugin, please have a look at the <a href=\"%s\">FAQ</a>.", 'nksnow' ), 'http://wordpress.org/extend/plugins/nksnow/faq/' ); ?>
 		</p>
 	
-		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
+		<h2><?php _e( 'Settings', 'nksnow' ) ?></h2>
 		<form action="" method="post">
 			<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow' )  ?>
+			<table class="form-table" id="clearnone" >
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Show how many snowflakes (or other objects)?', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_snowflakes" > <?php
+							$select = get_option('nksnow_snowflakes'); 
+							for ($i = 20 ; $i >= 0; $i--) {
+								if ( $i == $select ) {
+									echo "<option selected>$i</option>\n";
+								}
+								else {
+									echo "<option>$i</option>\n";
+								}
+							} ?>
+						</select>
+					</td>
+				</tr>
 
-			<p>
-				<?php _e( 'Show how many snowflakes (or other objects)?', 'nksnow' ) ?>
-				<select name="nksnow_snowflakes" >
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Which of these flakes, drops, leaves and balloons do you want? ', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td> <?php
+						$dirArray = nksnow_dirArray();
+						$selected_array = get_option('nksnow_selected');
+
+						// 0.7.3 had some incompatible changes, check
+						if (!is_array($selected_array)) {
+							$selected_array = array('flake2.gif', 'flake3.gif');
+						}
+			
+						for ($i = 0 ; $i < count($dirArray); $i++) { ?>
+							<div style="float: left; border:1px solid #ddd;background:#ccf;text-align:center;margin:0 1px 0 0;"> <?php
+								if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
+									echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
+								}
+								else {
+									echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
+								}
+								echo '<br>';
+								echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />"; ?>
+							</div >
+							<?php
+						} ?> 
+
+						<div style="clear:both;">&nbsp;</div>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						&nbsp;<!-- yes -->
+					<td> 
+						<?php _e( 'By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.', 'nksnow' ) ?>
+					</td>
+				</tr>
+
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Use the balloon mode? This will make all images float upwards.', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_invert">
+							<option value="Yes" <?php
+								if (get_option('nksnow_invert') === 'Yes') {
+									echo "selected";
+								}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
+							<option <?php
+								if (get_option('nksnow_invert') !== 'Yes') {
+									echo "selected";
+								}?>><?php _e( 'No', 'nksnow' ) ?></option>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+			<p class="submit" >
+				<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 			</p>
-			<?php
-				$select = get_option('nksnow_snowflakes'); 
-				for ($i = 20 ; $i >= 0; $i--) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				}
-			?>
-			</select>
-	
-			<p>
-				<?php _e( 'Which of these flakes, drops, leaves and balloons do you want? ', 'nksnow' ) ?>
-			</p> <?php
-			$dirArray = nksnow_dirArray();
-			$selected_array = get_option('nksnow_selected');
-			// 0.7.3 had some incompatible changes, check
-			if (!is_array($selected_array)) {
-				$selected_array = array('flake2.gif', 'flake3.gif');
-			}
-			echo '<table style="border: 1px solid #ddd; margin: 1mm 0; " ><tr>';
-			for ($i = 0 ; $i < count($dirArray); $i++) {
-				echo '<td style="vertical-align: top; text-align: center; padding: 2px; ">';
-				if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
-					echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
-				}
-				else {
-					echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
-				}
-				echo '</td>';
-			}
-			echo '</tr><tr>';
-			for ($i = 0 ; $i < count($dirArray); $i++) {
-				echo '<td style="vertical-align: center; background: #aaf; text-align: center; padding: 2px; ">';
-				echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />";
-				echo '</td>';
-			}
-			echo '</tr>';
-			echo '</table>'; ?>
-			<p>
-				<?php _e( 'By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.', 'nksnow' ) ?>
-			</p>
-	
-			<p>
-				<?php _e( 'Use the balloon mode? This will make all images float upwards.', 'nksnow' ) ?>
-				<select name="nksnow_invert">
-					<option value="Yes" <?php
-						if (get_option('nksnow_invert') === 'Yes') {
-							echo "selected";
-						}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
-					<option <?php
-						if (get_option('nksnow_invert') !== 'Yes') {
-							echo "selected";
-						}?>><?php _e( 'No', 'nksnow' ) ?></option>
-				</select>
-			</p>
-	
-			<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
-	
-			<h4><?php _e( 'Custom images', 'nksnow' ) ?></h4>
-				
+
+			<h2><?php _e( 'Custom images', 'nksnow' ) ?></h2>
 			<p>
 				<?php _e( 'If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value.', 'nksnow' ) ?>
 				<br />
 				<?php _e( "Make sure the value is bigger than your highest image's height and broadest image's width.", 'nksnow' ) ?>
 			</p>
-	
-			<p>
-				<?php _e( 'Flakesize?', 'nksnow' ) ?>
-				<select name="nksnow_flakesize" > <?php
-				$select = get_option('nksnow_flakesize'); 
-				for ($i = 20 ; $i <= 500; $i = $i + 10) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				} ?>
-				</select>
+
+			<table class="form-table">
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Flakesize?', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_flakesize" > <?php
+						$select = get_option('nksnow_flakesize'); 
+						for ($i = 20 ; $i <= 500; $i = $i + 10) {
+							if ( $i == $select ) {
+								echo "<option selected>$i</option>\n";
+							}
+							else {
+								echo "<option>$i</option>\n";
+							}
+						} ?>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+			<p class="submit" >
+				<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 			</p>
-	
-			<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
-	
-			<h4><?php _e( 'Pro settings', 'nksnow' ) ?></h4>
-			<p>
-			<?php _e( 'Stop snow after how many seconds?', 'nksnow' ) ?>
-			<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
+
+			<h3><?php _e( 'Pro settings', 'nksnow' ) ?></h3>
+
+			<table class="form-table">
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Stop snow after how many seconds?', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<input type="text" name="nksnow_maxtime" value="<?php echo get_option('nksnow_maxtime'); ?>" size="3">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Overall speed (timeout in milliseconds between moves)? ', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_timeout" > <?php
+							$select = get_option('nksnow_timeout'); 
+							for ($i = 40 ; $i <= 500; $i = $i + 40) {
+								if ( $i == $select ) {
+									echo "<option selected>$i</option>\n";
+								}
+								else {
+									echo "<option>$i</option>\n";
+								}
+							} ?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Maximum Wind strength ', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_maxstepx" > <?php
+							$select = get_option('nksnow_maxstepx'); 
+							for ($i = 1 ; $i <= 20; $i++) {
+								if ( $i == $select ) {
+									echo "<option selected>$i</option>\n";
+								}
+								else {
+									echo "<option>$i</option>\n";
+								}
+							} ?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Maximum Falling speed', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_maxstepy" > <?php
+							$select = get_option('nksnow_maxstepy'); 
+							for ($i = 3 ; $i <= 20; $i++) {
+								if ( $i == $select ) {
+									echo "<option selected>$i</option>\n";
+								}
+								else {
+									echo "<option>$i</option>\n";
+								}
+							} ?>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Show snowflakes only on pages whose URI contains', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( "Show snowflakes only if the URI given above and the URI are equal (\$_SERVER['REQUEST_URI'] == URI string)?", 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+		   				<input type="checkbox" name="nksnow_precise" <?php
+							if (get_option('nksnow_precise') === 'on') {
+								echo "checked";
+							}?>>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						<label>
+							<?php _e( 'Hide the &quot;Powered by&quot; message in the footer?', 'nksnow' ) ?>
+						</label>
+					</th>
+					<td>
+						<select name="nksnow_homelink">
+							<option <?php
+								if (get_option('nksnow_homelink') === 'Yes') {
+									echo "selected";
+								}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
+							<option <?php
+								if (get_option('nksnow_homelink') !== 'Yes') {
+									echo "selected";
+								}?>><?php _e( 'No', 'nksnow' ) ?></option>
+						</select>
+					</td>
+				</tr>
+			</table>
+
+			<p class="submit" >
+				<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 			</p>
-	
-			<p>
-			<?php _e( 'Overall speed (timeout in milliseconds between moves)? ', 'nksnow' ) ?>
-			<select name="nksnow_timeout" > <?php
-				$select = get_option('nksnow_timeout'); 
-				for ($i = 40 ; $i <= 500; $i = $i + 40) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				} ?>
-			</select>
-			</p>
-	
-			<p>
-			<?php _e( 'Maximum Wind strength ', 'nksnow' ) ?>
-			<select name="nksnow_maxstepx" >
-			<?php
-				$select = get_option('nksnow_maxstepx'); 
-				for ($i = 1 ; $i <= 20; $i++) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				}
-			?>
-			</select>
-			</p>
-	
-			<p>
-			<?php _e( 'Maximum Falling speed', 'nksnow' ) ?>
-			<select name="nksnow_maxstepy" >
-			<?php
-				$select = get_option('nksnow_maxstepy'); 
-				for ($i = 3 ; $i <= 20; $i++) {
-					if ( $i == $select ) {
-						echo "<option selected>$i</option>\n";
-					}
-					else {
-						echo "<option>$i</option>\n";
-					}
-				}
-			?>
-			</select>
-			</p>
-	
-			<p>
-			<?php _e( 'Show snowflakes only on pages whose URI contains', 'nksnow' ) ?>
-			<input type="text" value="<?php echo get_option('nksnow_uri'); ?>" name="nksnow_uri" />
-			</p>
-	
-			<p>
-			<?php _e( "Show snowflakes only if the URI given above and the URI are equal (\$_SERVER['REQUEST_URI'] == URI string)?", 'nksnow' ) ?>
-			
-		   	<input type="checkbox" name="nksnow_precise" <?php
-				if (get_option('nksnow_precise') === 'on') {
-					echo "checked";
-				}?>>
-			</p>
-	
-			
-			<p>
-			<?php _e( 'Hide the &quot;Powered by&quot; message in the footer?', 'nksnow' ) ?>
-			<select name="nksnow_homelink">
-				<option <?php
-					if (get_option('nksnow_homelink') === 'Yes') {
-						echo "selected";
-					}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
-				<option <?php
-					if (get_option('nksnow_homelink') !== 'Yes') {
-						echo "selected";
-					}?>><?php _e( 'No', 'nksnow' ) ?></option>
-			</select>
-			</p>
-	
-			<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
+
 	
 		</form>
 	</div> <?php
