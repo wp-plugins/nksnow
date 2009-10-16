@@ -58,6 +58,8 @@ function nksnow_css_admin() { ?>
 
 /**
  * The options page
+ *
+ * @todo Makes this, erm, better. Or not. It was my first plugin.
  */
 function nksnow_options_page() {
 	if ( current_user_can( 'manage_options' ) ) { ?>
