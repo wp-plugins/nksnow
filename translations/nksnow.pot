@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Nicolas Kuttler
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/nksnow\n"
+"POT-Creation-Date: 2009-10-16 10:21+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: inc/admin.php:31 inc/admin.php:64
+msgid "Snow and more"
+msgstr ""
+
+#: inc/admin.php:66
+#, php-format
+msgid ""
+"If you have any problems using this plugin, please have a look at the <a "
+"href=\"%s\">FAQ</a>."
+msgstr ""
+
+#: inc/admin.php:69
+msgid "Settings"
+msgstr ""
+
+#: inc/admin.php:73
+msgid "Show how many snowflakes (or other objects)?"
+msgstr ""
+
+#: inc/admin.php:89
+msgid "Which of these flakes, drops, leaves and balloons do you want? "
+msgstr ""
+
+#: inc/admin.php:116
+msgid ""
+"By the way if you have nice snowflakes, drops, leaves etc. feel free to "
+"submit them to me if you made them yourself."
+msgstr ""
+
+#: inc/admin.php:119
+msgid "Use the balloon mode? This will make all images float upwards."
+msgstr ""
+
+#: inc/admin.php:124 inc/admin.php:231
+msgid "Yes"
+msgstr ""
+
+#: inc/admin.php:128 inc/admin.php:235
+msgid "No"
+msgstr ""
+
+#: inc/admin.php:132 inc/admin.php:158 inc/admin.php:239
+msgid "Save changes"
+msgstr ""
+
+#: inc/admin.php:134
+msgid "Custom images"
+msgstr ""
+
+#: inc/admin.php:137
+msgid ""
+"If you add your own images to the <tt>pics</tt> directory they will appear "
+"in the table above. To have them disappear properly when they are leaving "
+"the visible part of the browser window you may have to change the "
+"<tt>flakesize</tt> value."
+msgstr ""
+
+#: inc/admin.php:139
+msgid ""
+"Make sure the value is bigger than your highest image's height and broadest "
+"image's width."
+msgstr ""
+
+#: inc/admin.php:142
+msgid "Flakesize?"
+msgstr ""
+
+#: inc/admin.php:160
+msgid "Pro settings"
+msgstr ""
+
+#: inc/admin.php:161
+msgid "Stop snow after how many seconds?"
+msgstr ""
+
+#: inc/admin.php:165
+msgid "Overall speed (timeout in milliseconds between moves)? "
+msgstr ""
+
+#: inc/admin.php:181
+msgid "Maximum Wind strength "
+msgstr ""
+
+#: inc/admin.php:197
+msgid "Maximum Falling speed"
+msgstr ""
+
+#: inc/admin.php:213
+msgid "Show snowflakes only on pages whose URI contains"
+msgstr ""
+
+#: inc/admin.php:217
+msgid ""
+"Show snowflakes only if the URI given above and the URI are equal ($_SERVER"
+"['REQUEST_URI'] == URI string)?"
+msgstr ""
+
+#: inc/admin.php:226
+msgid "Hide the &quot;Powered by&quot; message in the footer?"
+msgstr ""
+
+#: inc/page.php:89
+#, php-format
+msgid ""
+"<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>"
+msgstr ""
+
+#: inc/page.php:91
+#, php-format
+msgid ""
+"<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>"
+msgstr ""
+
+#. Plugin Name of an extension
+msgid "Snow, balloons and more"
+msgstr ""
+
+#. Plugin URI of an extension
+msgid "http://www.nkuttler.de/wordpress/nksnow/"
+msgstr ""
+
+#. Description of an extension
+msgid ""
+"Snow falling down your wordpress blog. See the <a href=\"http://www.nkuttler."
+"de/nksnow/\">live demo</a>."
+msgstr ""
+
+#. Author of an extension
+msgid "Nicolas Kuttler"
+msgstr ""
+
+#. Author URI of an extension
+msgid "http://www.nkuttler.de/"
+msgstr ""
+
+#: inc/nkuttler.php:23
+msgid "Do you like this plugin?"
+msgstr ""
+
+#: inc/nkuttler.php:31
+#, php-format
+msgid "<a href=\"%s\">Vote</a> for it"
+msgstr ""
+
+#: inc/nkuttler.php:34
+#, php-format
+msgid "<a href=\"%s\">Visit</a> it's homepage"
+msgstr ""
+
+#: inc/nkuttler.php:37
+#, php-format
+msgid "<a href=\"%s\">Subscribe</a> the feed"
+msgstr ""
+
+#: inc/nkuttler.php:40
+msgid "About the author"
+msgstr ""
+
+#: inc/nkuttler.php:43
+#, php-format
+msgid "My <a href=\"%s\">blog</a>"
+msgstr ""
+
+#: inc/nkuttler.php:46
+#, php-format
+msgid "Subscribe via <a href=\"%s\">RSS</a> or <a href=\"%s\">email</a>"
+msgstr ""
+
+#: inc/nkuttler.php:50
+msgid "My other plugins"
+msgstr ""

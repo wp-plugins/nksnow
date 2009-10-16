@@ -5,7 +5,7 @@
  *
  * @todo use one potion... somewhen
  */
-function nksnow_install() {
+function nksnow_activate() {
 	if ( !get_option( 'nksnow_snowflakes' ) ) {
 	    update_option( 'nksnow_snowflakes', '10' );
 	    update_option( 'nksnow_timeout', '80' );
@@ -21,15 +21,40 @@ function nksnow_install() {
 }
 
 /**
- * Todo: uninstall hook
+ * : uninstall hook
  */
+function nksnow_uninstall() {
+    delete_option( 'nksnow_snowflakes' );
+    delete_option( 'nksnow_timeout' );
+    delete_option( 'nksnow_maxstepx' );
+    delete_option( 'nksnow_maxstepy' );
+    delete_option( 'nksnow_selected' );
+    delete_option( 'nksnow_maxtime' );
+    delete_option( 'nksnow_uri' );
+    delete_option( 'nksnow_precise' );
+    delete_option( 'nksnow_flakesize' );
+    delete_option( 'nksnow_invert' );
+}
 
 /**
  * Add option page
  */
 function nksnow_add_pages() {
-	add_options_page( __( 'Snow and more', 'nksnow' ), __( 'Snow and more', 'nksnow' ), 10, 'nksnow', 'nksnow_options_page' );
+	$page = add_options_page( __( 'Snow and more', 'nksnow' ), __( 'Snow and more', 'nksnow' ), 10, 'nksnow', 'nksnow_options_page' );
+	add_action( 'admin_head-' . $page, 'nksnow_css_admin' );
 }
+
+/**
+ * Load admin CSS style
+ *
+ * @since 0.9.0
+ *
+ * @todo check if this is correct
+ */
+function nksnow_css_admin() { ?>
+    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/inc/admin.css' ?>" type="text/css" media="all" /> <?php
+}
+
 
 /**
  * The options page
@@ -62,6 +87,7 @@ function nksnow_options_page() { ?>
 	} ?>
 
 	<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2>
+	<?php nkuttler_links( 'nksnow' ); ?>
 	<p>
 		<?php printf ( __( "If you have any problems using this plugin, please have a look at the <a href=\"%s\">FAQ</a>.", 'nksnow' ), 'http://wordpress.org/extend/plugins/nksnow/faq/' ); ?>
 	</p>
