@@ -52,3 +52,6 @@ blockquote {
 .success {
 	background-color:		#dfd;
 }
+#clearnone {
+	clear:					none;
+}
