@@ -93,7 +93,7 @@ function nksnow_options_page() {
 		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php 
 
 		require_once( 'nkuttler.php' );
-		nkuttler_links( 'nksnow' ); ?>
+		nkuttler0_2_1_links( 'nksnow' ); ?>
 	
 		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
