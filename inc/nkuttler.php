@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Information about the author 0.2.0
+ * Information about the author 0.2.1
  */
 
-if ( !function_exists( 'nkuttler_links' ) ) {
-	function nkuttler_links( $plugin ) {
+if ( !function_exists( 'nkuttler021_links' ) ) {
+	function nkuttler0_2_1_links( $plugin ) {
 	
 		$name			= 'Nicolas Kuttler';
 		$gravatar		= '7b75fc655756dd5c58f4df1f4083d2e2.jpg';
@@ -20,7 +20,7 @@ if ( !function_exists( 'nkuttler_links' ) ) {
 		$homeFeed		= 'http://www.nkuttler.de/feed/';
 		$commentsFeed	= $url_plugin . '/feed/'; ?>
 	
-		<div class="box info right" >
+		<div id="nkbox" >
 			<strong><?php _e( 'Do you like this plugin?', $plugin ) ?></strong>
 			<div class="gravatar" >
 				<a href="<?php echo $url_author ?>"><img src="http://www.gravatar.com/avatar/<?php echo $gravatar ?>?s=50" alt="<?php echo $author ?>" title="<?php echo $author ?>" /></a>
@@ -53,3 +53,11 @@ if ( !function_exists( 'nkuttler_links' ) ) {
 		</div> <?php
 	}
 }
+// just to be on the safe side
+if ( !function_exists( 'nkuttler_links' ) ) {
+	function nkuttler_links( $plugin ) {
+		nkuttler0_2_1_links( $plugin );
+	}
+}
+
+?>

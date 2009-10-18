@@ -52,7 +52,7 @@ function nksnow_add_pages() {
  * @todo check if this is correct
  */
 function nksnow_css_admin() { ?>
-    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/inc/admin.css' ?>" type="text/css" media="all" /> <?php
+    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/inc/admin.css?v=021' ?>" type="text/css" media="all" /> <?php
 }
 
 
@@ -63,7 +63,7 @@ function nksnow_css_admin() { ?>
  */
 function nksnow_options_page() {
 	if ( current_user_can( 'manage_options' ) ) { ?>
-		<div id="nkuttler" class="wrap" >  <?php
+		<div class="wrap" >  <?php
 			if ( $_POST['nksnow'] ) {
 				#function_exists( 'check_admin_referer' ) ? check_admin_referer( 'nksnow' ) : null;
 				$nonce = $_POST['_wpnonce'];
