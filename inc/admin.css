@@ -1,6 +1,9 @@
-/* version 0.2.1 */
+/* version 0.2.2 */
+p, li {
+	max-width:				100ex;
+}
 p {
-	max-width:				80ex;
+	text-align:				justify;
 }
 thead {
 	text-align:				center;
@@ -45,6 +48,9 @@ blockquote {
 	clear:					none;
 }
 
+.nkthemeswitch-admin {
+	text-align:				center;
+}
 a.nkthemeswitch {
 	line-height:		    28px;
 	padding:				4px 4px;
@@ -56,6 +62,7 @@ a.nkthemeswitch {
 	border-radius:	  		6px;
 	-moz-border-radius:     6px;
 	-webkit-border-radius:  6px;
+	white-space:			pre;
 }
 a.nkthemeswitch:hover {
 	background:				#eef;

@@ -42,6 +42,20 @@ function nksnow_uninstall() {
 function nksnow_add_pages() {
 	$page = add_options_page( __( 'Snow and more', 'nksnow' ), __( 'Snow and more', 'nksnow' ), 10, 'nksnow', 'nksnow_options_page' );
 	add_action( 'admin_head-' . $page, 'nksnow_css_admin' );
+
+	// Add icon
+	add_filter( 'ozh_adminmenu_icon_nksnow', 'nksnow_icon' );
+}
+
+/**
+ * Return admin menu icon
+ *
+ * @return string path to icon
+ *
+ * @since 0.9.1.1
+ */
+function nksnow_icon() {
+	return get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/pics/weather_snow.png';
 }
 
 /**
