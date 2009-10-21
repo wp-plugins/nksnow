@@ -6,6 +6,7 @@ Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
 Version: 0.9.1.1
+Text Domain: nksnow
 */
 
 /**
