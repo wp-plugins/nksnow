@@ -27,7 +27,7 @@ msgid ""
 "If you have any problems using this plugin, please have a look at the <a "
 "href=\"%s\">FAQ</a>."
 msgstr ""
-"Solltest Du Probleme mit diesem plugin haben, schau Dir bitte zunächst "
+"Sollten Sie Probleme mit diesem plugin haben, schau Sie bitte zunächst "
 "ein mal die <a href=\"%s\">FAQ</a> an."
 
 #: inc/admin.php:69
@@ -40,15 +40,15 @@ msgstr "Wie viele Schneeflocken (oder andere Objekte) sollen angezeigt werden?"
 
 #: inc/admin.php:89
 msgid "Which of these flakes, drops, leaves and balloons do you want? "
-msgstr "Welche dieser Flocken, Tropfen, Blätter und Ballons möchtest Du? "
+msgstr "Welche dieser Flocken, Tropfen, Blätter und Ballons möchten Sie? "
 
 #: inc/admin.php:116
 msgid ""
 "By the way if you have nice snowflakes, drops, leaves etc. feel free to "
 "submit them to me if you made them yourself."
 msgstr ""
-"Übrigens, wenn Du hübsche Schneeflocken, Tropfen, Blätter etc. hast dann "
-"schick sie mir bitte zu falls Du sie selbst erstellt hast."
+"Übrigens, wenn Sie hübsche Schneeflocken, Tropfen, Blätter etc. haben dann "
+"schicken Sie sie mir bitte zu falls Sie sie selbst erstellt hast."
 
 #: inc/admin.php:119
 msgid "Use the balloon mode? This will make all images float upwards."
@@ -77,9 +77,9 @@ msgid ""
 "the visible part of the browser window you may have to change the "
 "<tt>flakesize</tt> value."
 msgstr ""
-"Wenn Du deine eigenen Bilder in das <tt>pics</tt> Verzeichnis legst werden "
+"Wenn Sie Ihre eigenen Bilder in das <tt>pics</tt> Verzeichnis legst werden "
 "sie in der obigen Tabelle erscheinen. Damit sie am Rand des sichtbaren "
-"Bereichs ordentlich ausgeblendet werden musst du die <tt>Flockengröße</tt> "
+"Bereichs ordentlich ausgeblendet werden müssen Sie die <tt>Flockengröße</tt> "
 "Einstellung ändern."
 
 #: inc/admin.php:139
@@ -87,8 +87,8 @@ msgid ""
 "Make sure the value is bigger than your highest image's height and broadest "
 "image's width."
 msgstr ""
-"Stell sicher dass der Wert größer ist als die Höhe Deines höchsten und die "
-"Breite deines breitesten Bildes ist."
+"Stell sicher dass der Wert größer ist als die Höhe Ihres höchsten und die "
+"Breite Ihres breitesten Bildes ist."
 
 #: inc/admin.php:142
 msgid "Flakesize?"
@@ -156,7 +156,7 @@ msgid ""
 "Snow falling down your wordpress blog. See the <a href=\"http://www.nkuttler."
 "de/nksnow/\">live demo</a>."
 msgstr ""
-"Schnellrieseln für dein WordPress blog. Siehe "
+"Schnellrieseln für Ihr WordPress blog. Siehe "
 "<a href=\"http://www.nicolaskuttler.de/wordpress/nksnow\">Demoseite</a>"
 
 #. Author of an extension
@@ -169,22 +169,22 @@ msgstr "http://www.nicolaskuttler.de/"
 
 #: inc/nkuttler.php:23
 msgid "Do you like this plugin?"
-msgstr "Gefällt Dir dieses plugin?"
+msgstr "Gefällt Ihnen dieses plugin?"
 
 #: inc/nkuttler.php:31
 #, php-format
 msgid "<a href=\"%s\">Vote</a> for it"
-msgstr "<a href=\"%s\">Stimm</a> für es ab"
+msgstr "<a href=\"%s\">Stimmen</a> Sie für es ab"
 
 #: inc/nkuttler.php:34
 #, php-format
 msgid "<a href=\"%s\">Visit</a> it's homepage"
-msgstr "<a href=\"%s\">Besuch</a> seine Webseite"
+msgstr "<a href=\"%s\">Besuchen</a> Sie seine Webseite"
 
 #: inc/nkuttler.php:37
 #, php-format
 msgid "<a href=\"%s\">Subscribe</a> the feed"
-msgstr "<a href=\"%s\">Abonniere</a> den feed"
+msgstr "<a href=\"%s\">Abonnieren</a> Sie den feed"
 
 #: inc/nkuttler.php:40
 msgid "About the author"
@@ -199,7 +199,7 @@ msgstr "Mein <a href=\"%s\">Blog</a>"
 #, php-format
 msgid "Subscribe via <a href=\"%s\">RSS</a> or <a href=\"%s\">email</a>"
 msgstr ""
-"Abonniere den <a href=\"%s\">RSS feed</a> (als <a href=\"%s\">E-Mail</a>)"
+"Abonnieren Sie den <a href=\"%s\">RSS feed</a> (als <a href=\"%s\">E-Mail</a>)"
 
 #: inc/nkuttler.php:50
 msgid "My other plugins"
