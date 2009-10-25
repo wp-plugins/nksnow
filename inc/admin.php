@@ -55,7 +55,7 @@ function nksnow_add_pages() {
  * @since 0.9.1.1
  */
 function nksnow_icon() {
-	return get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/pics/weather_snow.png';
+	return get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/pic/weather_snow.png';
 }
 
 /**
@@ -66,7 +66,7 @@ function nksnow_icon() {
  * @todo check if this is correct
  */
 function nksnow_css_admin() { ?>
-    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/inc/admin.css?v=021' ?>" type="text/css" media="all" /> <?php
+    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/css/admin.css?v=021' ?>" type="text/css" media="all" /> <?php
 }
 
 
@@ -148,23 +148,25 @@ function nksnow_options_page() {
 						// 0.7.3 had some incompatible changes, check
 						if (!is_array($selected_array)) {
 							$selected_array = array('flake2.gif', 'flake3.gif');
-						}
-			
-						for ($i = 0 ; $i < count($dirArray); $i++) { ?>
-							<div style="float: left; border:1px solid #ddd;background:#ccf;text-align:center;margin:0 1px 0 0;"> <?php
-								if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
-									echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
-								}
-								else {
-									echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
-								}
-								echo '<br>';
-								echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" style=\"margin: 5px 2px;\" />"; ?>
-							</div >
-							<?php
-						} ?> 
+						} ?>
 
-						<div style="clear:both;">&nbsp;</div>
+						<div class="nksnow_select_wrap"> <?php
+			
+							for ($i = 0 ; $i < count($dirArray); $i++) { ?>
+								<div class="nksnow_select" > <?php
+									if ( is_integer(array_search($dirArray[$i], $selected_array)) ) {
+										echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" checked />";
+									}
+									else {
+										echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
+									}
+									echo '<br>';
+									echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" />"; ?>
+								</div >
+								<?php
+							} ?> 
+							<div style="clear:both;">&nbsp;</div>
+						</div>
 					</td>
 				</tr>
 
