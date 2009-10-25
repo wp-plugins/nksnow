@@ -66,7 +66,7 @@ function nksnow_icon() {
  * @todo check if this is correct
  */
 function nksnow_css_admin() { ?>
-    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/css/admin.css?v=021' ?>" type="text/css" media="all" /> <?php
+    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/css/admin.css?v=0.2.4' ?>" type="text/css" media="all" /> <?php
 }
 
 
