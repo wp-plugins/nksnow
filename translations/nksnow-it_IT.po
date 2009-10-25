@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Nicolas Kuttler
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Snow, balloons and more in italiano\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/nksnow\n"
+"POT-Creation-Date: 2009-10-16 10:21+0000\n"
+"PO-Revision-Date: 2009-10-25 18:33+0100\n"
+"Last-Translator: Gianni Diurno (aka gidibao) <gidibao@gmail.com>\n"
+"Language-Team: Gianni Diurno | http://gidibao.net/ <gidibao@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+
+#: inc/admin.php:31
+#: inc/admin.php:64
+msgid "Snow and more"
+msgstr "Neve ed altro..."
+
+#: inc/admin.php:66
+#, php-format
+msgid "If you have any problems using this plugin, please have a look at the <a href=\"%s\">FAQ</a>."
+msgstr "Visitare la pagina delle <a href=\"%s\">FAQ</a> in caso di problemi con l'utilizzo del plugin."
+
+#: inc/admin.php:69
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: inc/admin.php:73
+msgid "Show how many snowflakes (or other objects)?"
+msgstr "Quanti fiocchi di neve (od altro da mostrare)?"
+
+#: inc/admin.php:89
+msgid "Which of these flakes, drops, leaves and balloons do you want? "
+msgstr "Quale desideri tra i fiocchi, le gocce, le foglie ed i palloncini? "
+
+#: inc/admin.php:116
+msgid "By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself."
+msgstr "Contribuisci inviandomi le tue creazioni."
+
+#: inc/admin.php:119
+msgid "Use the balloon mode? This will make all images float upwards."
+msgstr "Utilizzi la modatilà palloncini? Le immagini fluttueranno verso l'alto."
+
+#: inc/admin.php:124
+#: inc/admin.php:231
+msgid "Yes"
+msgstr "Sì"
+
+#: inc/admin.php:128
+#: inc/admin.php:235
+msgid "No"
+msgstr "No"
+
+#: inc/admin.php:132
+#: inc/admin.php:158
+#: inc/admin.php:239
+msgid "Save changes"
+msgstr "Salva le modifiche"
+
+#: inc/admin.php:134
+msgid "Custom images"
+msgstr "Immagini personalizzate"
+
+#: inc/admin.php:137
+msgid "If you add your own images to the <tt>pics</tt> directory they will appear in the table above. To have them disappear properly when they are leaving the visible part of the browser window you may have to change the <tt>flakesize</tt> value."
+msgstr "Qualora avessi aggiunto nella cartella <tt>pics</tt> delle immagini di tua creazione, esse appariranno nella tabella qui sopra. Modifica il valore <tt>dimensione fiocco</tt> affinché l'immagine possa scomparire propriamente dalla finestra del browser."
+
+#: inc/admin.php:139
+msgid "Make sure the value is bigger than your highest image's height and broadest image's width."
+msgstr "Assicurati che il valore sia maggiore di quello della larghezza ed altezza della tua immagine più grande. "
+
+#: inc/admin.php:142
+msgid "Flakesize?"
+msgstr "Dimensione fiocco?"
+
+#: inc/admin.php:160
+msgid "Pro settings"
+msgstr "Impostazioni avanzate"
+
+#: inc/admin.php:161
+msgid "Stop snow after how many seconds?"
+msgstr "Quanti secondi deve durare la nevicata?"
+
+#: inc/admin.php:165
+msgid "Overall speed (timeout in milliseconds between moves)? "
+msgstr "Velocità generale (timeout in millisecondi)? "
+
+#: inc/admin.php:181
+msgid "Maximum Wind strength "
+msgstr "Forza massima del vento"
+
+#: inc/admin.php:197
+msgid "Maximum Falling speed"
+msgstr "Velocità massima di caduta"
+
+#: inc/admin.php:213
+msgid "Show snowflakes only on pages whose URI contains"
+msgstr "Mostra i fiocchi di neve nelle sole pagine in cui l'URI contenga"
+
+#: inc/admin.php:217
+msgid "Show snowflakes only if the URI given above and the URI are equal ($_SERVER['REQUEST_URI'] == URI string)?"
+msgstr "Mostra i fiocchi di neve solamente qualora l'URI fornito qui sopra e l'URI siano pari a ($_SERVER['REQUEST_URI'] == URI string)?"
+
+#: inc/admin.php:226
+msgid "Hide the &quot;Powered by&quot; message in the footer?"
+msgstr "Rimuovere dal footer il messaggio &quot;Powered by&quot;?"
+
+#: inc/page.php:89
+#, php-format
+msgid "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>"
+msgstr "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>"
+
+#: inc/page.php:91
+#, php-format
+msgid "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>"
+msgstr "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>"
+
+#. Plugin Name of an extension
+msgid "Snow, balloons and more"
+msgstr "Snow, balloons and more"
+
+#. Plugin URI of an extension
+msgid "http://www.nkuttler.de/wordpress/nksnow/"
+msgstr "http://www.nkuttler.de/wordpress/nksnow/"
+
+#. Description of an extension
+msgid "Snow falling down your wordpress blog. See the <a href=\"http://www.nkuttler.de/nksnow/\">live demo</a>."
+msgstr "Snow falling down your wordpress blog. See the <a href=\"http://www.nkuttler.de/nksnow/\">live demo</a>."
+
+#. Author of an extension
+msgid "Nicolas Kuttler"
+msgstr "Nicolas Kuttler"
+
+#. Author URI of an extension
+msgid "http://www.nkuttler.de/"
+msgstr "http://www.nkuttler.de/"
+
+#: inc/nkuttler.php:23
+msgid "Do you like this plugin?"
+msgstr "Ti piace questo plugin?"
+
+#: inc/nkuttler.php:31
+#, php-format
+msgid "<a href=\"%s\">Vote</a> for it"
+msgstr "<a href=\"%s\">votalo</a> su WordPress"
+
+#: inc/nkuttler.php:34
+#, php-format
+msgid "<a href=\"%s\">Visit</a> it's homepage"
+msgstr "<a href=\"%s\">visita</a> la sua homepage"
+
+#: inc/nkuttler.php:37
+#, php-format
+msgid "<a href=\"%s\">Subscribe</a> the feed"
+msgstr "<a href=\"%s\">abbonati</a> al feed RSS"
+
+#: inc/nkuttler.php:40
+msgid "About the author"
+msgstr "Info autore"
+
+#: inc/nkuttler.php:43
+#, php-format
+msgid "My <a href=\"%s\">blog</a>"
+msgstr "il mio <a href=\"%s\">blog</a>"
+
+#: inc/nkuttler.php:46
+#, php-format
+msgid "Subscribe via <a href=\"%s\">RSS</a> or <a href=\"%s\">email</a>"
+msgstr "abbonati al feed <a href=\"%s\">RSS</a> oppure via <a href=\"%s\">email</a>"
+
+#: inc/nkuttler.php:50
+msgid "My other plugins"
+msgstr "I miei plugin"
+
