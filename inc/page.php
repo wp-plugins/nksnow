@@ -118,28 +118,34 @@ function nksnow_homelink() {
 }
 
 /**
- * Messy function that returns all things in a hardcoded directory :)
- * This was my first plugin ever.
+ * Messy function that returns all files in a hardcoded directory
  *
- * @return array list of, errrr, things
+ * @param string $pattern pattern the filename has to match
+ *
+ * @return array list of files
  *
  * @todo fix this mess... somewhen
  */
-function nksnow_dirArray() {
+function nksnow_dirArray( $pattern = null ) {
 	$picpath = ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/';
 	if ( $picdir = opendir( $picpath ) ) {
 		while( $entryName = readdir( $picdir ) ) {
 
-			if ( $entryName == '.' || $entryName == '..' || $entryName == '.svn' ) {
+			if( $entryName == '.' || $entryName == '..' || $entryName == '.svn' )
 				continue;
-			}
+			elseif ( isset( $pattern ) )
+				if( !preg_match( "$pattern", $entryName ) )
+					continue;
+
 			$dirArray[] = $entryName;
 		}
 	}
-	sort( $dirArray );
 	closedir( $picdir );
 
-	return $dirArray;
+	if( isset( $dirArray ) ) {
+		sort( $dirArray );
+		return $dirArray;
+	}
 }
 
 ?>
