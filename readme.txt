@@ -5,8 +5,8 @@ Plugin URI: http://www.nkuttler.de/nksnow/
 Donate link: http://www.amazon.de/gp/registry/24F64AHKD51LY
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
-Tested up to: 2.9-rare
-Stable tag: 0.9.1
+Tested up to: 2.9
+Stable tag: 0.9.2
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
 
@@ -83,7 +83,7 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
 
 == Changelog ==
 = 0.9.2 =
- * Add many new pictures contributed by <a href="">Neko</a>. Thank you very much!
+ * Add many new pictures contributed by <a href="http://wagashi-net.de/blog/wagashimaniac/">Neko</a>. Thank you very much!
  * Update translations
  * Fix for admin CSS
  * Add icon by <a href="http://www.famfamfam.com">famfamfam</a> to the <a href="http://planetozh.com/blog/my-projects/wordpress-admin-menu-drop-down-css/">Admin Drop Down Menu</a>.
