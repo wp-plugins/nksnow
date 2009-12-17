@@ -74,11 +74,15 @@ a.nkthemeswitch:hover {
 }
 .nksnow_select {
 	border:					1px solid #ccc;
-	background:				#ccf;
+	background:				#222;
 	float:					left;
 	text-align:				center;
 	padding:				0 4px 8px 4px;
 	margin:					0 2px 2px 0;
+	min-height:				70px;
+}
+.nksnow_select:hover {
+	background:				#ddd;
 }
 
 #zcmail * {
