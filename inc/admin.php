@@ -142,9 +142,9 @@ function nksnow_options_page() {
 						</label>
 					</th>
 					<td> <?php
-						nksnow_listpics( 'GIF', '/\.gif$/' );
-						nksnow_listpics( 'PNG', '/\.png$/' );
-						nksnow_listpics( 'Rest', '/!(\.(gif|png)$)/' ); ?>
+						nksnow_listpics( '<b>GIF</b>', '/\.gif$/' );
+						nksnow_listpics( '<b>PNG</b> Don\'t use them if you care about <a href="http://www.stoplivinginthepast.com/" target="_blank" >IE6</a> support.', '/\.png$/' );
+						nksnow_listpics( '<b>Rest</b>', '/!(\.(gif|png)$)/' ); ?>
 					</td>
 				</tr>
 
@@ -357,7 +357,7 @@ function nksnow_listpics( $header, $pattern = null ) {
 		$selected_array = array('flake2.gif', 'flake3.gif');
 	} ?>
 
-	<b><?php echo $header ?></b>
+	<?php echo $header ?>
 
 	<div class="nksnow_select_wrap"> <?php
 

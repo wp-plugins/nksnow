@@ -74,7 +74,7 @@ a.nkthemeswitch:hover {
 }
 .nksnow_select {
 	border:					1px solid #ccc;
-	background:				#222;
+	background:				url( ../pic/gradient2.png ) repeat-x top #ccf;
 	float:					left;
 	text-align:				center;
 	padding:				0 4px 8px 4px;
@@ -82,7 +82,7 @@ a.nkthemeswitch:hover {
 	min-height:				70px;
 }
 .nksnow_select:hover {
-	background:				#ddd;
+	background:				url( ../pic/gradient.png ) repeat-x top #ccf;
 }
 
 #zcmail * {
