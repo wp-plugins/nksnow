@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Snow, balloons and more 0.9.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/nksnow\n"
-"POT-Creation-Date: 2009-10-16 10:21+0000\n"
+"POT-Creation-Date: 2010-01-09 13:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,56 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: inc/admin.php:31 inc/admin.php:64
+#: inc/admin.php:43 inc/admin.php:108
 msgid "Snow and more"
 msgstr ""
 
-#: inc/admin.php:66
-#, php-format
-msgid ""
-"If you have any problems using this plugin, please have a look at the <a "
-"href=\"%s\">FAQ</a>."
-msgstr ""
-
-#: inc/admin.php:69
+#: inc/admin.php:113
 msgid "Settings"
 msgstr ""
 
-#: inc/admin.php:73
+#: inc/admin.php:121
 msgid "Show how many snowflakes (or other objects)?"
 msgstr ""
 
-#: inc/admin.php:89
+#: inc/admin.php:142
 msgid "Which of these flakes, drops, leaves and balloons do you want? "
 msgstr ""
 
-#: inc/admin.php:116
+#: inc/admin.php:156
 msgid ""
 "By the way if you have nice snowflakes, drops, leaves etc. feel free to "
 "submit them to me if you made them yourself."
 msgstr ""
 
-#: inc/admin.php:119
+#: inc/admin.php:163
 msgid "Use the balloon mode? This will make all images float upwards."
 msgstr ""
 
-#: inc/admin.php:124 inc/admin.php:231
+#: inc/admin.php:171 inc/admin.php:326
 msgid "Yes"
 msgstr ""
 
-#: inc/admin.php:128 inc/admin.php:235
+#: inc/admin.php:175 inc/admin.php:330
 msgid "No"
 msgstr ""
 
-#: inc/admin.php:132 inc/admin.php:158 inc/admin.php:239
+#: inc/admin.php:182 inc/admin.php:216 inc/admin.php:337
 msgid "Save changes"
 msgstr ""
 
-#: inc/admin.php:134
+#: inc/admin.php:185
 msgid "Custom images"
 msgstr ""
 
-#: inc/admin.php:137
+#: inc/admin.php:187
 msgid ""
 "If you add your own images to the <tt>pics</tt> directory they will appear "
 "in the table above. To have them disappear properly when they are leaving "
@@ -73,57 +66,103 @@ msgid ""
 "<tt>flakesize</tt> value."
 msgstr ""
 
-#: inc/admin.php:139
+#: inc/admin.php:189
 msgid ""
 "Make sure the value is bigger than your highest image's height and broadest "
 "image's width."
 msgstr ""
 
-#: inc/admin.php:142
+#: inc/admin.php:196
 msgid "Flakesize?"
 msgstr ""
 
-#: inc/admin.php:160
+#: inc/admin.php:219
 msgid "Pro settings"
 msgstr ""
 
-#: inc/admin.php:161
+#: inc/admin.php:225
 msgid "Stop snow after how many seconds?"
 msgstr ""
 
-#: inc/admin.php:165
+#: inc/admin.php:235
 msgid "Overall speed (timeout in milliseconds between moves)? "
 msgstr ""
 
-#: inc/admin.php:181
+#: inc/admin.php:255
 msgid "Maximum Wind strength "
 msgstr ""
 
-#: inc/admin.php:197
+#: inc/admin.php:275
 msgid "Maximum Falling speed"
 msgstr ""
 
-#: inc/admin.php:213
+#: inc/admin.php:295
 msgid "Show snowflakes only on pages whose URI contains"
 msgstr ""
 
-#: inc/admin.php:217
+#: inc/admin.php:305
 msgid ""
 "Show snowflakes only if the URI given above and the URI are equal ($_SERVER"
 "['REQUEST_URI'] == URI string)?"
 msgstr ""
 
-#: inc/admin.php:226
+#: inc/admin.php:318
 msgid "Hide the &quot;Powered by&quot; message in the footer?"
 msgstr ""
 
-#: inc/page.php:89
+#: inc/nkuttler.php:25
+msgid "Do you like this plugin?"
+msgstr ""
+
+#: inc/nkuttler.php:33
+#, php-format
+msgid "<a href=\"%s\">Rate</a> it"
+msgstr ""
+
+#: inc/nkuttler.php:36
+#, php-format
+msgid "<a href=\"%s\">Visit</a> it's homepage"
+msgstr ""
+
+#: inc/nkuttler.php:39
+#, php-format
+msgid "<a href=\"%s\">Subscribe</a> the feed"
+msgstr ""
+
+#: inc/nkuttler.php:42
+#, php-format
+msgid "<a href=\"%s\">Donate</a>!"
+msgstr ""
+
+#: inc/nkuttler.php:45
+msgid "About the author"
+msgstr ""
+
+#: inc/nkuttler.php:48
+#, php-format
+msgid "My <a href=\"%s\">blog</a>"
+msgstr ""
+
+#: inc/nkuttler.php:51
+#, php-format
+msgid "Subscribe via <a href=\"%s\">RSS</a> or <a href=\"%s\">email</a>"
+msgstr ""
+
+#: inc/nkuttler.php:55
+msgid "My other plugins"
+msgstr ""
+
+#: inc/nkuttler.php:56
+msgid "<a href=\"http://www.nkuttler.de\">Translated by Nicolas</a>"
+msgstr ""
+
+#: inc/page.php:113
 #, php-format
 msgid ""
 "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>"
 msgstr ""
 
-#: inc/page.php:91
+#: inc/page.php:115
 #, php-format
 msgid ""
 "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>"
@@ -149,41 +188,4 @@ msgstr ""
 
 #. Author URI of an extension
 msgid "http://www.nkuttler.de/"
-msgstr ""
-
-#: inc/nkuttler.php:23
-msgid "Do you like this plugin?"
-msgstr ""
-
-#: inc/nkuttler.php:31
-#, php-format
-msgid "<a href=\"%s\">Vote</a> for it"
-msgstr ""
-
-#: inc/nkuttler.php:34
-#, php-format
-msgid "<a href=\"%s\">Visit</a> it's homepage"
-msgstr ""
-
-#: inc/nkuttler.php:37
-#, php-format
-msgid "<a href=\"%s\">Subscribe</a> the feed"
-msgstr ""
-
-#: inc/nkuttler.php:40
-msgid "About the author"
-msgstr ""
-
-#: inc/nkuttler.php:43
-#, php-format
-msgid "My <a href=\"%s\">blog</a>"
-msgstr ""
-
-#: inc/nkuttler.php:46
-#, php-format
-msgid "Subscribe via <a href=\"%s\">RSS</a> or <a href=\"%s\">email</a>"
-msgstr ""
-
-#: inc/nkuttler.php:50
-msgid "My other plugins"
 msgstr ""
