@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Information about the author 0.2.1
+ * Information about the author 0.2.2
  */
 
-if ( !function_exists( 'nkuttler021_links' ) ) {
-	function nkuttler0_2_1_links( $plugin ) {
+if ( !function_exists( 'nkuttler022_links' ) ) {
+	function nkuttler0_2_2_links( $plugin ) {
 	
 		$name			= 'Nicolas Kuttler';
 		$gravatar		= '7b75fc655756dd5c58f4df1f4083d2e2.jpg';
@@ -18,6 +18,7 @@ if ( !function_exists( 'nkuttler021_links' ) ) {
 	
 		$vote			= 'http://wordpress.org/extend/plugins/' . $plugin;
 		$homeFeed		= 'http://www.nkuttler.de/feed/';
+		$donate			= 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11041772';
 		$commentsFeed	= $url_plugin . '/feed/'; ?>
 	
 		<div id="nkbox" >
@@ -29,13 +30,16 @@ if ( !function_exists( 'nkuttler021_links' ) ) {
 			</div>
 			<ul >
 				<li>
-					<?php printf( __( "<a href=\"%s\">Vote</a> for it", $plugin ), $vote ) ?> <br />
+					<?php printf( __( "<a href=\"%s\">Rate</a> it", $plugin ), $vote ) ?> <br />
 				</li>
 				<li>
 					<?php printf( __( "<a href=\"%s\">Visit</a> it's homepage", $plugin ), $url_plugin ) ?> <br />
 				</li>
 				<li>
 					<?php printf( __( "<a href=\"%s\">Subscribe</a> the feed", $plugin ), $commentsFeed ) ?> <br />
+				</li>
+				<li>
+					<?php printf( __( "<a href=\"%s\">Donate</a>!", $plugin ), $donate ) ?> <br />
 				</li>
 			</ul>
 			<strong><?php _e( 'About the author', $plugin ) ?></strong> <br />
@@ -49,6 +53,7 @@ if ( !function_exists( 'nkuttler021_links' ) ) {
 			</ul>
 			<div >
 				<a href="<?php echo $profile ?>"><?php _e( 'My other plugins', $plugin ) ?></a><br />
+				<?php _e( '<a href="http://www.nkuttler.de">Translated by Nicolas</a>', $plugin ) ?><br />
 			</div>
 		</div> <?php
 	}
