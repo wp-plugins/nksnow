@@ -55,7 +55,8 @@ function nksnow_add_pages() {
  * @since 0.9.1.1
  */
 function nksnow_icon() {
-	return get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/pic/weather_snow.png';
+	global $nksnow;
+	return $nksnow['url'] . 'pic/weather_snow.png';
 }
 
 /**
@@ -63,10 +64,10 @@ function nksnow_icon() {
  *
  * @since 0.9.0
  *
- * @todo check if this is correct
  */
-function nksnow_css_admin() { ?>
-    <link rel="stylesheet" href="<?php echo get_bloginfo( 'home' ) . '/' . PLUGINDIR . '/nksnow/css/admin.css?v=0.2.4' ?>" type="text/css" media="all" /> <?php
+function nksnow_css_admin() {
+	global $nksnow; ?>
+    <link rel="stylesheet" href="<?php echo $nksnow['url'] . 'css/admin.css?v=0.2.4' ?>" type="text/css" media="all" /> <?php
 }
 
 
@@ -107,7 +108,7 @@ function nksnow_options_page() {
 		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php 
 
 		require_once( 'nkuttler.php' );
-		nkuttler0_2_1_links( 'nksnow' ); ?>
+		nkuttler0_2_2_links( 'nksnow' ); ?>
 	
 		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
@@ -347,6 +348,7 @@ function nksnow_options_page() {
  * @since 0.9.2
  */
 function nksnow_listpics( $header, $pattern = null ) {
+	global $nksnow;
 	$dirArray = nksnow_dirArray( $pattern );
 	if ( !isset( $dirArray ) )
 		return;
@@ -370,7 +372,7 @@ function nksnow_listpics( $header, $pattern = null ) {
 					echo "<input type=\"checkbox\" name=\"nksnow_selected[]\" value=\"$dirArray[$i]\" />";
 				}
 				echo '<br>';
-				echo '<img src="' . get_bloginfo('wpurl') .'/' . PLUGINDIR . "/nksnow/pics/" . $dirArray[$i] . "\" />"; ?>
+				echo '<img src="' . $nksnow['url'] . "pics/" . $dirArray[$i] . "\" />"; ?>
 			</div >
 			<?php
 		} ?> 

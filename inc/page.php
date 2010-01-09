@@ -70,7 +70,7 @@ nks.invert = <?php
 	}
 ?>;
 </script>
-<script src="<?php echo get_bloginfo( 'wpurl' ) . '/' . PLUGINDIR . '/nksnow/snow.js'; ?>" type="text/javascript"></script>
+<script src="<?php global $nksnow; echo $nksnow['url'] . '/snow.js'; ?>" type="text/javascript"></script>
 <!-- /nksnow -->
 <?php
 }
@@ -83,6 +83,7 @@ function nksnow_footer() {
 	$selected_array = get_option('nksnow_selected');
 	$dirArray = nksnow_dirArray();
 	$arraymax = count($selected_array) - 1;
+	global $nksnow;
 
 	// 0.7.3 had some incompatible changes, check
 	if (!is_array($selected_array)) {
@@ -92,13 +93,13 @@ function nksnow_footer() {
 	// Check if selected images really exists, revert to defaults if not
 	// Smoothen 0.5.4 -> 0.6.0 transition
 	foreach($selected_array as $selected) {
-		if (!file_exists( ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/' . $selected )) {
-    		$selected_array = array('flake2.gif', 'flake3.gif');
+		if ( !file_exists( $nksnow['path'] . '/pics/' . $selected ) ) {
+    		$selected_array = array( 'flake2.gif', 'flake3.gif' );
 		}
 	}
 
-	for ($i = 0; $i < $snowflakes; $i++) {
-		echo "\n<img id=\"nksnow$i\" src=\"" . get_bloginfo('wpurl') . '/' . PLUGINDIR . '/nksnow/pics/' . $selected_array[rand(0, $arraymax)] . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" alt=\"snowflake\" />";
+	for ( $i = 0; $i < $snowflakes; $i++ ) {
+		echo "\n<img id=\"nksnow$i\" src=\"" . $nksnow['url'] . '/pics/' . $selected_array[rand(0, $arraymax)] . "\" style=\"position: fixed; top: -100px; border: 0; z-index:1000;\" class=\"nksnow\" alt=\"snowflake\" />";
 	}
 }
 
@@ -127,7 +128,8 @@ function nksnow_homelink() {
  * @todo fix this mess... somewhen
  */
 function nksnow_dirArray( $pattern = null ) {
-	$picpath = ABSPATH . '/' . PLUGINDIR . '/nksnow/pics/';
+	global $nksnow;
+	$picpath = $nksnow['path'] . '/pics/';
 	if ( $picdir = opendir( $picpath ) ) {
 		while( $entryName = readdir( $picdir ) ) {
 

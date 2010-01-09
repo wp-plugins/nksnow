@@ -13,6 +13,12 @@ Text Domain: nksnow
  * Check who we are and load stuff
  */
 function nksnow_load() {
+	global $nksnow;
+	$nksnow = array(
+		'path' => WP_PLUGIN_DIR . '/' . str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) ),
+		'url' => WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) ),
+	);
+
 	// TODO split translations?
 	add_action( 'init', 'nksnow_load_translation_file' );
 
@@ -31,8 +37,9 @@ function nksnow_load() {
  * @todo maybe split the two sentences for the frontend into a different file?
  */
 function nksnow_load_translation_file() {
-	$plugin_path = plugin_basename( dirname( __FILE__ ) .'/translations' );
-	load_plugin_textdomain( 'nksnow', '', $plugin_path );
+	global $nksnow;
+	$translation_path = basename ( $nksnow['path'] ) . '/translations';
+	load_plugin_textdomain( 'nksnow', '', $translation_path );
 }
 
 nksnow_load();
