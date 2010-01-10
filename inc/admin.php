@@ -320,11 +320,11 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_homelink">
-							<option <?php
+							<option value="Yes" <?php
 								if (get_option('nksnow_homelink') === 'Yes') {
 									echo "selected";
 								}?>><?php _e( 'Yes', 'nksnow' ) ?></option>
-							<option <?php
+							<option value="No" <?php
 								if (get_option('nksnow_homelink') !== 'Yes') {
 									echo "selected";
 								}?>><?php _e( 'No', 'nksnow' ) ?></option>

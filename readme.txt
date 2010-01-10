@@ -6,7 +6,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
 Tested up to: 2.9
-Stable tag: 0.9.2
+Stable tag: 0.10.0
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
 
@@ -82,6 +82,8 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.10.0 =
+ * Fix for when WordPress is installed into a subdirectory. Thanks <a href="http://ten-fingers-and-a-brain.com">Martin</a>!
 = 0.9.2 =
  * Add many new pictures contributed by <a href="http://wagashi-net.de/blog/wagashimaniac/">Neko</a>. Thank you very much!
  * Update translations
