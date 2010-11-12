@@ -108,11 +108,12 @@ function nksnow_footer() {
  * Who wouldn't want to rank for those keywords?
  */
 function nksnow_homelink() {
+	$url = 'http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/';
 	if ( !( get_option('nksnow_homelink' ) === 'Yes' ) ) {
 		if ( get_option( 'nksnow_invert' ) === 'Yes' ) {
-			printf( __( "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), 'http://www.nkuttler.de/wordpress/nksnow/', 'http://www.nkuttler.de/wordpress/nksnow/' );
+			printf( __( "<a href=\"%s\">Wordpress balloons</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), $url, $url );
 		} else {
-			printf( __( "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), 'http://www.nkuttler.de/wordpress/nksnow/', 'http://www.nkuttler.de/wordpress/nksnow/' );
+			printf( __( "<a href=\"%s\">Wordpress snowstorm</a> powered by <a href=\"%s\">nksnow</a>", 'nksnow' ), $url, $url );
 		} ?>
 		<br /> <?php
 	}

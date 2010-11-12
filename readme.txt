@@ -1,68 +1,50 @@
 === Snow, balloons and more ===
 Contributors: nkuttler
 Author URI: http://www.nkuttler.de/
-Plugin URI: http://www.nkuttler.de/nksnow/
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=11041772
+Plugin URI: http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/
+Donate link: http://www.nkuttler.de/wordpress/donations/
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
-Tested up to: 2.9
-Stable tag: 0.10.0
+Tested up to: 3.0
+Stable tag: 0.10.0.1
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
 
 == Description ==
 
-<p>
-Snowflakes (and more) falling down your blog! There are snowflakes, leaves, drops - and balloons that can float upwards. You can simply add more images in the <tt>pics</tt> folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
-</p>
-<p>
+Snowflakes (and more) falling down your blog! There are snowflakes, leaves, drops - and balloons that can float upwards. You can simply add more images in the pics folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
+
 You can configure the number of snowflakes and limit the plugin to specific posts or pages.
 If you enter something into the URI field you will only see snow if the URI of your page matches the string.
 No fancy regexps.
-I added this feature so that I could put a <a href="http://www.nkuttler.de/nksnow/">live demo</a> on my blog.
-</p>
-<p>
-If you like this you might like my <a href="http://www.nkuttler.de/nkfireworks/">WordPress fireworks plugin</a> as well.
-</p>
+I added this feature so that I could put a [live demo](http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/) on my blog.
 
-<h3>My plugins</h3>
-<p>
-<a href="http://www.nkuttler.de/wordpress/nktagcloud/">Better tag cloud</a>:
-I was pretty unhappy with the default WordPress tag cloud widget. This one is more powerful and offers a list HTML markup that is consistent with most other widgets.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/nkthemeswitch/">Theme switch</a>:
-I like to tweak my main theme that I use on a variety of blogs. If you have ever done this you know how annoying it can be to break things for visitors of your blog. This plugin allows you to use a different theme than the one used for your visitors when you are logged in.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/zero-conf-mail/">Zero Conf Mail</a>:
-Simple mail contact form, the way I like it. No ajax, no bloat. No configuration necessary, but possible.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/nkmovecomments/">Move WordPress comments</a>:
-This plugin adds a small form to every comment on your blog. The form is only added for admins and allows you to <a href="http://www.nkuttler.de/nkmovecomments/">move comments</a> to a different post/page and to fix comment threading.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/delete-pending-comments">Delete Pending Comments</a>:
-This is a plugin that lets you delete all pending comments at once. Useful for spam victims.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/nksnow/">Snow and more</a>:
-This one lets you see snowflakes, leaves, raindrops, balloons or custom images fall down or float upwards on your blog.
-<br/>
-<a href="http://www.nkuttler.de/wordpress/nkfireworks/">Fireworks</a>:
-The name says it all, see fireworks on your blog!
-<br/>
-<a href="http://www.rhymebox.de/blog/rhymebox-widget/">Rhyming widget</a>:
-I wrote a little online <a href="http://www.rhymebox.com/">rhyming dictionary</a>. This is a widget to search it directly from one of your sidebars.
-</p>
+If you like this you might like my [WordPress fireworks plugin](http://www.nkuttler.de/wordpress-plugin/wordpress-fireworks-plugin/) as well.
+
+= Other plugins I wrote =
+
+ * [Better Lorem Ipsum Generator](http://www.nkuttler.de/wordpress-plugin/wordpress-lorem-ipsum-generator-plugin/)
+ * [Better Related Posts](http://www.nkuttler.de/wordpress-plugin/wordpress-related-posts-plugin/)
+ * [Custom Avatars For Comments](http://www.nkuttler.de/wordpress-plugin/custom-avatars-for-comments/)
+ * [Better Tag Cloud](http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/)
+ * [Theme Switch](http://www.nkuttler.de/wordpress-plugin/theme-switch-and-preview-plugin/)
+ * [MU fast backend switch](http://www.nkuttler.de/wordpress-plugin/wpmu-switch-backend/)
+ * [Visitor Movies for WordPress](http://www.nkuttler.de/wordpress-plugin/record-movies-of-visitors/)
+ * [Zero Conf Mail](http://www.nkuttler.de/wordpress-plugin/zero-conf-mail/)
+ * [Move WordPress Comments](http://www.nkuttler.de/wordpress-plugin/move-wordpress-comments/)
+ * [Delete Pending Comments](http://www.nkuttler.de/wordpress-plugin/delete-pending-comments/)
+ * [Snow and more](http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/)
 
 == Installation ==
-<ol>
-<li>Unzip nksnow.zip</li>
-<li>Upload nksnow to your `/wp-content/plugins/` directory</li>
-<li>Activate the plugin through the 'Plugins' menu in WordPress</li>
-<li>Configure as you like. See <tt>Settings</tt>, then <tt>Snow and more</tt>.</li>
-<li>Enjoy! Read the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> if there's no snow.</li>
-</ol>
+
+ * Unzip nksnow.zip
+ * Upload nksnow to your `/wp-content/plugins/` directory
+ * Activate the plugin through the 'Plugins' menu in WordPress
+ * Configure as you like. See Settings -> Snow and more
+ * Enjoy! Please read the [FAQ](http://wordpress.org/extend/plugins/nksnow/faq/) if there's no snow.
 
 == Screenshots ==
-1. It's snowing! Watch the <a href="http://www.nkuttler.de/nksnow/">live demo</a> at my blog.
+1. It's snowing! Watch the [live demo](http://www.nkuttler.de/nksnow/) at my blog.
 2. Settings page.
 
 == Frequently Asked Questions ==
@@ -70,7 +52,7 @@ Q: How do I make the effect only active on the start page?<br />
 A: Set the URI filter to / and check the precise match box. This assumes that WordPress is installed in the webserver's root directory.<br />
 
 Q: I see no snow.<br />
-A: Please make sure that your template uses the wp_footer() and wp_head() template tags. They should be in your header.php and footer.php, see <a href="http://codex.wordpress.org/Theme_Development">the theme development page</a>.<br />
+A: Please make sure that your template uses the wp_footer() and wp_head() template tags. They should be in your header.php and footer.php, see the [theme development page](http://codex.wordpress.org/Theme_Development).
 
 Q: I still see no snow.<br />
 A: Please send me a link to your blog. It's quite possible that some doctype combinations or browsers will not work. If somebody complains I might try to fix it.<br />
@@ -82,13 +64,15 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.10.0.1 ( 2010-11-12 ) =
+ * Documentation updates
 = 0.10.0 =
- * Fix for when WordPress is installed into a subdirectory. Thanks <a href="http://ten-fingers-and-a-brain.com">Martin</a>!
+ * Fix for when WordPress is installed into a subdirectory. Thanks [Martin](http://ten-fingers-and-a-brain.com)!
 = 0.9.2 =
- * Add many new pictures contributed by <a href="http://wagashi-net.de/blog/wagashimaniac/">Neko</a>. Thank you very much!
+ * Add many new pictures contributed by [Neko](http://wagashi-net.de/blog/wagashimaniac/). Thank you very much!
  * Update translations
  * Fix for admin CSS
- * Add icon by <a href="http://www.famfamfam.com">famfamfam</a> to the <a href="http://planetozh.com/blog/my-projects/wordpress-admin-menu-drop-down-css/">Admin Drop Down Menu</a>.
+ * Add icon by [famfamfam](http://www.famfamfam.com) to the [Admin Drop Down Menu](http://planetozh.com/blog/my-projects/wordpress-admin-menu-drop-down-css/).
 = 0.9.1 =
  * Bugfix, allow a number of 0 flakes.
 = 0.9.0 =
@@ -101,67 +85,67 @@ A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowfl
  * Fix bad upgrade bug that deletes plugin settings
 = 0.8.0 =
  * New mode for ballons: the images can float upwards now.
- * Added new images: balloons. Thanks to <a href="http://desperatelyseekingwp.com">Desperately Seeking WordPress</a> for the images and the idea.
+ * Added new images: balloons. Thanks to [Desperately Seeking WordPress](http://desperatelyseekingwp.com) for the images and the idea.
  * This changelog was changed to the new format.
 = 0.7.6 =
- * Small update + fix.<br />
+ * Small update + fix.
 = 0.7.5 =
- * And another fix related to the 0.7.3 release. Thanks to <a href="http://www.ecchi-sama.fr/">Rodin Pandarex</a>.<br />
+ * And another fix related to the 0.7.3 release. Thanks to [Rodin Pandarex](http://www.ecchi-sama.fr/).
 = 0.7.4 =
- * Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that. Thanks to <a href="http://dponline.org/weblog">Dona</a> for reporting.<br />
+ * Bugfix when no snowflakes are selected. Looks like your settings are lost with this upgrade, sorry about that. Thanks to [Dona](http://dponline.org/weblog) for reporting.
 = 0.7.3 =
- * Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to <a href="http://mintys.lt/">Gudas</a>.<br />
+ * Doc updates, remove unnecessary split(), implode() etc. Add class to images to generate valid markup, thanks to [Gudas](http://mintys.lt/).
 = 0.7.2 =
- * Undo last 'update'.<br />
+ * Undo last 'update'.
 = 0.7.1 =
- * Let IE5 ignore this script.<br />
+ * Let IE5 ignore this script.
 = 0.7.0 =
- * JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. Window.onload bugfix. End position of pictures depends on flake size, smaller updates.<br />
+ * JavaScript rewrite, encapsulate data in an object. Should increase the plugin's compatibility. Add hack for IE6's lack of position: fixed handling. Window.onload bugfix. End position of pictures depends on flake size, smaller updates.
 = 0.6.1 =
- * More pics, fix typos, update layout, fix bug where selecting no image results in an error.<br />
+ * More pics, fix typos, update layout, fix bug where selecting no image results in an error.
 = 0.6.0 =
- * Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by <a href="http://kauaikris.com/">Kristin</a> first.<br />
+ * Add pics directory. Simply throw more images in there and have them appear on the settings page. This was requested by [Kristin](http://kauaikris.com/) first.
 = 0.5.4 =
- * Link to the <a href="http://wordpress.org/extend/plugins/nksnow/faq/">FAQ</a> on the config page.<br />
+ * Link to the [FAQ](http://wordpress.org/extend/plugins/nksnow/faq/) on the config page.
 = 0.5.3 =
- * Fix wrong get_bloginfo('url') usage<br />
+ * Fix wrong get_bloginfo('url') usage
 = 0.5.2 =
- * Add precise URI match suggested by Rob<br />
+ * Add precise URI match suggested by Rob
 = 0.5.1 =
- * Bugfix, thanks to <a href="http://www.ps3attitude.com/">DolphGB</a>.<br />
+ * Bugfix, thanks to [DolphGB](http://www.ps3attitude.com/).
 = 0.5.0 =
- * Stop snowing after a certain time.<br />
+ * Stop snowing after a certain time.
 = 0.4.5 =
- * Checked compatibility with older wordpress versions.<br />
+ * Checked compatibility with older wordpress versions.
 = 0.4.4 =
- * Really include the smaller leaves, thanks to <a href="http://drkblog.com/">Dr K</a> for pointing that out. Update config screenshot.<br />
+ * Really include the smaller leaves, thanks to [Dr K](http://drkblog.com/) for pointing that out. Update config screenshot.
 = 0.4.3 =
- * Bugfix<br />
+ * Bugfix
 = 0.4.2 =
- * Fix the bug introduced by the last 'fix'<br />
+ * Fix the bug introduced by the last 'fix'
 = 0.4.1 =
- * Fix potential bug by using PLUGINDIR constant instead of hardcoded path.<br />
+ * Fix potential bug by using PLUGINDIR constant instead of hardcoded path.
 = 0.4.0 =
- * Add install hook + minor updates.<br />
+ * Add install hook + minor updates.
 = 0.3.0 =
- * Add leaves, make it possible to select different flakes, drops and leaves at the same time. Updates in the wind algo too.<br />
+ * Add leaves, make it possible to select different flakes, drops and leaves at the same time. Updates in the wind algo too.
 = 0.2.2 =
- * New snowflakes, small js updates and make the config page friendlier. FAQ update and remove border around images if css puts some there, thanks to <a href="http://zeveisenberg.com">Zev Eisenberg</a> for pointing that out.<br >
+ * New snowflakes, small js updates and make the config page friendlier. FAQ update and remove border around images if css puts some there, thanks to [Zev Eisenberg](http://zeveisenberg.com) for pointing that out.<br >
 = 0.2.1 =
- * Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.<br />
+ * Add bugfix for when 0 flakes are selected, thanks to Jon for reporting. Also restructured the settings page to make it a little friendlier. And add more snowflakes.
 = 0.2.0 =
- * Add a lot of new configuration options. Include a second snowflake.<br />
+ * Add a lot of new configuration options. Include a second snowflake.
 = 0.1.6 =
- * Fix for google chrome and make the snowflakes scrolling-aware.<br />
+ * Fix for google chrome and make the snowflakes scrolling-aware.
 = 0.1.5 =
- * Doc updates only<br />
+ * Doc updates only
 = 0.1.4 =
- * Wordpress.org upload, some doc updates<br />
+ * Wordpress.org upload, some doc updates
 = 0.1.3 =
- * Nicer snowflakes<br />
+ * Nicer snowflakes
 = 0.1.2 =
- * Number of snowflakes is an option now, fix for IE, set allowed URI<br />
+ * Number of snowflakes is an option now, fix for IE, set allowed URI
 = 0.1.1 =
- * Minor fixes<br />
+ * Minor fixes
 = 0.1.0 =
- * Initial release<br />
+ * Initial release

@@ -83,7 +83,7 @@ function nksnow_options_page() {
 				#function_exists( 'check_admin_referer' ) ? check_admin_referer( 'nksnow' ) : null;
 				$nonce = $_POST['_wpnonce'];
 				if ( !wp_verify_nonce( $nonce, 'nksnow') ) die( 'Security check' );
-		
+
 				update_option('nksnow_snowflakes', $_POST['nksnow_snowflakes']);
 				update_option('nksnow_uri', $_POST['nksnow_uri']);
 				update_option('nksnow_precise', $_POST['nksnow_precise']);
@@ -93,7 +93,7 @@ function nksnow_options_page() {
 				update_option('nksnow_maxstepy', $_POST['nksnow_maxstepy']);
 				update_option('nksnow_maxtime', $_POST['nksnow_maxtime']);
 				update_option('nksnow_invert', $_POST['nksnow_invert']);
-		
+
 				// todo why array? single flake?
 				if ( is_array( $_POST['nksnow_selected'] ) ) {
 					update_option( 'nksnow_selected', $_POST['nksnow_selected'] );
@@ -102,14 +102,14 @@ function nksnow_options_page() {
 					update_option( 'nksnow_selected', array( 'flake2.gif','flake3.gif' ) );
 				}
 				update_option( 'nksnow_flakesize', $_POST['nksnow_flakesize'] );
-			} 
+			}
 		} ?>
 
-		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php 
+		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php
 
 		require_once( 'nkuttler.php' );
-		nkuttler0_2_2_links( 'nksnow' ); ?>
-	
+		nkuttler0_2_3_links( 'nksnow', 'http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/' ); ?>
+
 		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
 			<?php if ( function_exists('wp_nonce_field') ) wp_nonce_field( 'nksnow' )  ?>
@@ -123,7 +123,7 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_snowflakes" > <?php
-							$select = get_option('nksnow_snowflakes'); 
+							$select = get_option('nksnow_snowflakes');
 							for ($i = 20 ; $i >= 0; $i--) {
 								if ( $i == $select ) {
 									echo "<option selected>$i</option>\n";
@@ -152,7 +152,7 @@ function nksnow_options_page() {
 				<tr>
 					<th>
 						&nbsp;<!-- yes -->
-					<td> 
+					<td>
 						<?php _e( 'By the way if you have nice snowflakes, drops, leaves etc. feel free to submit them to me if you made them yourself.', 'nksnow' ) ?>
 					</td>
 				</tr>
@@ -198,7 +198,7 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_flakesize" > <?php
-						$select = get_option('nksnow_flakesize'); 
+						$select = get_option('nksnow_flakesize');
 						for ($i = 20 ; $i <= 500; $i = $i + 10) {
 							if ( $i == $select ) {
 								echo "<option selected>$i</option>\n";
@@ -237,7 +237,7 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_timeout" > <?php
-							$select = get_option('nksnow_timeout'); 
+							$select = get_option('nksnow_timeout');
 							for ($i = 40 ; $i <= 500; $i = $i + 40) {
 								if ( $i == $select ) {
 									echo "<option selected>$i</option>\n";
@@ -257,7 +257,7 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_maxstepx" > <?php
-							$select = get_option('nksnow_maxstepx'); 
+							$select = get_option('nksnow_maxstepx');
 							for ($i = 1 ; $i <= 20; $i++) {
 								if ( $i == $select ) {
 									echo "<option selected>$i</option>\n";
@@ -277,7 +277,7 @@ function nksnow_options_page() {
 					</th>
 					<td>
 						<select name="nksnow_maxstepy" > <?php
-							$select = get_option('nksnow_maxstepy'); 
+							$select = get_option('nksnow_maxstepy');
 							for ($i = 3 ; $i <= 20; $i++) {
 								if ( $i == $select ) {
 									echo "<option selected>$i</option>\n";
@@ -337,7 +337,7 @@ function nksnow_options_page() {
 				<input type="submit" class="button-primary" value="<?php _e( 'Save changes', 'nksnow' ) ?>" />
 			</p>
 
-	
+
 		</form>
 	</div> <?php
 }
@@ -375,7 +375,7 @@ function nksnow_listpics( $header, $pattern = null ) {
 				echo '<img src="' . $nksnow['url'] . "pics/" . $dirArray[$i] . "\" />"; ?>
 			</div >
 			<?php
-		} ?> 
+		} ?>
 		<div style="clear:both;">&nbsp;</div>
 	</div> <?php
 }
