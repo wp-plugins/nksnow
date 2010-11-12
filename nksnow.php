@@ -5,7 +5,7 @@ Plugin URI: http://www.nkuttler.de/wordpress/nksnow/
 Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Description: Snow falling down your wordpress blog. See the <a href="http://www.nkuttler.de/nksnow/">live demo</a>.
-Version: 0.10.0
+Version: 0.10.0.1
 Text Domain: nksnow
 */
 
