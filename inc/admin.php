@@ -108,7 +108,10 @@ function nksnow_options_page() {
 		<h2><?php _e( 'Snow and more', 'nksnow' ) ?></h2> <?php
 
 		require_once( 'nkuttler.php' );
-		nkuttler0_2_3_links( 'nksnow', 'http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/' ); ?>
+		nkuttler0_2_4_links(
+			'nksnow',
+			'http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/'
+		); ?>
 
 		<h3><?php _e( 'Settings', 'nksnow' ) ?></h3>
 		<form action="" method="post">
