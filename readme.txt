@@ -5,8 +5,8 @@ Plugin URI: http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/
 Donate link: http://www.nkuttler.de/wordpress/donations/
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
-Tested up to: 3.0
-Stable tag: 0.10.0.3
+Tested up to: 3.1
+Stable tag: 0.10.0.4
 
 Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
 
@@ -64,6 +64,8 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.10.0.4 ( 2010-12-14 ) =
+ * Add spanish translation, thanks Carlos!
 = 0.10.0.3 ( 2010-12-10 ) =
  * Add bulgarian translation, thanks [Veselin](http://www.asenov.net)
  * Update italian
