@@ -1,39 +1,26 @@
 === Snow, balloons and more ===
 Contributors: nkuttler
-Author URI: http://www.nkuttler.de/
-Plugin URI: http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/
-Donate link: http://www.nkuttler.de/wordpress/donations/
+Author URI: http://kuttler.eu/blog/
+Plugin URI: http://kuttler.eu/wordpress-plugin/snow-balloons-and-more/
+Donate link: http://nkuttler.eu/donations/
 Tags: admin, plugin, christmas, snow, toy, toys, fun, funny, santa, balloons, balloon, balloons, birthday, celebrate
 Requires at least: 2.1
-Tested up to: 3.1
-Stable tag: 0.10.0.4
+Tested up to: 3.5
+Stable tag: 0.10.0.5
 
-Snowflakes (and more) falling down your blog! Inspired by the unforgettable xsnow. Since 0.8.0 images can float upwards too.
+Snowflakes (and more) falling down your blog! Inspired by the unforgettable
+xsnow. Since 0.8.0 images can float upwards too.
 
 == Description ==
 
-Snowflakes (and more) falling down your blog! There are snowflakes, leaves, drops - and balloons that can float upwards. You can simply add more images in the pics folder and they will appear on the settings page. I also happily accept images submitted to me as long as they are properly licensed.
+Snowflakes (and more) falling down your blog! There are snowflakes, leaves,
+drops - and balloons that can float upwards. You can simply add more images
+in the pics folder and they will appear on the settings page. I also happily
+accept images submitted to me as long as they are properly licensed.
 
-You can configure the number of snowflakes and limit the plugin to specific posts or pages.
-If you enter something into the URI field you will only see snow if the URI of your page matches the string.
-No fancy regexps.
-I added this feature so that I could put a [live demo](http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/) on my blog.
-
-If you like this you might like my [WordPress fireworks plugin](http://www.nkuttler.de/wordpress-plugin/wordpress-fireworks-plugin/) as well.
-
-= Other plugins I wrote =
-
- * [Better Lorem Ipsum Generator](http://www.nkuttler.de/wordpress-plugin/wordpress-lorem-ipsum-generator-plugin/)
- * [Better Related Posts](http://www.nkuttler.de/wordpress-plugin/wordpress-related-posts-plugin/)
- * [Custom Avatars For Comments](http://www.nkuttler.de/wordpress-plugin/custom-avatars-for-comments/)
- * [Better Tag Cloud](http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/)
- * [Theme Switch](http://www.nkuttler.de/wordpress-plugin/theme-switch-and-preview-plugin/)
- * [MU fast backend switch](http://www.nkuttler.de/wordpress-plugin/wpmu-switch-backend/)
- * [Visitor Movies for WordPress](http://www.nkuttler.de/wordpress-plugin/record-movies-of-visitors/)
- * [Zero Conf Mail](http://www.nkuttler.de/wordpress-plugin/zero-conf-mail/)
- * [Move WordPress Comments](http://www.nkuttler.de/wordpress-plugin/move-wordpress-comments/)
- * [Delete Pending Comments](http://www.nkuttler.de/wordpress-plugin/delete-pending-comments/)
- * [Snow and more](http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/)
+You can configure the number of snowflakes and limit the plugin to specific
+posts or pages.  If you enter something into the URI field you will only see
+snow if the URI of your page matches the string.  No fancy regexps.
 
 == Installation ==
 
@@ -64,6 +51,8 @@ Q: Why don't you have nicer snowflakes?<br />
 A: Sorry, I'm not a designer. Feel free to send me more properly licensed snowflakes that I can include.<br />
 
 == Changelog ==
+= 0.10.0.5 ( 2013-01-05 ) =
+ * Maintenance release
 = 0.10.0.4 ( 2010-12-14 ) =
  * Add spanish translation, thanks Carlos!
 = 0.10.0.3 ( 2010-12-10 ) =
